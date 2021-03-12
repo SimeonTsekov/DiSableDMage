@@ -9,5 +9,8 @@ class CityEvent with _$CityEvent {
   const factory CityEvent.fetchAverageCityWithId(String id) =
       _FetchAverageCityWithId;
 
+  const factory CityEvent.fetchAverageAllCities() =
+    _FetchAverageAllCities;
+
   const factory CityEvent.uploadCityWithId(String id) = _UploadCityWithId;
 }

@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
               fit: StackFit.expand,
               children: <Widget>[
                 Container(
-                  color: Colors.lightBlueAccent.withOpacity(0.6),
+                  color: Colors.lightBlueAccent,
                 ),
                 SingleChildScrollView(
                   child: Form(

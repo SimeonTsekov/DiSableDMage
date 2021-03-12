@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AverageStatsScreen extends StatelessWidget {
+import '../../model/City.dart';
+import 'CityScreen.dart';
+
+class AverageStatsScreen extends CityScreen {
+  AverageStatsScreen({required String errorText})
+      : super(onErrorText: errorText);
+
   @override
-  Widget build(BuildContext context) {
-    return Container();
+  Widget buildOnCityFetched(City city) {
+    // TODO: implement buildOnCityFetched
+    throw UnimplementedError();
   }
 }
