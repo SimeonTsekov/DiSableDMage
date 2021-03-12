@@ -8,7 +8,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Widget> get _pages => [
+  List<Widget> get _aggregationScreens => [
         Center(
           child: Text("Text1"),
         ),
@@ -20,14 +20,98 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ];
 
+  List<Widget> get _statisticsScreens => [
+        Center(
+          child: Text("Statistics1"),
+        ),
+        Center(
+          child: Text("Statistics2"),
+        ),
+        Center(
+          child: Text("Statistics3"),
+        ),
+      ];
+
+  List<GButton> get _aggregationTabs => [
+        // Change the icons, text and stuff cuz this is not e-bikify
+        GButton(
+          gap: 8,
+          icon: Icons.home,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          backgroundColor: Colors.greenAccent,
+          text: 'Home',
+        ),
+        GButton(
+            gap: 8,
+            icon: Icons.battery_charging_full_sharp,
+            text: 'Bat. status',
+            iconActiveColor: Colors.redAccent,
+            iconColor: Colors.black,
+            textColor: Colors.black,
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+            backgroundColor: Colors.lightBlue),
+        GButton(
+          gap: 8,
+          icon: Icons.location_on_sharp,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          backgroundColor: Colors.yellow,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          text: 'Location',
+        ),
+      ];
+
+  List<GButton> get _statisticsTabs => [
+        // Change the icons, text and stuff cuz this is not e-bikify
+        GButton(
+          gap: 8,
+          icon: Icons.home,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          backgroundColor: Colors.greenAccent,
+          text: 'Stats1',
+        ),
+        GButton(
+            gap: 8,
+            icon: Icons.battery_charging_full_sharp,
+            text: 'Stats2',
+            iconActiveColor: Colors.redAccent,
+            iconColor: Colors.black,
+            textColor: Colors.black,
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+            backgroundColor: Colors.lightBlue),
+        GButton(
+          gap: 8,
+          icon: Icons.location_on_sharp,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          backgroundColor: Colors.yellow,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          text: 'Stats3',
+        ),
+      ];
+
+  List<GButton> _buildTabs() =>
+      _isShowingStatistics ? _statisticsTabs : _aggregationTabs;
+
   int _currentTab = 0;
+
+  bool _isShowingStatistics = false;
 
   final _pageController = PageController();
 
   Widget _buildPageView() => PageView(
         controller: _pageController,
         onPageChanged: (index) => pageChanged(index),
-        children: _pages,
+        children:
+            _isShowingStatistics ? _statisticsScreens : _aggregationScreens,
       );
 
   void pageChanged(int index) {
@@ -50,6 +134,15 @@ class _HomeScreenState extends State<HomeScreen> {
               expandedHeight: 200.0,
               floating: false,
               pinned: true,
+              actions: [
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _isShowingStatistics = !_isShowingStatistics;
+                      });
+                    },
+                    child: Text('Toggle'))
+              ],
               flexibleSpace: FlexibleSpaceBar(
                   centerTitle: false,
                   title: Text("Sliver with bottom navbar",
@@ -92,39 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 curve: Curves.easeOutExpo,
                 tabBackgroundColor: Colors.lightBlue,
                 textStyle: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                tabs: [
-                  // Change the icons, text and stuff cuz this is not e-bikify
-                  GButton(
-                    gap: 8,
-                    icon: Icons.home,
-                    iconActiveColor: Colors.redAccent,
-                    iconColor: Colors.black,
-                    textColor: Colors.black,
-                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-                    backgroundColor: Colors.greenAccent,
-                    text: 'Home',
-                  ),
-                  GButton(
-                      gap: 8,
-                      icon: Icons.battery_charging_full_sharp,
-                      text: 'Bat. status',
-                      iconActiveColor: Colors.redAccent,
-                      iconColor: Colors.black,
-                      textColor: Colors.black,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-                      backgroundColor: Colors.lightBlue),
-                  GButton(
-                    gap: 8,
-                    icon: Icons.location_on_sharp,
-                    iconActiveColor: Colors.redAccent,
-                    iconColor: Colors.black,
-                    textColor: Colors.black,
-                    backgroundColor: Colors.yellow,
-                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-                    text: 'Location',
-                  ),
-                ],
+                tabs: _buildTabs(),
                 selectedIndex: _currentTab,
                 onTabChange: (index) {
                   bottomTapped(index);

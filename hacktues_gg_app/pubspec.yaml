@@ -37,6 +37,8 @@ dependencies:
   google_nav_bar: ^5.0.2
   syncfusion_flutter_core: ^18.4.47
   syncfusion_flutter_charts: ^18.4.47
+  json_annotation: ^4.0.0
+  dio: ^4.0.0-beta7
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -47,6 +49,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^1.11.5
   injectable_generator: ^1.2.0
+  json_serializable: ^4.0.2
   freezed: ^0.14.0
 
 # For information on the generic Dart part of this file, see the
