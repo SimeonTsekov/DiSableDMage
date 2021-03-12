@@ -2,6 +2,7 @@
 using Firebase.Auth;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using User;
 
 namespace UI
 {
@@ -32,6 +33,7 @@ namespace UI
 
         public void OnSignOut()
         {
+            UserController.Instance.UpdateUser();
             PlayerPrefs.SetString("UserId", "LMAO");
             FirebaseAuth.DefaultInstance.SignOut();
             SceneManager.LoadScene("LogIn");
@@ -39,6 +41,7 @@ namespace UI
         
         public void OnExit()
         {
+            UserController.Instance.UpdateUser();
             GameStateController.Instance.GenerateBuildingsJsonFile();
             Application.Quit();
         }

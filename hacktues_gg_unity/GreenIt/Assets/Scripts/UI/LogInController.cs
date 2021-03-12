@@ -3,6 +3,7 @@ using Authentication;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using User;
 
 namespace UI
 {
@@ -28,6 +29,7 @@ namespace UI
 			_password = passwordField.text;
 			
 			LogInAuthenticationController.Instance.Authenticate(_email, _password);
+			UserController.Instance.ReadUser();
 			SceneManager.LoadScene("MainScene");
 		}
 

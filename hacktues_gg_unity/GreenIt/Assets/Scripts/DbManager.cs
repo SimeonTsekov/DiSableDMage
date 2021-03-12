@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Firebase;
 using Firebase.Firestore;
 using Firebase.Storage;
 using UnityEngine;
 using UnityEngine.Networking;
+using User;
 
 public class DbManager : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class DbManager : MonoBehaviour
 	private DocumentReference _reference;
 	private FirebaseApp _app;
 	private StorageReference _storage;
+	private FirebaseFirestore _db;
 
 	private void Awake()
 	{
@@ -23,24 +26,35 @@ public class DbManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 		_app = FirebaseApp.DefaultInstance;
 		_storage = FirebaseStorage.DefaultInstance.RootReference;
+		_db = FirebaseFirestore.DefaultInstance;
 	}
 
-	private void Start()
+	public async Task<UserData> ReadUserData()
 	{
-		//Call();
+		UserData userData = null;
+
+		await _db.Collection("cities")
+			.Document(PlayerPrefs.GetString("UserId"))
+			.GetSnapshotAsync()
+			.ContinueWith(user =>
+			{
+				userData = new UserData(user.Result.GetValue<int>("population"),
+					user.Result.GetValue<float>("pollution"),
+					user.Result.GetValue<float>("money"),
+					user.Result.GetValue<string>("name"),
+					user.Result.GetValue<int>("energy"),
+					user.Result.GetValue<float>("pollution_multiplier"),
+					user.Result.GetValue<float>("money_multiplier"));
+			});
+
+		return userData;
 	}
 
-	async void Call()
+	public async void UpdateUser()
 	{
-		var db = FirebaseFirestore.DefaultInstance;
-		_reference = db.Collection("B R U H").Document("b r u h");
-
-		var bruh = new Dictionary<string, string>
-		{
-			{"B R U H", "b r u h"}
-		};
-
-		await _reference.SetAsync(bruh);
+		await _db.Collection("cities")
+			.Document(PlayerPrefs.GetString("UserId"))
+			.SetAsync(UserController.Instance.GetUserDataDictionary());
 	}
 
 	async void ReadConfiguration()

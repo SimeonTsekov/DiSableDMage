@@ -33,6 +33,7 @@ namespace Authentication
 				var newUser = task.Result;
 				Debug.LogFormat("User signed in successfully: {0} ({1})",
 					newUser.DisplayName, newUser.UserId);
+				PlayerPrefs.SetString("UserId", newUser.UserId);
 			});
 		}
 

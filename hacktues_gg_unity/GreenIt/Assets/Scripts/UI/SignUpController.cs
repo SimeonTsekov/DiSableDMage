@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using User;
 
 namespace UI
 {
@@ -25,6 +26,7 @@ namespace UI
             if (_confirmedPassword.Equals(_password))
             {
                 SignUpAuthenticationController.Instance.Authenticate(_email, _password);
+                UserController.Instance.InitializeUser();
                 SceneManager.LoadScene("MainScene");
             }
         }
