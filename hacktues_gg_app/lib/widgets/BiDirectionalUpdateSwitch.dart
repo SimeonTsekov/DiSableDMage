@@ -30,9 +30,12 @@ class BiDirectionalUpdateSwitch extends StatelessWidget {
           // hasData bugs out
           if (snapshot.data != null) {
             return Switch.adaptive(
-                value: snapshot.data!.state.map(on: (_) => true, off: (_) => false),
-                onChanged: snapshot.data!.shouldRun ? ((value) => prefsBgBloc
-                    .sendEvent(PrefBackgroundRunEvent.toggle(value))) : null;
+                value: snapshot.data!.state
+                    .map(on: (_) => true, off: (_) => false),
+                onChanged: snapshot.data!.shouldRun
+                    ? ((value) => prefsBgBloc
+                        .sendEvent(PrefBackgroundRunEvent.toggle(value)))
+                    : null);
           } else if (snapshot.error != null) {
             return Text('ok, ERROR NO SWITCH');
           } else {
