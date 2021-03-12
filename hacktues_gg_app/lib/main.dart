@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hacktues_gg_app/di/serviceLocator.dart';
-import 'package:hacktues_gg_app/navigation/PageManager.dart';
 import 'package:hacktues_gg_app/screens/root/Root.dart';
+import 'package:hacktues_gg_app/services/Prefs.dart';
+
+import 'blocs/CityBloc.dart';
+import 'di/serviceLocator.dart';
 
 const _calculationsTaskId = 'calculations and stuff';
 
@@ -20,10 +22,23 @@ Future<void> _headless(String taskId) async {
 Future<void> _onBackgroundFetch(String taskId) async {
   // calculations and stuff
   if (taskId == _calculationsTaskId) {
-    print('Background fetch');
-    // stuff
+    CityBloc cityBloc = $<CityBloc>();
+    Prefs prefs = $<Prefs>();
+    bool? shouldSendBg = await prefs.getShouldFetchBackgroundStream().first;
+
+    if(shouldSendBg == true) {
+      // TODO: Fetch user city from Sembast
+      // TODO: Store user city in Sembast db on fetches and calculations
+      // TODO: Do calculations on user city
+    }
+
     BackgroundFetch.finish(taskId);
   }
+}
+
+Future<void> _onBackgroundFetchTimeout(String taskId) async {
+  print("[BackgroundFetch] TASK TIMEOUT taskId: $taskId");
+  BackgroundFetch.finish(taskId);
 }
 
 Future<void> _configureBackgroundFetch() async {
