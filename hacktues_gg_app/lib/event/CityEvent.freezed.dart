@@ -22,16 +22,6 @@ class _$CityEventTearOff {
     );
   }
 
-  _FetchAverageCityWithId fetchAverageCityWithId(String id) {
-    return _FetchAverageCityWithId(
-      id,
-    );
-  }
-
-  _FetchAverageAllCities fetchAverageAllCities() {
-    return const _FetchAverageAllCities();
-  }
-
   _UploadCityWithId updateCity(City newCity) {
     return _UploadCityWithId(
       newCity,
@@ -47,16 +37,12 @@ mixin _$CityEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) fetchCityWithId,
-    required TResult Function(String id) fetchAverageCityWithId,
-    required TResult Function() fetchAverageAllCities,
     required TResult Function(City newCity) updateCity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? fetchCityWithId,
-    TResult Function(String id)? fetchAverageCityWithId,
-    TResult Function()? fetchAverageAllCities,
     TResult Function(City newCity)? updateCity,
     required TResult orElse(),
   }) =>
@@ -64,18 +50,12 @@ mixin _$CityEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchCityWithId value) fetchCityWithId,
-    required TResult Function(_FetchAverageCityWithId value)
-        fetchAverageCityWithId,
-    required TResult Function(_FetchAverageAllCities value)
-        fetchAverageAllCities,
     required TResult Function(_UploadCityWithId value) updateCity,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCityWithId value)? fetchCityWithId,
-    TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
-    TResult Function(_FetchAverageAllCities value)? fetchAverageAllCities,
     TResult Function(_UploadCityWithId value)? updateCity,
     required TResult orElse(),
   }) =>
@@ -161,8 +141,6 @@ class _$_FetchCityWithId implements _FetchCityWithId {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) fetchCityWithId,
-    required TResult Function(String id) fetchAverageCityWithId,
-    required TResult Function() fetchAverageAllCities,
     required TResult Function(City newCity) updateCity,
   }) {
     return fetchCityWithId(id);
@@ -172,8 +150,6 @@ class _$_FetchCityWithId implements _FetchCityWithId {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? fetchCityWithId,
-    TResult Function(String id)? fetchAverageCityWithId,
-    TResult Function()? fetchAverageAllCities,
     TResult Function(City newCity)? updateCity,
     required TResult orElse(),
   }) {
@@ -187,10 +163,6 @@ class _$_FetchCityWithId implements _FetchCityWithId {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchCityWithId value) fetchCityWithId,
-    required TResult Function(_FetchAverageCityWithId value)
-        fetchAverageCityWithId,
-    required TResult Function(_FetchAverageAllCities value)
-        fetchAverageAllCities,
     required TResult Function(_UploadCityWithId value) updateCity,
   }) {
     return fetchCityWithId(this);
@@ -200,8 +172,6 @@ class _$_FetchCityWithId implements _FetchCityWithId {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCityWithId value)? fetchCityWithId,
-    TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
-    TResult Function(_FetchAverageAllCities value)? fetchAverageAllCities,
     TResult Function(_UploadCityWithId value)? updateCity,
     required TResult orElse(),
   }) {
@@ -222,232 +192,13 @@ abstract class _FetchCityWithId implements CityEvent {
 }
 
 /// @nodoc
-abstract class _$FetchAverageCityWithIdCopyWith<$Res> {
-  factory _$FetchAverageCityWithIdCopyWith(_FetchAverageCityWithId value,
-          $Res Function(_FetchAverageCityWithId) then) =
-      __$FetchAverageCityWithIdCopyWithImpl<$Res>;
-  $Res call({String id});
-}
-
-/// @nodoc
-class __$FetchAverageCityWithIdCopyWithImpl<$Res>
-    extends _$CityEventCopyWithImpl<$Res>
-    implements _$FetchAverageCityWithIdCopyWith<$Res> {
-  __$FetchAverageCityWithIdCopyWithImpl(_FetchAverageCityWithId _value,
-      $Res Function(_FetchAverageCityWithId) _then)
-      : super(_value, (v) => _then(v as _FetchAverageCityWithId));
-
-  @override
-  _FetchAverageCityWithId get _value => super._value as _FetchAverageCityWithId;
-
-  @override
-  $Res call({
-    Object? id = freezed,
-  }) {
-    return _then(_FetchAverageCityWithId(
-      id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_FetchAverageCityWithId implements _FetchAverageCityWithId {
-  const _$_FetchAverageCityWithId(this.id);
-
-  @override
-  final String id;
-
-  @override
-  String toString() {
-    return 'CityEvent.fetchAverageCityWithId(id: $id)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _FetchAverageCityWithId &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
-
-  @JsonKey(ignore: true)
-  @override
-  _$FetchAverageCityWithIdCopyWith<_FetchAverageCityWithId> get copyWith =>
-      __$FetchAverageCityWithIdCopyWithImpl<_FetchAverageCityWithId>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id) fetchCityWithId,
-    required TResult Function(String id) fetchAverageCityWithId,
-    required TResult Function() fetchAverageAllCities,
-    required TResult Function(City newCity) updateCity,
-  }) {
-    return fetchAverageCityWithId(id);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id)? fetchCityWithId,
-    TResult Function(String id)? fetchAverageCityWithId,
-    TResult Function()? fetchAverageAllCities,
-    TResult Function(City newCity)? updateCity,
-    required TResult orElse(),
-  }) {
-    if (fetchAverageCityWithId != null) {
-      return fetchAverageCityWithId(id);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FetchCityWithId value) fetchCityWithId,
-    required TResult Function(_FetchAverageCityWithId value)
-        fetchAverageCityWithId,
-    required TResult Function(_FetchAverageAllCities value)
-        fetchAverageAllCities,
-    required TResult Function(_UploadCityWithId value) updateCity,
-  }) {
-    return fetchAverageCityWithId(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchCityWithId value)? fetchCityWithId,
-    TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
-    TResult Function(_FetchAverageAllCities value)? fetchAverageAllCities,
-    TResult Function(_UploadCityWithId value)? updateCity,
-    required TResult orElse(),
-  }) {
-    if (fetchAverageCityWithId != null) {
-      return fetchAverageCityWithId(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchAverageCityWithId implements CityEvent {
-  const factory _FetchAverageCityWithId(String id) = _$_FetchAverageCityWithId;
-
-  String get id => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$FetchAverageCityWithIdCopyWith<_FetchAverageCityWithId> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$FetchAverageAllCitiesCopyWith<$Res> {
-  factory _$FetchAverageAllCitiesCopyWith(_FetchAverageAllCities value,
-          $Res Function(_FetchAverageAllCities) then) =
-      __$FetchAverageAllCitiesCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$FetchAverageAllCitiesCopyWithImpl<$Res>
-    extends _$CityEventCopyWithImpl<$Res>
-    implements _$FetchAverageAllCitiesCopyWith<$Res> {
-  __$FetchAverageAllCitiesCopyWithImpl(_FetchAverageAllCities _value,
-      $Res Function(_FetchAverageAllCities) _then)
-      : super(_value, (v) => _then(v as _FetchAverageAllCities));
-
-  @override
-  _FetchAverageAllCities get _value => super._value as _FetchAverageAllCities;
-}
-
-/// @nodoc
-class _$_FetchAverageAllCities implements _FetchAverageAllCities {
-  const _$_FetchAverageAllCities();
-
-  @override
-  String toString() {
-    return 'CityEvent.fetchAverageAllCities()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _FetchAverageAllCities);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id) fetchCityWithId,
-    required TResult Function(String id) fetchAverageCityWithId,
-    required TResult Function() fetchAverageAllCities,
-    required TResult Function(City newCity) updateCity,
-  }) {
-    return fetchAverageAllCities();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id)? fetchCityWithId,
-    TResult Function(String id)? fetchAverageCityWithId,
-    TResult Function()? fetchAverageAllCities,
-    TResult Function(City newCity)? updateCity,
-    required TResult orElse(),
-  }) {
-    if (fetchAverageAllCities != null) {
-      return fetchAverageAllCities();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FetchCityWithId value) fetchCityWithId,
-    required TResult Function(_FetchAverageCityWithId value)
-        fetchAverageCityWithId,
-    required TResult Function(_FetchAverageAllCities value)
-        fetchAverageAllCities,
-    required TResult Function(_UploadCityWithId value) updateCity,
-  }) {
-    return fetchAverageAllCities(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FetchCityWithId value)? fetchCityWithId,
-    TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
-    TResult Function(_FetchAverageAllCities value)? fetchAverageAllCities,
-    TResult Function(_UploadCityWithId value)? updateCity,
-    required TResult orElse(),
-  }) {
-    if (fetchAverageAllCities != null) {
-      return fetchAverageAllCities(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _FetchAverageAllCities implements CityEvent {
-  const factory _FetchAverageAllCities() = _$_FetchAverageAllCities;
-}
-
-/// @nodoc
 abstract class _$UploadCityWithIdCopyWith<$Res> {
   factory _$UploadCityWithIdCopyWith(
           _UploadCityWithId value, $Res Function(_UploadCityWithId) then) =
       __$UploadCityWithIdCopyWithImpl<$Res>;
   $Res call({City newCity});
+
+  $CityCopyWith<$Res> get newCity;
 }
 
 /// @nodoc
@@ -471,6 +222,13 @@ class __$UploadCityWithIdCopyWithImpl<$Res>
           : newCity // ignore: cast_nullable_to_non_nullable
               as City,
     ));
+  }
+
+  @override
+  $CityCopyWith<$Res> get newCity {
+    return $CityCopyWith<$Res>(_value.newCity, (value) {
+      return _then(_value.copyWith(newCity: value));
+    });
   }
 }
 
@@ -507,8 +265,6 @@ class _$_UploadCityWithId implements _UploadCityWithId {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String id) fetchCityWithId,
-    required TResult Function(String id) fetchAverageCityWithId,
-    required TResult Function() fetchAverageAllCities,
     required TResult Function(City newCity) updateCity,
   }) {
     return updateCity(newCity);
@@ -518,8 +274,6 @@ class _$_UploadCityWithId implements _UploadCityWithId {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? fetchCityWithId,
-    TResult Function(String id)? fetchAverageCityWithId,
-    TResult Function()? fetchAverageAllCities,
     TResult Function(City newCity)? updateCity,
     required TResult orElse(),
   }) {
@@ -533,10 +287,6 @@ class _$_UploadCityWithId implements _UploadCityWithId {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchCityWithId value) fetchCityWithId,
-    required TResult Function(_FetchAverageCityWithId value)
-        fetchAverageCityWithId,
-    required TResult Function(_FetchAverageAllCities value)
-        fetchAverageAllCities,
     required TResult Function(_UploadCityWithId value) updateCity,
   }) {
     return updateCity(this);
@@ -546,8 +296,6 @@ class _$_UploadCityWithId implements _UploadCityWithId {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCityWithId value)? fetchCityWithId,
-    TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
-    TResult Function(_FetchAverageAllCities value)? fetchAverageAllCities,
     TResult Function(_UploadCityWithId value)? updateCity,
     required TResult orElse(),
   }) {

@@ -2,7 +2,7 @@
 
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/model/CityAverage.dart';
-import 'package:hacktues_gg_app/screens/main/AverageCityScreen.dart';
+import 'package:hacktues_gg_app/screens/base/AverageCityScreen.dart';
 import 'package:hacktues_gg_app/widgets/CityAverageBarChart.dart';
 
 class ComparisonScreen extends AverageCityScreen<CityAverageBarChart,
@@ -12,7 +12,5 @@ class ComparisonScreen extends AverageCityScreen<CityAverageBarChart,
   @override
   List<CityAverageBarChart> buildAverageStatDisplayListFromCityAverage(
           CityAverage city) =>
-      [
-
-      ];
+      [];
 }

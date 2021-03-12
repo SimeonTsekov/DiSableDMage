@@ -13,16 +13,20 @@ class CityRepository {
 
   CityRepository({required this.db, required this.storage});
 
-  Future<void> uploadCity(City cityFields) async => await db.updateCity(cityFields);
+  Future<void> uploadCity(City cityFields) async =>
+      await db.updateCity(cityFields);
 
-  Stream<ResponseState<City?>> streamCityWithId(String id) =>
-      db.citySnapshots(id).map((event) => ResponseState(event));
+  Stream<ResponseState<City>> streamCityWithId(String id) =>
+      db.citySnapshots(id).map((event) =>
+          event != null ? ResponseState(event) : ResponseState.loading());
 
-  Stream<ResponseState<CityAverage?>> streamAverageCityWithId(String id) =>
-      db.averageCitySnapshot(id).map((event) => ResponseState(event));
+  Stream<ResponseState<CityAverage>> streamAverageCityWithId(String id) =>
+      db.averageCitySnapshot(id).map((event) =>
+          event != null ? ResponseState(event) : ResponseState.loading());
 
-  Stream<ResponseState<CityAverage?>> streamAverageAllCities =>
-      db.averageAllCitiesSnapshot().map((event) => ResponseState(event));
+  Stream<ResponseState<CityAverage>> streamAverageAllCities() =>
+      db.averageAllCitiesSnapshot().map((event) =>
+          event != null ? ResponseState(event) : ResponseState.loading());
 
 // methods that return stream and this gets injected to bloc go brrr
 }

@@ -26,102 +26,102 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   List<Widget> get _aggregationScreens => [
-    AverageStatsScreen(
-        errorText: 'Something went wrong with the aggregation!'),
-    Center(
-      child: Text("Text2"),
-    ),
-    Center(
-      child: Text("Text3"),
-    ),
-  ];
+        AverageStatsScreen(
+            errorText: 'Something went wrong with the aggregation!'),
+        Center(
+          child: Text("Text2"),
+        ),
+        Center(
+          child: Text("Text3"),
+        ),
+      ];
 
   List<Widget> get _statisticsScreens => [
-    StatsScreen($(),
-        errorText: 'Something went wrong with fetching the data',
-        max: 200,
-        min: 0,
-        interval: 20,
-        graphicType: GraphicType.Pollution),
-    StatsScreen($(),
-        errorText: 'Something went wrong with fetching the data',
-        max: 200,
-        min: 0,
-        interval: 20,
-        graphicType: GraphicType.Money),
-    StatsScreen($(),
-        errorText: 'Something went wrong with fetching the data',
-        max: 200,
-        min: 0,
-        interval: 20,
-        graphicType: GraphicType.BuildingCount),
-  ];
+        StatsScreen($(),
+            errorText: 'Something went wrong with fetching the data',
+            max: 200,
+            min: 0,
+            interval: 20,
+            graphicType: GraphicType.Pollution),
+        StatsScreen($(),
+            errorText: 'Something went wrong with fetching the data',
+            max: 200,
+            min: 0,
+            interval: 20,
+            graphicType: GraphicType.Money),
+        StatsScreen($(),
+            errorText: 'Something went wrong with fetching the data',
+            max: 200,
+            min: 0,
+            interval: 20,
+            graphicType: GraphicType.BuildingCount),
+      ];
 
   List<GButton> get _aggregationTabs => [
-    // Change the icons, text and stuff cuz this is not e-bikify
-    GButton(
-      gap: 8,
-      icon: Icons.home,
-      iconActiveColor: Colors.redAccent,
-      iconColor: Colors.black,
-      textColor: Colors.black,
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-      backgroundColor: Colors.greenAccent,
-      text: 'Home',
-    ),
-    GButton(
-        gap: 8,
-        icon: Icons.battery_charging_full_sharp,
-        text: 'Bat. status',
-        iconActiveColor: Colors.redAccent,
-        iconColor: Colors.black,
-        textColor: Colors.black,
-        padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-        backgroundColor: Colors.lightBlue),
-    GButton(
-      gap: 8,
-      icon: Icons.location_on_sharp,
-      iconActiveColor: Colors.redAccent,
-      iconColor: Colors.black,
-      textColor: Colors.black,
-      backgroundColor: Colors.yellow,
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-      text: 'Location',
-    ),
-  ];
+        // Change the icons, text and stuff cuz this is not e-bikify
+        GButton(
+          gap: 8,
+          icon: Icons.home,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          backgroundColor: Colors.greenAccent,
+          text: 'Home',
+        ),
+        GButton(
+            gap: 8,
+            icon: Icons.battery_charging_full_sharp,
+            text: 'Bat. status',
+            iconActiveColor: Colors.redAccent,
+            iconColor: Colors.black,
+            textColor: Colors.black,
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+            backgroundColor: Colors.lightBlue),
+        GButton(
+          gap: 8,
+          icon: Icons.location_on_sharp,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          backgroundColor: Colors.yellow,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          text: 'Location',
+        ),
+      ];
 
   List<GButton> get _statisticsTabs => [
-    // Change the icons, text and stuff cuz this is not e-bikify
-    GButton(
-      gap: 8,
-      icon: Icons.home,
-      iconActiveColor: Colors.redAccent,
-      iconColor: Colors.black,
-      textColor: Colors.black,
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-      backgroundColor: Colors.greenAccent,
-      text: 'Stats1',
-    ),
-    GButton(
-        gap: 8,
-        icon: Icons.battery_charging_full_sharp,
-        text: 'Stats2',
-        iconActiveColor: Colors.redAccent,
-        iconColor: Colors.black,
-        textColor: Colors.black,
-        padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-        backgroundColor: Colors.lightBlue),
-    GButton(
-      gap: 8,
-      icon: Icons.location_on_sharp,
-      iconActiveColor: Colors.redAccent,
-      iconColor: Colors.black,
-      textColor: Colors.black,
-      backgroundColor: Colors.yellow,
-      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-      text: 'Stats3',
-    ),
-  ];
+        // Change the icons, text and stuff cuz this is not e-bikify
+        GButton(
+          gap: 8,
+          icon: Icons.home,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          backgroundColor: Colors.greenAccent,
+          text: 'Stats1',
+        ),
+        GButton(
+            gap: 8,
+            icon: Icons.battery_charging_full_sharp,
+            text: 'Stats2',
+            iconActiveColor: Colors.redAccent,
+            iconColor: Colors.black,
+            textColor: Colors.black,
+            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+            backgroundColor: Colors.lightBlue),
+        GButton(
+          gap: 8,
+          icon: Icons.location_on_sharp,
+          iconActiveColor: Colors.redAccent,
+          iconColor: Colors.black,
+          textColor: Colors.black,
+          backgroundColor: Colors.yellow,
+          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+          text: 'Stats3',
+        ),
+      ];
 
   List<GButton> _buildTabs() =>
       _isShowingStatistics ? _statisticsTabs : _aggregationTabs;
@@ -133,11 +133,11 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   final _pageController = PageController();
 
   Widget _buildPageView() => PageView(
-    controller: _pageController,
-    onPageChanged: (index) => pageChanged(index),
-    children:
-    _isShowingStatistics ? _statisticsScreens : _aggregationScreens,
-  );
+        controller: _pageController,
+        onPageChanged: (index) => pageChanged(index),
+        children:
+            _isShowingStatistics ? _statisticsScreens : _aggregationScreens,
+      );
 
   void pageChanged(int index) {
     setState(() => _currentTab = index);
@@ -154,46 +154,46 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   @override
   void initState() {
     super.initState();
-    widget.cityBloc.sendEvent(CityEvent.fetchCityWithId(this.currentCityId));
+    widget.cityBloc.sendEvent(CityEvent.fetchCityWithId('random_city'));
     widget.previousStatisticsBloc.fetchInitialStatistics(this.currentCityId);
   }
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    body: NestedScrollView(
-      headerSliverBuilder: (context, _) => [
-        SliverAppBar(
-          expandedHeight: 200.0,
-          floating: false,
-          pinned: true,
-          actions: [
-            ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _isShowingStatistics = !_isShowingStatistics;
-                  });
-                },
-                child: Text('Toggle'))
+        body: NestedScrollView(
+          headerSliverBuilder: (context, _) => [
+            SliverAppBar(
+              expandedHeight: 200.0,
+              floating: false,
+              pinned: true,
+              actions: [
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _isShowingStatistics = !_isShowingStatistics;
+                      });
+                    },
+                    child: Text('Toggle'))
+              ],
+              flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: false,
+                  title: const HackTUESText(
+                    "Sliver with bottom navbar",
+                    fontSize: 16.0,
+                  ),
+                  // think of some interesting background image
+                  background: Image.network(
+                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                    fit: BoxFit.cover,
+                  )),
+            )
           ],
-          flexibleSpace: FlexibleSpaceBar(
-              centerTitle: false,
-              title: const HackTUESText(
-                "Sliver with bottom navbar",
-                fontSize: 16.0,
-              ),
-              // think of some interesting background image
-              background: Image.network(
-                "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
-                fit: BoxFit.cover,
-              )),
-        )
-      ],
-      body: _buildPageView(),
-    ),
-    drawer: NavigationDrawer(),
-    bottomNavigationBar: SafeArea(
-      // wrap with Opacity, listen notifications from the scrollView and update the opacity.
-        child: Container(
+          body: _buildPageView(),
+        ),
+        drawer: NavigationDrawer(),
+        bottomNavigationBar: SafeArea(
+            // wrap with Opacity, listen notifications from the scrollView and update the opacity.
+            child: Container(
           margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
               color: Colors.white,
@@ -220,9 +220,8 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                 selectedIndex: _currentTab,
                 onTabChange: (index) {
                   bottomTapped(index);
-                }
-              ),
+                }),
           ),
         )),
-  );
+      );
 }

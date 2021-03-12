@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/base/RxObject.dart';
-import 'package:hacktues_gg_app/screens/main/CityScreen.dart';
+import 'package:hacktues_gg_app/screens/base/CityScreen.dart';
 import 'package:hacktues_gg_app/state/ResponseState.dart';
 
 abstract class AverageCityScreen<W extends Widget, M, T extends RxObject<ResponseState<M>>>
