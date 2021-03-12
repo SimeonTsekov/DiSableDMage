@@ -7,15 +7,17 @@ import 'package:rx_shared_preferences/rx_shared_preferences.dart';
 Future<void> _backgroundMessageHandler(Map<String, dynamic>? message) async {
   final RxSharedPreferences _prefs = RxSharedPreferences.getInstance();
   _prefs.reload();
-  _prefs.getBoolStream(PrefsKeys.SHOULD_RUN_BACKGROUND).listen((event) async {
-    if (event != null) {
-      if (event) {
-        await configureBackgroundFetch();
-      } else {
-        BackgroundFetch.finish(calculationsTaskId);
-      }
-    }
-  });
+  bool shouldBgRun = message?['isActive'] == false;
+
+  bool foregroundShouldBgRun =
+      await _prefs.getBoolStream(PrefsKeys.SHOULD_RUN_BACKGROUND).first == true;
+  _prefs.setBool(PrefsKeys.SHOULD_RUN_BACKGROUND, shouldBgRun);
+
+  if (foregroundShouldBgRun && shouldBgRun) {
+    await configureBackgroundFetch();
+  } else {
+    BackgroundFetch.finish(calculationsTaskId);
+  }
 }
 
 class CloudMessaging {
