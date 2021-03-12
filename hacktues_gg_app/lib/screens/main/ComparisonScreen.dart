@@ -12,5 +12,7 @@ class ComparisonScreen extends AverageCityScreen<CityAverageBarChart,
   @override
   List<CityAverageBarChart> buildAverageStatDisplayListFromCityAverage(
           CityAverage city) =>
-      [];
+      [
+
+      ];
 }

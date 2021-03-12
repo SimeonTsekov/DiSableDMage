@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/AuthBloc.dart';
 import 'package:hacktues_gg_app/di/serviceLocator.dart';
 import 'package:hacktues_gg_app/event/AuthEvent.dart';
+import 'package:hacktues_gg_app/widgets/BiDirectionalUpdateSwitch.dart';
 
 import 'HackTUESText.dart';
 
@@ -22,6 +23,9 @@ class NavigationDrawer extends StatelessWidget {
               // onTap: go to the settins with the switch and stuff  () => $<PageManager>().openPage<Settings>(key: 'Settings', builder: () => {})
             ),
             Divider(),
+            BiDirectionalUpdateSwitch(
+              prefsBgBloc: $(),
+            ),
             ListTile(
                 title: const HackTUESText(
                   'Logout',
