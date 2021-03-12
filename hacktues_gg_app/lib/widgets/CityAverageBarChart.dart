@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:hacktues_gg_app/model/CityAverage.dart';
-import 'package:hacktues_gg_app/model/City.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
+// Not the cleanest solution but should work
 class CityAverageBarChart extends StatefulWidget {
   final String chartTitle;
   final double cityAggregatedAmount;
   final double globalAggregatedAmount;
 
-  const CityAverageBarChart({Key? key, required this.chartTitle,
-    required this.cityAggregatedAmount, required this.globalAggregatedAmount}) : super(key: key);
+  const CityAverageBarChart(
+      {Key? key,
+      required this.chartTitle,
+      required this.cityAggregatedAmount,
+      required this.globalAggregatedAmount})
+      : super(key: key);
 
   @override
   _CityAverageBarChartState createState() => _CityAverageBarChartState();
@@ -18,9 +21,7 @@ class CityAverageBarChart extends StatefulWidget {
 
 class _CityAverageBarChartState extends State<CityAverageBarChart> {
   @override
-  Widget build(BuildContext context) {
-    return _getCityAverageBarChart();
-  }
+  Widget build(BuildContext context) => _getCityAverageBarChart();
 
   SfCartesianChart _getCityAverageBarChart() {
     return SfCartesianChart(
@@ -39,55 +40,15 @@ class _CityAverageBarChartState extends State<CityAverageBarChart> {
   }
 
   /// Returns the list of chart series which need to render on the barchart.
-  List<BarSeries<double, String>> _getCityAverageBarChartSeries() {
-    final List<CityAverage> chartData = <CityAverage>[
-      // ChartSampleData(
-      //     x: 'France',
-      //     y: 84452000,
-      //     secondSeriesYValue: 82682000,
-      //     thirdSeriesYValue: 86861000),
-      // ChartSampleData(
-      //     x: 'Spain',
-      //     y: 68175000,
-      //     secondSeriesYValue: 75315000,
-      //     thirdSeriesYValue: 81786000),
-      // ChartSampleData(
-      //     x: 'US',
-      //     y: 77774000,
-      //     secondSeriesYValue: 76407000,
-      //     thirdSeriesYValue: 76941000),
-      // ChartSampleData(
-      //     x: 'Italy',
-      //     y: 50732000,
-      //     secondSeriesYValue: 52372000,
-      //     thirdSeriesYValue: 58253000),
-      // ChartSampleData(
-      //     x: 'Mexico',
-      //     y: 32093000,
-      //     secondSeriesYValue: 35079000,
-      //     thirdSeriesYValue: 39291000),
-      // ChartSampleData(
-      //     x: 'UK',
-      //     y: 34436000,
-      //     secondSeriesYValue: 35814000,
-      //     thirdSeriesYValue: 37651000),
-    ];
-    return <BarSeries<double, String>>[
-      // BarSeries<ChartSampleData, String>(
-      //     dataSource: chartData,
-      //     xValueMapper: (ChartSampleData sales, _) => sales.x,
-      //     yValueMapper: (ChartSampleData sales, _) => sales.y,
-      //     name: '2015'),
-      // BarSeries<ChartSampleData, String>(
-      //     dataSource: chartData,
-      //     xValueMapper: (ChartSampleData sales, _) => sales.x,
-      //     yValueMapper: (ChartSampleData sales, _) => sales.secondSeriesYValue,
-      //     name: '2016'),
-      // BarSeries<ChartSampleData, String>(
-      //     dataSource: chartData,
-      //     xValueMapper: (ChartSampleData sales, _) => sales.x,
-      //     yValueMapper: (ChartSampleData sales, _) => sales.thirdSeriesYValue,
-      //     name: '2017')
-    ];
-  }
+  List<ColumnSeries<double, String>> _getCityAverageBarChartSeries() =>
+      <ColumnSeries<double, String>>[
+        ColumnSeries(
+            dataSource: [widget.cityAggregatedAmount],
+            xValueMapper: (_, __) => 'The category here',
+            yValueMapper: (city, __) => city),
+        ColumnSeries(
+            dataSource: [widget.globalAggregatedAmount],
+            xValueMapper: (_, __) => 'The category here',
+            yValueMapper: (global, __) => global),
+      ];
 }

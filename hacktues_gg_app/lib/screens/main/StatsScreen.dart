@@ -7,7 +7,7 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 import '../base/CityScreen.dart';
 import 'GraphicType.dart';
 
-class StatsScreen extends CityScreen<City, CityBloc> {
+class StatsScreen extends CityScreen<City?, CityBloc> {
   final double max, min, interval;
   final GraphicType graphicType;
   final CityPreviousStatisticsBloc _previousStatisticsBloc;
@@ -21,8 +21,8 @@ class StatsScreen extends CityScreen<City, CityBloc> {
       : super(onErrorText: errorText);
 
   @override
-  Widget buildOnCityFetched(context, City city) {
-    _previousStatisticsBloc.sendEvent(city);
+  Widget buildOnCityFetched(context, City? city) {
+    _previousStatisticsBloc.sendEvent(city!);
     return Expanded(child: _getDefaultLineChart());
   }
 
@@ -61,7 +61,7 @@ class StatsScreen extends CityScreen<City, CityBloc> {
       );
 
   SplineSeries<City, DateTime> _getDefaultLineSeries() {
-    late List<City> cities;
+    late List<City>? cities;
     this._previousStatisticsBloc.value!.when((value) {
       cities = value;
     }, idle: () {}, loading: () {}, error: (exc) {});
