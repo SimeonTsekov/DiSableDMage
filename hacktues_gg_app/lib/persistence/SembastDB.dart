@@ -1,9 +1,9 @@
 import 'package:hacktues_gg_app/model/City.dart';
 import 'package:injectable/injectable.dart';
-import 'package:sembast/sembast.dart';
-import 'package:sembast/sembast_io.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:sembast/sembast.dart';
+import 'package:sembast/sembast_io.dart';
 
 @singleton
 class SembastDB {
@@ -29,7 +29,11 @@ class SembastDB {
   }
 
   void updateCity(City city) {
-    _citiesDataStore.record('city').update(_citiesDB!, city.toJson());
+    _citiesDataStore.record('city').put(_citiesDB!, city.toJson());
+  }
+
+  void deleteCity() {
+    _citiesDataStore.record('city').delete(_citiesDB!);
   }
 
   Future<City> fetchCurrentCity() async {

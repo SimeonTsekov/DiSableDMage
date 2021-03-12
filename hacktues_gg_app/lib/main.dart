@@ -3,16 +3,20 @@ import 'dart:io';
 import 'package:background_fetch/background_fetch.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hacktues_gg_app/event/CityEvent.dart';
+import 'package:hacktues_gg_app/model/City.dart';
+import 'package:hacktues_gg_app/persistence/SembastDB.dart';
 import 'package:hacktues_gg_app/screens/root/Root.dart';
 import 'package:hacktues_gg_app/services/Prefs.dart';
+import 'package:hacktues_gg_app/services/Storage.dart';
 
 import 'blocs/CityBloc.dart';
 import 'di/serviceLocator.dart';
 
-const _calculationsTaskId = 'calculations and stuff';
+const calculationsTaskId = 'CityBackgrounBiDirectional';
 
 Future<void> _headless(String taskId) async {
-  if (taskId == _calculationsTaskId) {
+  if (taskId == calculationsTaskId) {
     // calculations and stuff
     print('HEADLESS');
     BackgroundFetch.finish(taskId);
@@ -21,18 +25,26 @@ Future<void> _headless(String taskId) async {
 
 Future<void> _onBackgroundFetch(String taskId) async {
   // calculations and stuff
-  if (taskId == _calculationsTaskId) {
-    CityBloc cityBloc = $<CityBloc>();
-    Prefs prefs = $<Prefs>();
+  if (taskId == calculationsTaskId) {
+    final CityBloc cityBloc = $<CityBloc>();
+    final Prefs prefs = $<Prefs>();
+    final Storage storage = $<Storage>();
     bool? shouldSendBg = await prefs.getShouldFetchBackgroundStream().first;
 
     if (shouldSendBg == true) {
-      // TODO: Fetch user city from Sembast
-      // TODO: Store user city in Sembast db on fetches and calculations
-      // TODO: Do calculations on user city
+      SembastDB localDb = $<SembastDB>();
+      final City currentCity = await localDb.fetchCurrentCity();
+      final City updatedCity = currentCity.copyWith.call(
+        money: currentCity.moneyMultiplier * currentCity.money,
+        pollution: currentCity.pollutionMultiplier * currentCity.pollution,
+        power: currentCity.powerMultiplier * currentCity.power,
+      );
 
-      // Update the user city with new values
-      // slap into firestore and storage
+      localDb.updateCity(updatedCity);
+      await storage.uploadStats(updatedCity);
+      cityBloc.sendEvent(CityEvent.updateCity(updatedCity));
+    } else {
+      print("SHOULDSENDBG TRIGGERED FALSE INSIDE _ONBACKGROUND FETCH. THIS SHOULD NEEEEVER HAPPEN");
     }
 
     BackgroundFetch.finish(taskId);
@@ -44,18 +56,19 @@ Future<void> _onBackgroundFetchTimeout(String taskId) async {
   BackgroundFetch.finish(taskId);
 }
 
-Future<void> _configureBackgroundFetch() async {
+Future<void> configureBackgroundFetch() async {
   await BackgroundFetch.configure(
       BackgroundFetchConfig(
           minimumFetchInterval: 1,
           stopOnTerminate: false,
           enableHeadless: true,
           forceAlarmManager: Platform.isAndroid),
-      _onBackgroundFetch);
+      _onBackgroundFetch,
+      _onBackgroundFetchTimeout);
   BackgroundFetch.registerHeadlessTask(
       _headless); // only for android when app is terminated
   BackgroundFetch.scheduleTask(TaskConfig(
-      taskId: _calculationsTaskId,
+      taskId: calculationsTaskId,
       stopOnTerminate: false,
       startOnBoot: true,
       periodic: true,
@@ -69,7 +82,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   configureDependencies();
-  await _configureBackgroundFetch();
   runApp(RootPage($()));
 }
 

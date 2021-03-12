@@ -10,7 +10,7 @@ class RxObject<T> {
 
   Sink<T> get _sink => behaviourSubject.sink;
 
-  Function(T) get emitState => _sink.add;
+  void Function(T) get emitState => _sink.add;
 
   @mustCallSuper
   dispose() => behaviourSubject.close();

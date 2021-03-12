@@ -24,6 +24,7 @@ class CityAverageBloc
   sendEvent(AverageCityEvent event) {
     event.when(
         fetchAverageCityWithId: _fetchAverageCityForId,
-        fetchAverageAllCities: _fetchAverageAllCities);
+        fetchAverageAllCities: _fetchAverageAllCities
+    );
   }
 }

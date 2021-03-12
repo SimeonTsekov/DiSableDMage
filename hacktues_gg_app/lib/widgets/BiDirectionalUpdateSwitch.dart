@@ -1,6 +1,8 @@
+import 'package:background_fetch/background_fetch.dart';
 import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/PrefsBackgroundBloc.dart';
 import 'package:hacktues_gg_app/event/PrefBackgroundRunEvent.dart';
+import 'package:hacktues_gg_app/main.dart';
 import 'package:hacktues_gg_app/state/PrefBackgroundRunState.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -29,12 +31,19 @@ class BiDirectionalUpdateSwitch extends StatelessWidget {
         builder: (context, snapshot) {
           // hasData bugs out
           if (snapshot.data != null) {
+            if (!snapshot.data!.shouldRun) {
+              BackgroundFetch.finish(calculationsTaskId);
+            }
+
             return Switch.adaptive(
                 value: snapshot.data!.state
                     .map(on: (_) => true, off: (_) => false),
                 onChanged: snapshot.data!.shouldRun
-                    ? ((value) => prefsBgBloc
-                        .sendEvent(PrefBackgroundRunEvent.toggle(value)))
+                    ? ((value) async {
+                        prefsBgBloc
+                            .sendEvent(PrefBackgroundRunEvent.toggle(value));
+                        await configureBackgroundFetch();
+                      })
                     : null);
           } else if (snapshot.error != null) {
             return Text('ok, ERROR NO SWITCH');

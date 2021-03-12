@@ -17,5 +17,6 @@ class AuthBloc extends Bloc<AuthState, AuthEvent> {
   sendEvent(AuthEvent event) => event.when(
       authenticate: (email, password) =>
           _auth.signIn(email: email, password: password),
-      logout: () => _auth.signOut());
+      logout: () => _auth.signOut()
+  );
 }

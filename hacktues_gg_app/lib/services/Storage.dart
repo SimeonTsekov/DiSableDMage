@@ -15,4 +15,6 @@ class Storage {
 
     return data.data!.map((e) => City.fromJson(e)).toList();
   }
+
+  Future<void> uploadStats(City city) async {}
 }
