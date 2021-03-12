@@ -6,11 +6,11 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 class CityAverageBarChart extends StatefulWidget {
   final String chartTitle;
-  final City city;
-  final CityAverage globalCityAverage;
+  final double cityAggregatedAmount;
+  final double globalAggregatedAmount;
 
   const CityAverageBarChart({Key? key, required this.chartTitle,
-    required this.city, required this.globalCityAverage}) : super(key: key);
+    required this.cityAggregatedAmount, required this.globalAggregatedAmount}) : super(key: key);
 
   @override
   _CityAverageBarChartState createState() => _CityAverageBarChartState();
@@ -39,7 +39,7 @@ class _CityAverageBarChartState extends State<CityAverageBarChart> {
   }
 
   /// Returns the list of chart series which need to render on the barchart.
-  List<BarSeries<CityAverage, String>> _getCityAverageBarChartSeries() {
+  List<BarSeries<double, String>> _getCityAverageBarChartSeries() {
     final List<CityAverage> chartData = <CityAverage>[
       // ChartSampleData(
       //     x: 'France',
