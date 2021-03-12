@@ -10,7 +10,7 @@ class ComparisonScreen extends CityScreen<CityAverage, CityAverageBloc> {
   ComparisonScreen({required String errorText}) : super(onErrorText: errorText);
 
   @override
-  Widget buildOnCityFetched(CityAverage city) {
+  Widget buildOnCityFetched(BuildContext context, CityAverage city) {
     // TODO: implement buildOnCityFetched
     throw UnimplementedError();
   }

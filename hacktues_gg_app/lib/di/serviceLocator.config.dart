@@ -8,7 +8,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../blocs/AuthBloc.dart' as _i4;
-import '../blocs/AverageCityBloc.dart' as _i5;
+import '../blocs/CityAverageBloc.dart' as _i5;
 import '../blocs/CityBloc.dart' as _i6;
 import '../blocs/CityPreviousStatisticsBloc.dart' as _i12;
 import '../blocs/PrefsBackgroundBloc.dart' as _i8;

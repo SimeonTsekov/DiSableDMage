@@ -22,13 +22,13 @@ class _$CityAverageTearOff {
 
   _CityAverage call(
       {required String id,
-      required int buildingCountAverage,
-      required int factoryCountAverage,
-      required int houseCountAverage,
+      required double buildingCountAverage,
+      required double factoryCountAverage,
+      required double houseCountAverage,
       required double moneyAverage,
-      required int pollutionAverage,
-      required int populationAverage,
-      required int powerAverage}) {
+      required double pollutionAverage,
+      required double populationAverage,
+      required double powerAverage}) {
     return _CityAverage(
       id: id,
       buildingCountAverage: buildingCountAverage,
@@ -52,13 +52,13 @@ const $CityAverage = _$CityAverageTearOff();
 /// @nodoc
 mixin _$CityAverage {
   String get id => throw _privateConstructorUsedError;
-  int get buildingCountAverage => throw _privateConstructorUsedError;
-  int get factoryCountAverage => throw _privateConstructorUsedError;
-  int get houseCountAverage => throw _privateConstructorUsedError;
+  double get buildingCountAverage => throw _privateConstructorUsedError;
+  double get factoryCountAverage => throw _privateConstructorUsedError;
+  double get houseCountAverage => throw _privateConstructorUsedError;
   double get moneyAverage => throw _privateConstructorUsedError;
-  int get pollutionAverage => throw _privateConstructorUsedError;
-  int get populationAverage => throw _privateConstructorUsedError;
-  int get powerAverage => throw _privateConstructorUsedError;
+  double get pollutionAverage => throw _privateConstructorUsedError;
+  double get populationAverage => throw _privateConstructorUsedError;
+  double get powerAverage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,13 +73,13 @@ abstract class $CityAverageCopyWith<$Res> {
       _$CityAverageCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      int buildingCountAverage,
-      int factoryCountAverage,
-      int houseCountAverage,
+      double buildingCountAverage,
+      double factoryCountAverage,
+      double houseCountAverage,
       double moneyAverage,
-      int pollutionAverage,
-      int populationAverage,
-      int powerAverage});
+      double pollutionAverage,
+      double populationAverage,
+      double powerAverage});
 }
 
 /// @nodoc
@@ -109,15 +109,15 @@ class _$CityAverageCopyWithImpl<$Res> implements $CityAverageCopyWith<$Res> {
       buildingCountAverage: buildingCountAverage == freezed
           ? _value.buildingCountAverage
           : buildingCountAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       factoryCountAverage: factoryCountAverage == freezed
           ? _value.factoryCountAverage
           : factoryCountAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       houseCountAverage: houseCountAverage == freezed
           ? _value.houseCountAverage
           : houseCountAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       moneyAverage: moneyAverage == freezed
           ? _value.moneyAverage
           : moneyAverage // ignore: cast_nullable_to_non_nullable
@@ -125,15 +125,15 @@ class _$CityAverageCopyWithImpl<$Res> implements $CityAverageCopyWith<$Res> {
       pollutionAverage: pollutionAverage == freezed
           ? _value.pollutionAverage
           : pollutionAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       populationAverage: populationAverage == freezed
           ? _value.populationAverage
           : populationAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       powerAverage: powerAverage == freezed
           ? _value.powerAverage
           : powerAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -147,13 +147,13 @@ abstract class _$CityAverageCopyWith<$Res>
   @override
   $Res call(
       {String id,
-      int buildingCountAverage,
-      int factoryCountAverage,
-      int houseCountAverage,
+      double buildingCountAverage,
+      double factoryCountAverage,
+      double houseCountAverage,
       double moneyAverage,
-      int pollutionAverage,
-      int populationAverage,
-      int powerAverage});
+      double pollutionAverage,
+      double populationAverage,
+      double powerAverage});
 }
 
 /// @nodoc
@@ -185,15 +185,15 @@ class __$CityAverageCopyWithImpl<$Res> extends _$CityAverageCopyWithImpl<$Res>
       buildingCountAverage: buildingCountAverage == freezed
           ? _value.buildingCountAverage
           : buildingCountAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       factoryCountAverage: factoryCountAverage == freezed
           ? _value.factoryCountAverage
           : factoryCountAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       houseCountAverage: houseCountAverage == freezed
           ? _value.houseCountAverage
           : houseCountAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       moneyAverage: moneyAverage == freezed
           ? _value.moneyAverage
           : moneyAverage // ignore: cast_nullable_to_non_nullable
@@ -201,15 +201,15 @@ class __$CityAverageCopyWithImpl<$Res> extends _$CityAverageCopyWithImpl<$Res>
       pollutionAverage: pollutionAverage == freezed
           ? _value.pollutionAverage
           : pollutionAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       populationAverage: populationAverage == freezed
           ? _value.populationAverage
           : populationAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       powerAverage: powerAverage == freezed
           ? _value.powerAverage
           : powerAverage // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -234,19 +234,19 @@ class _$_CityAverage implements _CityAverage {
   @override
   final String id;
   @override
-  final int buildingCountAverage;
+  final double buildingCountAverage;
   @override
-  final int factoryCountAverage;
+  final double factoryCountAverage;
   @override
-  final int houseCountAverage;
+  final double houseCountAverage;
   @override
   final double moneyAverage;
   @override
-  final int pollutionAverage;
+  final double pollutionAverage;
   @override
-  final int populationAverage;
+  final double populationAverage;
   @override
-  final int powerAverage;
+  final double powerAverage;
 
   @override
   String toString() {
@@ -308,13 +308,13 @@ class _$_CityAverage implements _CityAverage {
 abstract class _CityAverage implements CityAverage {
   const factory _CityAverage(
       {required String id,
-      required int buildingCountAverage,
-      required int factoryCountAverage,
-      required int houseCountAverage,
+      required double buildingCountAverage,
+      required double factoryCountAverage,
+      required double houseCountAverage,
       required double moneyAverage,
-      required int pollutionAverage,
-      required int populationAverage,
-      required int powerAverage}) = _$_CityAverage;
+      required double pollutionAverage,
+      required double populationAverage,
+      required double powerAverage}) = _$_CityAverage;
 
   factory _CityAverage.fromJson(Map<String, dynamic> json) =
       _$_CityAverage.fromJson;
@@ -322,19 +322,19 @@ abstract class _CityAverage implements CityAverage {
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  int get buildingCountAverage => throw _privateConstructorUsedError;
+  double get buildingCountAverage => throw _privateConstructorUsedError;
   @override
-  int get factoryCountAverage => throw _privateConstructorUsedError;
+  double get factoryCountAverage => throw _privateConstructorUsedError;
   @override
-  int get houseCountAverage => throw _privateConstructorUsedError;
+  double get houseCountAverage => throw _privateConstructorUsedError;
   @override
   double get moneyAverage => throw _privateConstructorUsedError;
   @override
-  int get pollutionAverage => throw _privateConstructorUsedError;
+  double get pollutionAverage => throw _privateConstructorUsedError;
   @override
-  int get populationAverage => throw _privateConstructorUsedError;
+  double get populationAverage => throw _privateConstructorUsedError;
   @override
-  int get powerAverage => throw _privateConstructorUsedError;
+  double get powerAverage => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CityAverageCopyWith<_CityAverage> get copyWith =>

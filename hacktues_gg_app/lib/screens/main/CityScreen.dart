@@ -21,7 +21,7 @@ abstract class CityScreen<M, T extends RxObject<ResponseState<M>>>
           if (snapshot.data != null) {
             return snapshot.data!.when(
                 (city) => Container(
-                      child: buildOnCityFetched(city),
+                      child: buildOnCityFetched(context, city),
                       color: Colors.lightBlueAccent,
                     ),
                 idle: () => Container(
@@ -37,5 +37,5 @@ abstract class CityScreen<M, T extends RxObject<ResponseState<M>>>
         });
   }
 
-  Widget buildOnCityFetched(M city);
+  Widget buildOnCityFetched(BuildContext context, M city);
 }

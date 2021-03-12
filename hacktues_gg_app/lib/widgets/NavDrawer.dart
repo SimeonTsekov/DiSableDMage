@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'HackTUESText.dart';
+
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer();
 
@@ -17,12 +19,12 @@ class NavigationDrawer extends StatelessWidget {
             ),
             Divider(),
             ListTile(
-                title: const Text('Logout',
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.5,
-                        fontFamily: 'Europe_Ext')),
+                title: const HackTUESText(
+                  'Logout',
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ),
                 onTap: () {
                   // stuff
                 }),
@@ -43,13 +45,11 @@ class NavigationDrawer extends StatelessWidget {
       // think of some picture here
       child: Stack(children: <Widget>[
         Positioned(
-            bottom: 12.0,
-            left: 16.0,
-            child: Text("Bluetooth low energy app",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w500))),
+          bottom: 12.0,
+          left: 16.0,
+          child: const HackTUESText("Bluetooth low energy app",
+              fontSize: 20.0, fontWeight: FontWeight.w500),
+        )
       ]));
 
   Widget _createDrawerItem(
@@ -59,16 +59,13 @@ class NavigationDrawer extends StatelessWidget {
           children: <Widget>[
             Icon(icon),
             Padding(
-              padding: EdgeInsets.only(left: 8.0),
-              child: Text(
-                text,
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Europe_Ext'),
-              ),
-            )
+                padding: EdgeInsets.only(left: 8.0),
+                child: HackTUESText(
+                  text,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ))
           ],
         ),
         onTap: onTap,

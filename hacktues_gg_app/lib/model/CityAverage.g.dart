@@ -9,13 +9,13 @@ part of 'CityAverage.dart';
 _$_CityAverage _$_$_CityAverageFromJson(Map<String, dynamic> json) {
   return _$_CityAverage(
     id: json['id'] as String,
-    buildingCountAverage: json['buildingCountAverage'] as int,
-    factoryCountAverage: json['factoryCountAverage'] as int,
-    houseCountAverage: json['houseCountAverage'] as int,
+    buildingCountAverage: (json['buildingCountAverage'] as num).toDouble(),
+    factoryCountAverage: (json['factoryCountAverage'] as num).toDouble(),
+    houseCountAverage: (json['houseCountAverage'] as num).toDouble(),
     moneyAverage: (json['moneyAverage'] as num).toDouble(),
-    pollutionAverage: json['pollutionAverage'] as int,
-    populationAverage: json['populationAverage'] as int,
-    powerAverage: json['powerAverage'] as int,
+    pollutionAverage: (json['pollutionAverage'] as num).toDouble(),
+    populationAverage: (json['populationAverage'] as num).toDouble(),
+    powerAverage: (json['powerAverage'] as num).toDouble(),
   );
 }
 

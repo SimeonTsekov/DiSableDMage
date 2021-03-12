@@ -9,7 +9,7 @@ class StatsScreen extends CityScreen<City, CityBloc> {
   StatsScreen({required String errorText}) : super(onErrorText: errorText);
 
   @override
-  Widget buildOnCityFetched(City city) {
+  Widget buildOnCityFetched(BuildContext context, City city) {
     // TODO: implement buildOnCityFetched
     throw UnimplementedError();
   }

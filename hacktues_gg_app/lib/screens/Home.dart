@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:hacktues_gg_app/blocs/CityBloc.dart';
+import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
+import 'package:hacktues_gg_app/di/serviceLocator.dart';
+import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
+import 'package:hacktues_gg_app/widgets/HackTUESText.dart';
 import 'package:hacktues_gg_app/widgets/NavDrawer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -8,9 +13,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final CityBloc cityBloc = $<CityBloc>();
+  final CityAverageBloc averageCityBloc = $<CityAverageBloc>();
+
   List<Widget> get _aggregationScreens => [
-        Center(
-          child: Text("Text1"),
+        AverageStatsScreen(
+            errorText: 'Something went wrong with the aggregation!'
         ),
         Center(
           child: Text("Text2"),
@@ -145,11 +153,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
               flexibleSpace: FlexibleSpaceBar(
                   centerTitle: false,
-                  title: Text("Sliver with bottom navbar",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
-                      )),
+                  title: const HackTUESText(
+                    "Sliver with bottom navbar",
+                    fontSize: 16.0,
+                  ),
                   // think of some interesting background image
                   background: Image.network(
                     "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
