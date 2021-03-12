@@ -29,6 +29,7 @@ Future<void> _onBackgroundFetch(String taskId) async {
     final CityBloc cityBloc = $<CityBloc>();
     final Prefs prefs = $<Prefs>();
     final Storage storage = $<Storage>();
+    print('not failing');
     bool? shouldSendBg = await prefs.getShouldFetchBackgroundStream().first;
 
     if (shouldSendBg == true) {
@@ -44,7 +45,8 @@ Future<void> _onBackgroundFetch(String taskId) async {
       await storage.uploadStats(updatedCity);
       cityBloc.sendEvent(CityEvent.updateCity(updatedCity));
     } else {
-      print("SHOULDSENDBG TRIGGERED FALSE INSIDE _ONBACKGROUND FETCH. THIS SHOULD NEEEEVER HAPPEN");
+      print(
+          "SHOULDSENDBG TRIGGERED FALSE INSIDE _ONBACKGROUND FETCH. THIS SHOULD NEEEEVER HAPPEN");
     }
 
     BackgroundFetch.finish(taskId);

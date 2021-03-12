@@ -29,24 +29,26 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   List<Widget> get _aggregationScreens => [
         AverageStatsScreen(
             errorText: 'Something went wrong with the aggregation!'),
-        ComparisonScreen(errorText: 'Something went wrong with the comparison!')
+        ComparisonScreen(
+          errorText: 'Something went wrong with the comparison!',
+        )
       ];
 
   List<Widget> get _statisticsScreens => [
         StatsScreen($(),
-            errorText: 'Something went wrong with fetching the data!',
+            errorText: 'Something went wrong with fetching pollution!',
             max: 200,
             min: 0,
             interval: 20,
             graphicType: GraphicType.Pollution),
         StatsScreen($(),
-            errorText: 'Something went wrong with fetching the data!',
+            errorText: 'Something went wrong with fetching money!',
             max: 200,
             min: 0,
             interval: 20,
             graphicType: GraphicType.Money),
         StatsScreen($(),
-            errorText: 'Something went wrong with fetching the data!',
+            errorText: 'Something went wrong with fetching buildingCount',
             max: 200,
             min: 0,
             interval: 20,
@@ -54,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
       ];
 
   List<GButton> get _aggregationTabs => [
-        // Change the icons, text and stuff cuz this is not e-bikify
         GButton(
           gap: 8,
           icon: Icons.home,
@@ -63,12 +64,12 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
           textColor: Colors.black,
           padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
           backgroundColor: Colors.greenAccent,
-          text: 'Home',
+          text: 'Average',
         ),
         GButton(
             gap: 8,
-            icon: Icons.battery_charging_full_sharp,
-            text: 'Bat. status',
+            icon: Icons.bar_chart,
+            text: 'Comparison',
             iconActiveColor: Colors.redAccent,
             iconColor: Colors.black,
             textColor: Colors.black,
@@ -77,21 +78,20 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
       ];
 
   List<GButton> get _statisticsTabs => [
-        // Change the icons, text and stuff cuz this is not e-bikify
         GButton(
           gap: 8,
-          icon: Icons.home,
+          icon: Icons.wb_cloudy_sharp,
           iconActiveColor: Colors.redAccent,
           iconColor: Colors.black,
           textColor: Colors.black,
           padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
           backgroundColor: Colors.greenAccent,
-          text: 'Stats1',
+          text: 'Pollution',
         ),
         GButton(
             gap: 8,
-            icon: Icons.battery_charging_full_sharp,
-            text: 'Stats2',
+            icon: Icons.account_balance_sharp,
+            text: 'Buildings',
             iconActiveColor: Colors.redAccent,
             iconColor: Colors.black,
             textColor: Colors.black,
@@ -99,14 +99,14 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
             backgroundColor: Colors.lightBlue),
         GButton(
           gap: 8,
-          icon: Icons.location_on_sharp,
+          icon: Icons.attach_money,
           iconActiveColor: Colors.redAccent,
           iconColor: Colors.black,
           textColor: Colors.black,
           backgroundColor: Colors.yellow,
           padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-          text: 'Stats3',
-        ),
+          text: 'Money',
+        )
       ];
 
   List<GButton> _buildTabs() =>
