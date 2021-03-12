@@ -18,8 +18,11 @@ class PrefsBackgroundRunBloc
   Stream<bool?> getShouldFetchBackgroundStream() =>
       _prefs.getShouldFetchBackgroundStream();
 
+  Future<void> setShouldFetchBackgroundStream(bool shouldFetch) async =>
+      await _prefs.setShouldFetchBackgroundStream(shouldFetch);
+
   @override
   sendEvent(PrefBackgroundRunEvent event) {
-    // TODO: implement sendEvent
+    event.when(toggle: (t) async => await setShouldFetchBackgroundStream(t));
   }
 }

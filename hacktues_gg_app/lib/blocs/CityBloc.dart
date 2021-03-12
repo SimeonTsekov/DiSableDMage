@@ -8,25 +8,25 @@ import '../model/City.dart';
 import 'base/Bloc.dart';
 
 @lazySingleton
-class CityBloc extends Bloc<ResponseState<City>, CityEvent> {
+class CityBloc extends Bloc<ResponseState<City?>, CityEvent> {
   final CityRepository _cityRepository = $<CityRepository>();
 
   CityBloc() : super(ResponseState.idle());
 
-  void _updateCity(City city) => _cityRepository.uploadCity(city);
+  void _updateCity(City city) async {
+    emitState(ResponseState.loading());
+    emitState(ResponseState(await _cityRepository.uploadCity(city)));
+  }
 
-  void _fetchCityForId(String id) =>
-      _cityRepository.streamCityWithId(id).listen(emitState);
-
-  void _fetchAverageCityForId(String id) =>
-      _cityRepository.fetchAverageCityWithId(id);
+  void _fetchCityForId(String id) {
+    _cityRepository.streamCityWithId(id).listen(emitState);
+  }
 
   @override
   sendEvent(CityEvent event) {
     event.when(
         fetchCityWithId: _fetchCityForId,
-        fetchAverageCityWithId: _fetchAverageCityForId,
-        updateCity: _updateCity,
-        fetchAverageAllCities: () {});
+        updateCity: _updateCity
+    );
   }
 }

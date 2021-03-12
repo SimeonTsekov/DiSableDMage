@@ -14,11 +14,14 @@ class CityAverageBloc
 
   CityAverageBloc() : super(ResponseState.idle());
 
-  void fetchAverageCityForId(String id) =>
-      _cityRepository.fetchAverageCityWithId(id);
+  void _fetchAverageCityForId(String id) =>
+      _cityRepository.streamAverageCityWithId(id).listen(emitState);
+
+  void _fetchAverageAllCities() =>
+      _cityRepository.streamAverageAllCities().listen(emitState);
 
   @override
   sendEvent(AverageCityEvent event) {
-    event.when(fetchAverageCityWithId: (id) {}, fetchAverageAllCities: () {});
+    event.when(fetchAverageCityWithId: _fetchAverageCityForId, fetchAverageAllCities: _fetchAverageAllCities);
   }
 }

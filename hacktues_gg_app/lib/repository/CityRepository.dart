@@ -1,3 +1,4 @@
+import 'package:hacktues_gg_app/model/CityAverage.dart';
 import 'package:hacktues_gg_app/state/ResponseState.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,11 +13,16 @@ class CityRepository {
 
   CityRepository({required this.db, required this.storage});
 
-  Future<void> uploadCity(City cityFields) async => db.updateCity(cityFields);
+  Future<void> uploadCity(City cityFields) async => await db.updateCity(cityFields);
 
-  Stream<ResponseState<City>> streamCityWithId(String id) =>
+  Stream<ResponseState<City?>> streamCityWithId(String id) =>
       db.citySnapshots(id).map((event) => ResponseState(event));
 
-  void fetchAverageCityWithId(String id) {}
+  Stream<ResponseState<CityAverage?>> streamAverageCityWithId(String id) =>
+      db.averageCitySnapshot(id).map((event) => ResponseState(event));
+
+  Stream<ResponseState<CityAverage?>> streamAverageAllCities =>
+      db.averageAllCitiesSnapshot().map((event) => ResponseState(event));
+
 // methods that return stream and this gets injected to bloc go brrr
 }
