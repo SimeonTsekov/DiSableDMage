@@ -1,28 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/model/CityAverage.dart';
+import 'package:hacktues_gg_app/screens/main/AverageCityScreen.dart';
 import 'package:hacktues_gg_app/widgets/AverageStatCard.dart';
 
-import 'CityScreen.dart';
-
-class AverageStatsScreen extends CityScreen<CityAverage, CityAverageBloc> {
-  AverageStatsScreen({required String errorText})
-      : super(onErrorText: errorText);
-
-  @override
-  Widget buildOnCityFetched(BuildContext context, CityAverage city) {
-    // actual project wouldn't rebuild all cards on one change but /shrug
-    final List<AverageStatCard> averageStatCards =
-        buildAverageStatCardListFromCityAverage(city);
-
-    return GridView.count(
-        physics: ScrollPhysics(),
-        crossAxisCount: 2,
-        children: averageStatCards);
-  }
+class AverageStatsScreen
+    extends AverageCityScreen<AverageStatCard, CityAverage, CityAverageBloc> {
+  AverageStatsScreen({required String errorText}) : super(errorText: errorText);
 
   // SUCKS MAJOR DICK
-  List<AverageStatCard> buildAverageStatCardListFromCityAverage(
+  @override
+  List<AverageStatCard> buildAverageStatDisplayListFromCityAverage(
           CityAverage city) =>
       [
         AverageStatCard(

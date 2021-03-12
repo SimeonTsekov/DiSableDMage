@@ -14,5 +14,5 @@ class RootPage extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: NavigatorEntryPoint(this._manager),
-      );
+    );
 }

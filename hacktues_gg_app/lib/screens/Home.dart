@@ -5,6 +5,7 @@ import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
 import 'package:hacktues_gg_app/event/CityEvent.dart';
 import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
+import 'package:hacktues_gg_app/screens/main/ComparisonScreen.dart';
 import 'package:hacktues_gg_app/utils/CurrentContext.dart';
 import 'package:hacktues_gg_app/widgets/HackTUESText.dart';
 import 'package:hacktues_gg_app/widgets/NavDrawer.dart';
@@ -25,12 +26,8 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   List<Widget> get _aggregationScreens => [
         AverageStatsScreen(
             errorText: 'Something went wrong with the aggregation!'),
-        Center(
-          child: Text("Text2"),
-        ),
-        Center(
-          child: Text("Text3"),
-        ),
+        ComparisonScreen(
+            errorText: 'Something went wrong with the comparison showcase!')
       ];
 
   List<Widget> get _statisticsScreens => [
@@ -66,16 +63,6 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
             textColor: Colors.black,
             padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
             backgroundColor: Colors.lightBlue),
-        GButton(
-          gap: 8,
-          icon: Icons.location_on_sharp,
-          iconActiveColor: Colors.redAccent,
-          iconColor: Colors.black,
-          textColor: Colors.black,
-          backgroundColor: Colors.yellow,
-          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-          text: 'Location',
-        ),
       ];
 
   List<GButton> get _statisticsTabs => [
@@ -163,6 +150,7 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                 expandedHeight: 400.0,
                 floating: false,
                 pinned: true,
+                automaticallyImplyLeading: false,
                 actions: [
                   Visibility(
                     visible: _isShowingToggleAndNav,
@@ -192,37 +180,41 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
           ),
         ),
         drawer: _isShowingToggleAndNav ? NavigationDrawer() : null,
-        bottomNavigationBar: SafeArea(
-            // wrap with Opacity, listen notifications from the scrollView and update the opacity.
-            child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              boxShadow: [
-                BoxShadow(
-                    spreadRadius: -10,
-                    blurRadius: 60,
-                    color: Colors.black.withOpacity(.4),
-                    offset: Offset(0, 25))
-              ]),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3),
-            child: GNav(
-                gap: 8,
-                activeColor: Colors.white30,
-                iconSize: 24,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                duration: Duration(milliseconds: 800),
-                curve: Curves.easeOutExpo,
-                tabBackgroundColor: Colors.lightBlue,
-                textStyle: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                tabs: _buildTabs(),
-                selectedIndex: _currentTab,
-                onTabChange: (index) {
-                  bottomTapped(index);
-                }),
-          ),
-        )),
+        bottomNavigationBar: Visibility(
+          visible: _isShowingToggleAndNav,
+          child: SafeArea(
+              // wrap with Opacity, listen notifications from the scrollView and update the opacity.
+              child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+                boxShadow: [
+                  BoxShadow(
+                      spreadRadius: -10,
+                      blurRadius: 60,
+                      color: Colors.black.withOpacity(.4),
+                      offset: Offset(0, 25))
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3),
+              child: GNav(
+                  gap: 8,
+                  activeColor: Colors.white30,
+                  iconSize: 24,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  duration: Duration(milliseconds: 800),
+                  curve: Curves.easeOutExpo,
+                  tabBackgroundColor: Colors.lightBlue,
+                  textStyle:
+                      TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  tabs: _buildTabs(),
+                  selectedIndex: _currentTab,
+                  onTabChange: (index) {
+                    bottomTapped(index);
+                  }),
+            ),
+          )),
+        ),
       );
 }
