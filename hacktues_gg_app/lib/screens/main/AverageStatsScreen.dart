@@ -9,7 +9,7 @@ class AverageStatsScreen extends CityScreen {
 
   @override
   Widget buildOnCityFetched(City city) {
-    // TODO: implement buildOnCityFetched
     throw UnimplementedError();
+
   }
 }
