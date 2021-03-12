@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hacktues_gg_app/blocs/AuthBloc.dart';
+import 'package:hacktues_gg_app/di/serviceLocator.dart';
+import 'package:hacktues_gg_app/event/AuthEvent.dart';
 
 import 'HackTUESText.dart';
 
 class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer();
+  final AuthBloc authBloc = $<AuthBloc>();
+  NavigationDrawer();
 
   @override
   Widget build(BuildContext context) => Drawer(
@@ -26,7 +30,7 @@ class NavigationDrawer extends StatelessWidget {
                   letterSpacing: 1.5,
                 ),
                 onTap: () {
-                  // stuff
+                  authBloc.sendEvent(AuthEvent.logout());
                 }),
             ListTile(
               title: Text('Version 0.0.1. All rights reserved. '),

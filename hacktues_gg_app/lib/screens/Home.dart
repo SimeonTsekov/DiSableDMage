@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
+import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/di/serviceLocator.dart';
 import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
 import 'package:hacktues_gg_app/widgets/HackTUESText.dart';
@@ -18,8 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> get _aggregationScreens => [
         AverageStatsScreen(
-            errorText: 'Something went wrong with the aggregation!'
-        ),
+            errorText: 'Something went wrong with the aggregation!'),
         Center(
           child: Text("Text2"),
         ),
@@ -112,6 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentTab = 0;
 
   bool _isShowingStatistics = false;
+  bool _isShowingToggleAndNav = false;
 
   final _pageController = PageController();
 
@@ -136,37 +136,49 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder: (context, _) => [
-            SliverAppBar(
-              expandedHeight: 200.0,
-              floating: false,
-              pinned: true,
-              actions: [
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _isShowingStatistics = !_isShowingStatistics;
-                      });
-                    },
-                    child: Text('Toggle'))
-              ],
-              flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: false,
-                  title: const HackTUESText(
-                    "Sliver with bottom navbar",
-                    fontSize: 16.0,
-                  ),
-                  // think of some interesting background image
-                  background: Image.network(
-                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
-                    fit: BoxFit.cover,
-                  )),
-            )
-          ],
-          body: _buildPageView(),
+        body: NotificationListener<ScrollNotification>(
+          onNotification: (notification) {
+            setState(() {
+              _isShowingToggleAndNav = notification.metrics.pixels ==
+                  notification.metrics.maxScrollExtent;
+            });
+            return true;
+          },
+          child: NestedScrollView(
+            headerSliverBuilder: (context, _) => [
+              SliverAppBar(
+                expandedHeight: 400.0,
+                floating: false,
+                pinned: true,
+                actions: [
+                  Visibility(
+                    visible: _isShowingToggleAndNav,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _isShowingStatistics = !_isShowingStatistics;
+                          });
+                        },
+                        child: Text('Toggle')),
+                  )
+                ],
+                flexibleSpace: FlexibleSpaceBar(
+                    centerTitle: false,
+                    title: const HackTUESText(
+                      "Sliver with bottom navbar",
+                      fontSize: 16.0,
+                    ),
+                    // think of some interesting background image
+                    background: Image.network(
+                      "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                      fit: BoxFit.cover,
+                    )),
+              )
+            ],
+            body: _buildPageView(),
+          ),
         ),
-        drawer: NavigationDrawer(),
+        drawer: _isShowingToggleAndNav ? NavigationDrawer() : null,
         bottomNavigationBar: SafeArea(
             // wrap with Opacity, listen notifications from the scrollView and update the opacity.
             child: Container(

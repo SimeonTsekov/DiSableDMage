@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/AuthBloc.dart';
 import 'package:hacktues_gg_app/event/AuthEvent.dart';
@@ -60,10 +61,14 @@ class _LoginScreenState extends State<LoginScreen> {
           required IconData primaryIcon,
           bool endIcon = false,
           IconData? suffixIconData,
+          required TextInputType keyboardType,
+          required FormFieldValidator<String> validate,
           required void Function(String) onChanged}) =>
       Padding(
         padding: const EdgeInsets.all(8.0),
-        child: TextField(
+        child: TextFormField(
+          keyboardType: keyboardType,
+          validator: validate,
           decoration: InputDecoration(
             suffixIcon: endIcon
                 ? Icon(
@@ -129,6 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
             appBar: AppBar(
               title: Text('Login'),
               backgroundColor: Colors.transparent,
+              automaticallyImplyLeading: false,
               elevation: 0.0,
             ),
             extendBodyBehindAppBar: true,
@@ -183,11 +189,31 @@ class _LoginScreenState extends State<LoginScreen> {
                         _buildInput(
                             hintText: "Email",
                             primaryIcon: Icons.person_outline,
+                            validate: (email) {
+                              if (email == null || email.isEmpty) {
+                                return 'Please enter a non-empty email address!';
+                              }
+                              if (!EmailValidator.validate(email)) {
+                                return 'Please enter a valid email address!';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.emailAddress,
                             onChanged: (value) => this._email = value),
                         _buildInput(
                             hintText: "Password",
                             primaryIcon: Icons.vpn_key,
                             endIcon: true,
+                            validate: (password) {
+                              if (password == null || password.isEmpty) {
+                                return 'Please enter a password!';
+                              }
+                              if (password.length < 6) {
+                                return 'Please enter a password longer than six characters!';
+                              }
+                              return null;
+                            },
+                            keyboardType: TextInputType.visiblePassword,
                             onChanged: (value) => this._password = value),
                         _buildLoginButton(
                             Icons.exit_to_app, () => validateAndSubmit()),
