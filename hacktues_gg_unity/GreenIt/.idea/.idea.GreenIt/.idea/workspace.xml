@@ -35,11 +35,13 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/BaseBuilding.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/House.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/BuildSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pYR4h3wcEBxbOEC7uVkIcEJWIu" />
@@ -98,7 +100,7 @@
       <workItem from="1615357958274" duration="3442000" />
       <workItem from="1615372865132" duration="12798000" />
       <workItem from="1615487887169" duration="1392000" />
-      <workItem from="1615536120201" duration="1960000" />
+      <workItem from="1615536120201" duration="2680000" />
     </task>
     <servers />
   </component>

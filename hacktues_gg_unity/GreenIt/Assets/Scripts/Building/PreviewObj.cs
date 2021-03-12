@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Building;
 using UnityEngine;
 
 public class PreviewObj : MonoBehaviour
@@ -79,7 +80,8 @@ public class PreviewObj : MonoBehaviour
             t.HandleSelection();
         }
 
-        Instantiate(prefab, transform.position, transform.rotation);//spawn in the prefab(Actual Building this preview represents)
+        Instantiate(prefab, transform.position, transform.rotation); //spawn in the prefab(Actual Building this preview represents)
+        prefab.GetComponentInChildren<BaseBuilding>().OnBuild();
         Destroy(gameObject);//destroy the preview
 
     }
