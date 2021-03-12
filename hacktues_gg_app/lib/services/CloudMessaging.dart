@@ -1,16 +1,18 @@
+import 'package:background_fetch/background_fetch.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:hacktues_gg_app/main.dart';
 import 'package:hacktues_gg_app/utils/PrefsKeys.dart';
 import 'package:rx_shared_preferences/rx_shared_preferences.dart';
 
 Future<void> _backgroundMessageHandler(Map<String, dynamic>? message) async {
   final RxSharedPreferences _prefs = RxSharedPreferences.getInstance();
   _prefs.reload();
-  _prefs.getBoolStream(PrefsKeys.SHOULD_RUN_BACKGROUND).listen((event) {
+  _prefs.getBoolStream(PrefsKeys.SHOULD_RUN_BACKGROUND).listen((event) async {
     if (event != null) {
       if (event) {
-        // start alarm manager
+        await configureBackgroundFetch();
       } else {
-        // pause alarm manager
+        BackgroundFetch.finish(calculationsTaskId);
       }
     }
   });
