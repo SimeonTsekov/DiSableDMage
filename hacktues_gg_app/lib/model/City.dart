@@ -10,7 +10,9 @@ part 'City.g.dart';
 class City with _$City {
   @Implements(GeographicArea)
   const factory City(
-      {required String name,
+      {
+      required String id,
+      required String name,
       required int population,
       required int buildingCount,
       required int factoryCount,

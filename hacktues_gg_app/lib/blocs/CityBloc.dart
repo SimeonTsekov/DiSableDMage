@@ -13,6 +13,10 @@ class CityBloc extends Bloc<ResponseState<City>, CityEvent> {
 
   CityBloc() : super(ResponseState.idle());
 
+  void uploadCityWithId(City city) => _cityRepository.uploadCity(city);
+
+  void fetchCityForId(String id) => _cityRepository.fetchCitiesWithId(id);
+
   @override
   sendEvent(CityEvent event) {}
 }

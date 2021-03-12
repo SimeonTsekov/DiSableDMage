@@ -21,7 +21,8 @@ class _$CityTearOff {
   const _$CityTearOff();
 
   _City call(
-      {required String name,
+      {required String id,
+      required String name,
       required int population,
       required int buildingCount,
       required int factoryCount,
@@ -34,6 +35,7 @@ class _$CityTearOff {
       required int powerMultiplier,
       required String updatedAt}) {
     return _City(
+      id: id,
       name: name,
       population: population,
       buildingCount: buildingCount,
@@ -59,6 +61,7 @@ const $City = _$CityTearOff();
 
 /// @nodoc
 mixin _$City {
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get population => throw _privateConstructorUsedError;
   int get buildingCount => throw _privateConstructorUsedError;
@@ -82,7 +85,8 @@ abstract class $CityCopyWith<$Res> {
   factory $CityCopyWith(City value, $Res Function(City) then) =
       _$CityCopyWithImpl<$Res>;
   $Res call(
-      {String name,
+      {String id,
+      String name,
       int population,
       int buildingCount,
       int factoryCount,
@@ -106,6 +110,7 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? population = freezed,
     Object? buildingCount = freezed,
@@ -120,6 +125,10 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
     Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -178,7 +187,8 @@ abstract class _$CityCopyWith<$Res> implements $CityCopyWith<$Res> {
       __$CityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String name,
+      {String id,
+      String name,
       int population,
       int buildingCount,
       int factoryCount,
@@ -203,6 +213,7 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? population = freezed,
     Object? buildingCount = freezed,
@@ -217,6 +228,10 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
     Object? updatedAt = freezed,
   }) {
     return _then(_City(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -275,7 +290,8 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
 /// @nodoc
 class _$_City implements _City {
   const _$_City(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.population,
       required this.buildingCount,
       required this.factoryCount,
@@ -291,6 +307,8 @@ class _$_City implements _City {
   factory _$_City.fromJson(Map<String, dynamic> json) =>
       _$_$_CityFromJson(json);
 
+  @override
+  final String id;
   @override
   final String name;
   @override
@@ -318,13 +336,15 @@ class _$_City implements _City {
 
   @override
   String toString() {
-    return 'City(name: $name, population: $population, buildingCount: $buildingCount, factoryCount: $factoryCount, houseCount: $houseCount, money: $money, moneyMultiplier: $moneyMultiplier, pollution: $pollution, pollutionMultiplier: $pollutionMultiplier, power: $power, powerMultiplier: $powerMultiplier, updatedAt: $updatedAt)';
+    return 'City(id: $id, name: $name, population: $population, buildingCount: $buildingCount, factoryCount: $factoryCount, houseCount: $houseCount, money: $money, moneyMultiplier: $moneyMultiplier, pollution: $pollution, pollutionMultiplier: $pollutionMultiplier, power: $power, powerMultiplier: $powerMultiplier, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _City &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.population, population) ||
@@ -363,6 +383,7 @@ class _$_City implements _City {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(population) ^
       const DeepCollectionEquality().hash(buildingCount) ^
@@ -389,7 +410,8 @@ class _$_City implements _City {
 
 abstract class _City implements City, GeographicArea {
   const factory _City(
-      {required String name,
+      {required String id,
+      required String name,
       required int population,
       required int buildingCount,
       required int factoryCount,
@@ -404,6 +426,8 @@ abstract class _City implements City, GeographicArea {
 
   factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
 
+  @override
+  String get id => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

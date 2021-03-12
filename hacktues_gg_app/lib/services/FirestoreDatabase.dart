@@ -1,18 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hacktues_gg_app/model/City.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class FirestoreDatabase {
   FirebaseFirestore get _db => FirebaseFirestore.instance;
-  late final String cityId;
 
   CollectionReference get _cities => _db.collection('cities');
 
-  DocumentReference get _city => _cities.doc(cityId);
+  DocumentReference getCity(String cityId) => _cities.doc(cityId);
 
-  FirestoreDatabase({required this.cityId});
-
-  Stream<City> citySnapshots() => _city.snapshots().map(
+  Stream<City> citySnapshots(String cityId) => getCity(cityId).snapshots().map(
         (city) => City(
+            id: city.id,
             name: city.get('name'),
             population: city.get('population'),
             buildingCount: city.get('buildingCount'),

@@ -8,6 +8,7 @@ part of 'City.dart';
 
 _$_City _$_$_CityFromJson(Map<String, dynamic> json) {
   return _$_City(
+    id: json['id'] as String,
     name: json['name'] as String,
     population: json['population'] as int,
     buildingCount: json['buildingCount'] as int,
@@ -24,6 +25,7 @@ _$_City _$_$_CityFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$_$_CityToJson(_$_City instance) => <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'population': instance.population,
       'buildingCount': instance.buildingCount,
