@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hacktues_gg_app/blocs/AverageCityBloc.dart';
+import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/model/CityAverage.dart';
 import 'package:hacktues_gg_app/widgets/AverageStatCard.dart';
 

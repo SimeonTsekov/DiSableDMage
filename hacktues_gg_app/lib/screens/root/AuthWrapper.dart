@@ -17,8 +17,8 @@ class AuthWrapper extends StatelessWidget {
         stream: _authBloc.stream,
         onData: (snapshot) {
           snapshot.when(
-              authenticated: () => $<PageManager>()
-                  .openPage(key: 'Home', builder: () => HomeScreen()),
+              authenticated: () => $<PageManager>().openPage(
+                  key: 'Home', builder: () => HomeScreen($(), $(), $())),
               failedToAuthenticate: (_) {},
               unknown: () {},
               loggedOut: () => $<PageManager>().openPage(
