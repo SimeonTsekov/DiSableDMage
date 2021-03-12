@@ -9,4 +9,7 @@ class Prefs {
 
   Stream<bool?> getShouldFetchBackgroundStream() =>
       _prefs.getBoolStream(PrefsKeys.SHOULD_RUN_BACKGROUND);
+
+  void setShouldFetchBackgroundStream(bool shouldFetch) async =>
+      await _prefs.setBool(PrefsKeys.SHOULD_RUN_BACKGROUND, shouldFetch);
 }
