@@ -26,10 +26,13 @@ Future<void> _onBackgroundFetch(String taskId) async {
     Prefs prefs = $<Prefs>();
     bool? shouldSendBg = await prefs.getShouldFetchBackgroundStream().first;
 
-    if(shouldSendBg == true) {
+    if (shouldSendBg == true) {
       // TODO: Fetch user city from Sembast
       // TODO: Store user city in Sembast db on fetches and calculations
       // TODO: Do calculations on user city
+
+      // Update the user city with new values
+      // slap into firestore and storage
     }
 
     BackgroundFetch.finish(taskId);

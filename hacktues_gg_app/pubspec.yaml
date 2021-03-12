@@ -39,8 +39,11 @@ dependencies:
   syncfusion_flutter_charts: ^18.4.47
   json_annotation: ^4.0.0
   dio: ^4.0.0-beta7
-  flutter_spinkit: "^4.1.2"
-  email_validator: '^1.0.5'
+  sembast: ^3.0.0+4
+  path: ^1.8.0
+  path_provider: ^2.0.1
+  flutter_spinkit: ^4.1.2
+  email_validator: ^1.0.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
