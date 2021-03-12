@@ -50,12 +50,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/LogInAuthenticationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/SignUpAuthenticationController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" />
     </changedPaths>
   </component>
@@ -116,7 +116,7 @@
       <workItem from="1615372865132" duration="12798000" />
       <workItem from="1615487887169" duration="1392000" />
       <workItem from="1615536120201" duration="21926000" />
-      <workItem from="1615573411631" duration="2749000" />
+      <workItem from="1615573411631" duration="5199000" />
     </task>
     <servers />
   </component>

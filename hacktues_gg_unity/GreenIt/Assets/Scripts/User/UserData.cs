@@ -19,6 +19,8 @@ namespace User
             pollution = Constants.basePollution;
             currency = Constants.baseCurrency;
             power = Constants.basePower;
+
+            cityName = "";
             
             pollutionMultiplier = Constants.basePollutionMultiplier;
             currencyMultiplier = Constants.baseCurrencyMultiplier;

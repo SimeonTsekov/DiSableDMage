@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Firebase.Firestore;
 using UnityEngine;
 using Utils;
@@ -32,7 +33,7 @@ namespace User
             UserData = new UserData();
         }
 
-        public async void ReadUser()
+        public async Task ReadUser()
         {
             UserData = await DbManager.Instance.ReadUserData();
         }
@@ -52,6 +53,7 @@ namespace User
             data["money"] = UserData.currency;
             data["money_multiplier"] = UserData.currencyMultiplier;
             data["name"] = UserData.cityName;
+            Debug.Log(data["name"]);
             data["pollution"] = UserData.pollution;
             data["pollution_multiplier"] = UserData.pollutionMultiplier;
             data["population"] = UserData.workers;

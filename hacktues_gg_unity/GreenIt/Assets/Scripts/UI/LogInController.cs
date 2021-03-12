@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Authentication;
 using Firebase.Auth;
 using TMPro;
@@ -16,24 +17,27 @@ namespace UI
 		public TMP_InputField emailField;
 		public TMP_InputField passwordField;
 
-		private void Start()
+		public GameObject logInMenu;
+
+		private async void Start()
 		{
-			Debug.Log(UserController.Instance.userId);
-			Debug.Log(PlayerPrefs.GetString("UserId"));
 			if (PlayerPrefs.GetString("UserId") != null && !PlayerPrefs.GetString("UserId").Equals("LMAO"))
 			{
+				logInMenu.SetActive(false);
 				UserController.Instance.userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
+				await UserController.Instance.ReadUser();
 				SceneManager.LoadScene("MainScene");
 			}
 		}
 
-		public void OnSignIn()
+		public async void OnSignIn()
 		{
 			_email = emailField.text;
 			_password = passwordField.text;
 			
+			logInMenu.SetActive(false);
 			LogInAuthenticationController.Instance.Authenticate(_email, _password);
-			UserController.Instance.ReadUser();
+			await UserController.Instance.ReadUser();
 			SceneManager.LoadScene("MainScene");
 		}
 

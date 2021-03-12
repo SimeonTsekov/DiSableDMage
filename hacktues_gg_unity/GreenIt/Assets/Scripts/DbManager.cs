@@ -42,11 +42,13 @@ public class DbManager : MonoBehaviour
 					user.Result.GetValue<float>("pollution"),
 					user.Result.GetValue<float>("money"),
 					user.Result.GetValue<string>("name"),
-					user.Result.GetValue<int>("energy"),
+					user.Result.GetValue<int>("power"),
 					user.Result.GetValue<float>("pollution_multiplier"),
 					user.Result.GetValue<float>("money_multiplier"));
 			});
 
+		Debug.Log(userData.cityName);
+		
 		return userData;
 	}
 
