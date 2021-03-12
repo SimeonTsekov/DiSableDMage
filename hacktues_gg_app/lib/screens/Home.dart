@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
+import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
 import 'package:hacktues_gg_app/di/serviceLocator.dart';
 import 'package:hacktues_gg_app/event/CityEvent.dart';
 import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
+import 'package:hacktues_gg_app/screens/main/ComparisonScreen.dart';
 import 'package:hacktues_gg_app/screens/main/GraphicType.dart';
 import 'package:hacktues_gg_app/screens/main/StatsScreen.dart';
 import 'package:hacktues_gg_app/utils/CurrentContext.dart';
@@ -28,29 +29,24 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   List<Widget> get _aggregationScreens => [
         AverageStatsScreen(
             errorText: 'Something went wrong with the aggregation!'),
-        Center(
-          child: Text("Text2"),
-        ),
-        Center(
-          child: Text("Text3"),
-        ),
+        ComparisonScreen(errorText: 'Something went wrong with the comparison!')
       ];
 
   List<Widget> get _statisticsScreens => [
         StatsScreen($(),
-            errorText: 'Something went wrong with fetching the data',
+            errorText: 'Something went wrong with fetching the data!',
             max: 200,
             min: 0,
             interval: 20,
             graphicType: GraphicType.Pollution),
         StatsScreen($(),
-            errorText: 'Something went wrong with fetching the data',
+            errorText: 'Something went wrong with fetching the data!',
             max: 200,
             min: 0,
             interval: 20,
             graphicType: GraphicType.Money),
         StatsScreen($(),
-            errorText: 'Something went wrong with fetching the data',
+            errorText: 'Something went wrong with fetching the data!',
             max: 200,
             min: 0,
             interval: 20,
@@ -78,16 +74,6 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
             textColor: Colors.black,
             padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
             backgroundColor: Colors.lightBlue),
-        GButton(
-          gap: 8,
-          icon: Icons.location_on_sharp,
-          iconActiveColor: Colors.redAccent,
-          iconColor: Colors.black,
-          textColor: Colors.black,
-          backgroundColor: Colors.yellow,
-          padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-          text: 'Location',
-        ),
       ];
 
   List<GButton> get _statisticsTabs => [

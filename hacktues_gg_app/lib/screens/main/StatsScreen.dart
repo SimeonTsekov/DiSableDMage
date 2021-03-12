@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
 import 'package:hacktues_gg_app/model/City.dart';
+import 'package:hacktues_gg_app/widgets/Error.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../base/CityScreen.dart';
@@ -26,7 +27,9 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
     return Expanded(child: _getDefaultLineChart());
   }
 
-  SfCartesianChart _getDefaultLineChart() => SfCartesianChart(
+  Widget _getDefaultLineChart() {
+    try {
+      return SfCartesianChart(
         backgroundColor: Colors.black,
         plotAreaBorderWidth: 0,
         primaryXAxis: DateTimeAxis(
@@ -59,12 +62,16 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
             enableSelectionZooming: true,
             enablePanning: true),
       );
+    } on Exception catch(e) {
+      return Error(error: 'Error while loading previous stats!');
+    }
+  }
 
   SplineSeries<City, DateTime> _getDefaultLineSeries() {
     late List<City>? cities;
     this._previousStatisticsBloc.value!.when((value) {
       cities = value;
-    }, idle: () {}, loading: () {}, error: (exc) {});
+    }, idle: () {}, loading: () {}, error: (exc) => throw exc ?? Exception('Error while loading previous stats!'));
     return SplineSeries<City, DateTime>(
         dataSource: cities,
         xValueMapper: (model, _) => DateTime.parse(model.updatedAt),

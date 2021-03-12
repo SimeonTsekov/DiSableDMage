@@ -17,15 +17,23 @@ class CityPreviousStatisticsBloc
   CityPreviousStatisticsBloc(this._storage) : super(ResponseState.idle());
 
   Future<void> fetchInitialStatistics(String id) async {
-    emitState(ResponseState.loading());
-    final stats = await _storage.downloadStats(id);
-    _lastStatistics.addAll(stats);
-    emitState(ResponseState(_lastStatistics));
+    try {
+      emitState(ResponseState.loading());
+      final stats = await _storage.downloadStats(id);
+      _lastStatistics.addAll(stats);
+      emitState(ResponseState(_lastStatistics));
+    } on Exception catch (e) {
+      emitState(ResponseState.error(ex: e));
+    }
   }
 
   @override
   sendEvent(City event) {
-    _lastStatistics.add(event);
-    emitState(ResponseState(_lastStatistics));
+    try {
+      _lastStatistics.add(event);
+      emitState(ResponseState(_lastStatistics));
+    } on Exception catch (e) {
+      emitState(ResponseState.error(ex: e));
+    }
   }
 }

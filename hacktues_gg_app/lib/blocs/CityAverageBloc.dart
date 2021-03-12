@@ -16,35 +16,41 @@ class CityAverageBloc extends Bloc<
   CityAverageBloc() : super(ResponseState.idle());
 
   void _combineCurrentAndAllCities(String id) {
-    Rx.combineLatest2<ResponseState<CityAverage?>, ResponseState<CityAverage?>,
-            MapEntry<CityAverage?, CityAverage>?>(
-        _cityRepository.streamAverageCityWithId(id),
-        _cityRepository.streamAverageAllCities(), (average, all) {
-      late CityAverage? _cityAverage;
-      late CityAverage? _allAverage;
-      late bool _hasData = false;
-      late ResponseState<MapEntry<CityAverage, CityAverage>> _responseState;
+    try {
+      Rx.combineLatest2<
+              ResponseState<CityAverage?>,
+              ResponseState<CityAverage?>,
+              MapEntry<CityAverage?, CityAverage>?>(
+          _cityRepository.streamAverageCityWithId(id),
+          _cityRepository.streamAverageAllCities(), (average, all) {
+        late CityAverage? _cityAverage;
+        late CityAverage? _allAverage;
+        late bool _hasData = false;
+        late ResponseState<MapEntry<CityAverage, CityAverage>> _responseState;
 
-      average.when((value) {
-        _cityAverage = value;
-        _hasData = true;
-      },
-          idle: () => _responseState = ResponseState.idle(),
-          loading: () => _responseState = ResponseState.loading(),
-          error: (exc) => _responseState = ResponseState.error(ex: exc));
-      all.when((value) {
-        _allAverage = value;
-        _hasData = true;
-      },
-          idle: () => _responseState = ResponseState.idle(),
-          loading: () => _responseState = ResponseState.loading(),
-          error: (exc) => _responseState = ResponseState.error(ex: exc));
-      if (_hasData) {
-        emitState(ResponseState(MapEntry(_cityAverage!, _allAverage!)));
-      } else {
-        emitState(_responseState);
-      }
-    });
+        average.when((value) {
+          _cityAverage = value;
+          _hasData = true;
+        },
+            idle: () => _responseState = ResponseState.idle(),
+            loading: () => _responseState = ResponseState.loading(),
+            error: (exc) => _responseState = ResponseState.error(ex: exc));
+        all.when((value) {
+          _allAverage = value;
+          _hasData = true;
+        },
+            idle: () => _responseState = ResponseState.idle(),
+            loading: () => _responseState = ResponseState.loading(),
+            error: (exc) => _responseState = ResponseState.error(ex: exc));
+        if (_hasData) {
+          emitState(ResponseState(MapEntry(_cityAverage!, _allAverage!)));
+        } else {
+          emitState(_responseState);
+        }
+      });
+    } on Exception catch (e) {
+      emitState(ResponseState.error(ex: e));
+    }
   }
 
   @override

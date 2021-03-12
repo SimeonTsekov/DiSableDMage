@@ -19,8 +19,13 @@ class CityBloc extends Bloc<ResponseState<City?>, CityEvent> {
     emitState(ResponseState(city));
   }
 
-  void _fetchCityForId(String id) =>
+  void _fetchCityForId(String id) {
+    try {
       _cityRepository.streamCityWithId(id).listen(emitState);
+    } on Exception catch (e) {
+      emitState(ResponseState.error(ex: e));
+    }
+  }
 
   @override
   sendEvent(CityEvent event) {
