@@ -19,7 +19,8 @@ class PageManager {
   List<Page> get _pagesList => List.unmodifiable(_pages);
 
   final List<Page> _pages = [
-    MaterialPage(child: AuthWrapper($()), key: ValueKey<String>('AuthWrapper'))
+    MaterialPage(
+        child: AuthWrapper($(), $()), key: ValueKey<String>('AuthWrapper'))
   ];
 
   void openPage<T extends Widget>(

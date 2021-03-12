@@ -220,7 +220,8 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                 selectedIndex: _currentTab,
                 onTabChange: (index) {
                   bottomTapped(index);
-                }),
+                }
+              ),
           ),
         )),
   );
