@@ -16,6 +16,7 @@ class CityPreviousStatisticsBloc extends Bloc<ResponseState<List<City>>, City> {
   CityPreviousStatisticsBloc(this._storage) : super(ResponseState.idle());
 
   Future<void> fetchInitialStatistics(String id) async {
+    emitState(ResponseState.loading());
     final stats = await _storage.downloadStats(id);
     _lastStatistics.addAll(stats);
     emitState(ResponseState(_lastStatistics));

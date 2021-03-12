@@ -1,3 +1,4 @@
+import 'package:hacktues_gg_app/state/ResponseState.dart';
 import 'package:injectable/injectable.dart';
 
 import '../model/City.dart';
@@ -11,14 +12,11 @@ class CityRepository {
 
   CityRepository({required this.db, required this.storage});
 
-  void uploadCity(City cityFields) {
-    // duplicated city with new props
-  }
+  Future<void> uploadCity(City cityFields) async => db.updateCity(cityFields);
 
-  void fetchCityWithId(String id) {
-    // TODO: Fetch user an call FirestoreDatabase method
-  }
+  Stream<ResponseState<City>> streamCityWithId(String id) =>
+      db.citySnapshots(id).map((event) => ResponseState(event));
 
   void fetchAverageCityWithId(String id) {}
-  // methods that return stream and this gets injected to bloc go brrr
+// methods that return stream and this gets injected to bloc go brrr
 }

@@ -11,19 +11,15 @@ class FirestoreDatabase {
   DocumentReference getCity(String cityId) => _cities.doc(cityId);
 
   Stream<City> citySnapshots(String cityId) => getCity(cityId).snapshots().map(
-        (city) => City(
-            id: city.id,
-            name: city.get('name'),
-            population: city.get('population'),
-            buildingCount: city.get('buildingCount'),
-            factoryCount: city.get('factoryCount'),
-            houseCount: city.get('houseCount'),
-            money: city.get('money'),
-            moneyMultiplier: city.get('moneyMultiplier'),
-            pollution: city.get('pollution'),
-            pollutionMultiplier: city.get('pollutionMultiplier'),
-            power: city.get('power'),
-            powerMultiplier: city.get('powerMultiplier'),
-            updatedAt: city.get('updatedAt')),
+        (city) => City.fromJson(city.data()!),
       );
+
+  Future<void> updateCity(City city) async =>
+      getCity(city.id).update(city.toJson());
+
+  // not needed?
+  Future<City?> fetchCityWithId(String cityId) async {
+    final city = await getCity(cityId).get();
+    return city.exists ? City.fromJson(city.data()!) : null;
+  }
 }

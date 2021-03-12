@@ -13,15 +13,20 @@ class CityBloc extends Bloc<ResponseState<City>, CityEvent> {
 
   CityBloc() : super(ResponseState.idle());
 
-  void uploadCityWithId(City city) => _cityRepository.uploadCity(city);
+  void _updateCity(City city) => _cityRepository.uploadCity(city);
 
-  void fetchCityForId(String id) => _cityRepository.fetchCityWithId(id);
+  void _fetchCityForId(String id) =>
+      _cityRepository.streamCityWithId(id).listen(emitState);
+
+  void _fetchAverageCityForId(String id) =>
+      _cityRepository.fetchAverageCityWithId(id);
 
   @override
   sendEvent(CityEvent event) {
     event.when(
-      fetchCityWithId: (id) {},
-      uploadCityWithId: (id) {},
-    );
+        fetchCityWithId: _fetchCityForId,
+        fetchAverageCityWithId: _fetchAverageCityForId,
+        updateCity: _updateCity,
+        fetchAverageAllCities: () {});
   }
 }
