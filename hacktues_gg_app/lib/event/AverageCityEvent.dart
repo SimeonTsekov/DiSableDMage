@@ -4,9 +4,6 @@ part 'AverageCityEvent.freezed.dart';
 
 @freezed
 class AverageCityEvent with _$AverageCityEvent {
-  const factory AverageCityEvent.fetchAverageCityWithId(String id) =
-      _FetchAverageCityWithId;
-
-  const factory AverageCityEvent.fetchAverageAllCities() =
-      _FetchAverageAllCities;
+  const factory AverageCityEvent.fetchAverageCityWithAllCities(String id) =
+      _FetchAverageWithAll;
 }

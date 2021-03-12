@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:dio/dio.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:hacktues_gg_app/model/City.dart';
@@ -14,5 +17,25 @@ class Storage {
     final data = await Dio().get<List<dynamic>>(url);
 
     return data.data!.map((e) => City.fromJson(e)).toList();
+  }
+
+  Future<void> uploadStats(City city) async {
+    final cityId = city.id;
+    final lastStats = await this.downloadStats(cityId);
+    lastStats.add(city);
+
+    JsonEncoder encoder = JsonEncoder.withIndent('  ');
+
+    String jsonString = encoder.convert(lastStats);
+    List<int> bytes = utf8.encode(jsonString);
+
+    String base64str = base64.encode(bytes);
+    Uint8List uploadData = base64.decode(base64str);
+
+    Reference uploadRef = _root.child('/cities/$cityId/stats.json');
+
+    await uploadRef
+        .putData(uploadData, SettableMetadata(contentType: 'application/json'))
+        .whenComplete(() => {});
   }
 }

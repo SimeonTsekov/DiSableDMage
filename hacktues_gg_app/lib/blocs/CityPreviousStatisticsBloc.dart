@@ -8,7 +8,8 @@ import 'base/Bloc.dart';
 // When background works, cache into local sembast data (the periodic callbackl), and then onResume => put all shit into Storage.
 
 @singleton
-class CityPreviousStatisticsBloc extends Bloc<ResponseState<List<City>>, City> {
+class CityPreviousStatisticsBloc
+    extends Bloc<ResponseState<List<City>?>, City> {
   final Storage _storage;
 
   late List<City> _lastStatistics;

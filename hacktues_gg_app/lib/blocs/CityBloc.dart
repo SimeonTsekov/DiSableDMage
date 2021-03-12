@@ -8,7 +8,7 @@ import '../model/City.dart';
 import 'base/Bloc.dart';
 
 @lazySingleton
-class CityBloc extends Bloc<ResponseState<City>, CityEvent> {
+class CityBloc extends Bloc<ResponseState<City?>, CityEvent> {
   final CityRepository _cityRepository = $<CityRepository>();
 
   CityBloc() : super(ResponseState.idle());
