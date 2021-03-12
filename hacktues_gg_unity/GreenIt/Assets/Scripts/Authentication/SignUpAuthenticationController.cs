@@ -1,5 +1,6 @@
 ﻿using Firebase.Auth;
 using UnityEngine;
+using User;
 
 namespace Authentication
 {
@@ -32,9 +33,9 @@ namespace Authentication
 
 				// Firebase user has been created.
 				FirebaseUser newUser = task.Result;
+				UserController.Instance.userId = newUser.UserId;
 				Debug.LogFormat("Firebase user created successfully: {0} ({1})",
 					newUser.DisplayName, newUser.UserId);
-				PlayerPrefs.SetString("UserId", newUser.UserId);
 			});
 		}
 

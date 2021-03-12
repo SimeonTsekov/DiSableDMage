@@ -1,5 +1,6 @@
 ﻿using System;
 using Authentication;
+using Firebase.Auth;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,10 +16,13 @@ namespace UI
 		public TMP_InputField emailField;
 		public TMP_InputField passwordField;
 
-		private void Awake()
+		private void Start()
 		{
+			Debug.Log(UserController.Instance.userId);
+			Debug.Log(PlayerPrefs.GetString("UserId"));
 			if (PlayerPrefs.GetString("UserId") != null && !PlayerPrefs.GetString("UserId").Equals("LMAO"))
 			{
+				UserController.Instance.userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
 				SceneManager.LoadScene("MainScene");
 			}
 		}

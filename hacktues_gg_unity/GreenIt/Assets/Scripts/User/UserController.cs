@@ -10,7 +10,8 @@ namespace User
     {
         public static UserController Instance { get; private set; }
         public UserData UserData;
-
+        public string userId;
+        
         public List<BuildingData> buildings;
 
         private void Awake()
@@ -23,6 +24,7 @@ namespace User
             DontDestroyOnLoad(gameObject);
             UserData = new UserData();
             buildings = new List<BuildingData>();
+            userId = "";
         }
 
         public void InitializeUser()

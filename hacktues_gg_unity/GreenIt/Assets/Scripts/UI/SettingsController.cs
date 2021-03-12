@@ -21,6 +21,7 @@ namespace UI
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
+                Debug.Log(UserController.Instance.userId);
                 OnSettings();
             }
         }
@@ -41,6 +42,8 @@ namespace UI
         
         public void OnExit()
         {
+            PlayerPrefs.SetString("UserId", UserController.Instance.userId);
+            PlayerPrefs.Save();
             UserController.Instance.UpdateUser();
             GameStateController.Instance.GenerateBuildingsJsonFile();
             Application.Quit();

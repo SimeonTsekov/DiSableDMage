@@ -34,7 +34,7 @@ public class DbManager : MonoBehaviour
 		UserData userData = null;
 
 		await _db.Collection("cities")
-			.Document(PlayerPrefs.GetString("UserId"))
+			.Document(UserController.Instance.userId)
 			.GetSnapshotAsync()
 			.ContinueWith(user =>
 			{
@@ -53,7 +53,7 @@ public class DbManager : MonoBehaviour
 	public async void UpdateUser()
 	{
 		await _db.Collection("cities")
-			.Document(PlayerPrefs.GetString("UserId"))
+			.Document(UserController.Instance.userId)
 			.SetAsync(UserController.Instance.GetUserDataDictionary());
 	}
 
