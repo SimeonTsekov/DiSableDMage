@@ -31,6 +31,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/RTS_Camera/Scripts/RTS_Camera.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/BaseBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/House.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
+    </changedPaths>
+  </component>
   <component name="ProjectId" id="1pYR4h3wcEBxbOEC7uVkIcEJWIu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -87,6 +98,7 @@
       <workItem from="1615357958274" duration="3442000" />
       <workItem from="1615372865132" duration="12798000" />
       <workItem from="1615487887169" duration="1392000" />
+      <workItem from="1615536120201" duration="1960000" />
     </task>
     <servers />
   </component>

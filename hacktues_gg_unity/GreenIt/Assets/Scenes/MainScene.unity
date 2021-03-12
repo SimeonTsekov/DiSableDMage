@@ -2124,7 +2124,7 @@ GameObject:
   - component: {fileID: 677011602}
   - component: {fileID: 677011601}
   m_Layer: 5
-  m_Name: 2x1
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2199,7 +2199,7 @@ MonoBehaviour:
         m_MethodName: StartBuild
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1050846086154497823, guid: 7a0bc559844e2bd4f98b90143c1f58b0,
+          m_ObjectArgument: {fileID: 4704225690565895432, guid: d029428946d90c84ca207873fd2b2dd2,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
