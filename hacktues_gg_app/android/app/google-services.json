@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "350190186908",
+    "project_id": "greenit-ea56b",
+    "storage_bucket": "greenit-ea56b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350190186908:android:4d5f6b7e0faa4008875859",
+        "android_client_info": {
+          "package_name": "com.example.hacktues_gg_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350190186908-5oav5e0ump0tbaqg7ru3gapj7b9gtel2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqZmMEp-w6uOrMz1iCg4fvzqeLzJQu7Jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350190186908-5oav5e0ump0tbaqg7ru3gapj7b9gtel2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
