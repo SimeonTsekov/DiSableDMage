@@ -1,4 +1,5 @@
-﻿using Authentication;
+﻿using System;
+using Authentication;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,14 @@ namespace UI
 
 		public TMP_InputField emailField;
 		public TMP_InputField passwordField;
-		
+
+		private void Awake()
+		{
+			if (PlayerPrefs.GetString("UserId") != null)
+			{
+				SceneManager.LoadScene("MainScene");
+			}
+		}
 
 		public void OnSignIn()
 		{
@@ -20,7 +28,7 @@ namespace UI
 			_password = passwordField.text;
 			
 			LogInAuthenticationController.Instance.Authenticate(_email, _password);
-			//SceneManager.LoadScene("MainScene");
+			SceneManager.LoadScene("MainScene");
 		}
 
 		public void OnLoadSignUp()

@@ -60,6 +60,7 @@
         <e p="Scripts" t="Include">
           <e p="Authentication" t="Include">
             <e p="LogInAuthenticationController.cs" t="Include" />
+            <e p="SignUpAuthenticationController.cs" t="Include" />
           </e>
           <e p="Building" t="Include">
             <e p="Buildings" t="Include">
@@ -82,6 +83,7 @@
           </e>
           <e p="UI" t="Include">
             <e p="LogInController.cs" t="Include" />
+            <e p="SignUpController.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="Constants.cs" t="Include" />

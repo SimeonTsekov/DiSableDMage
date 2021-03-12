@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2427014018962931360}
   - component: {fileID: 5294998583209807587}
   - component: {fileID: 3608569098754708748}
+  - component: {fileID: -5184645832551965379}
   m_Layer: 9
-  m_Name: 2x2_Preview
-  m_TagString: Untagged
+  m_Name: Factory
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8511894856246420768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.546875, y: 5.5124702, z: 2.30794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,4 +128,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodMat: {fileID: 2100000, guid: 9fd91d16699307d449b42117365e2b69, type: 2}
   badMat: {fileID: 2100000, guid: 439a570770679144189b4990afc1a915, type: 2}
-  prefab: {fileID: 4704225690565895432, guid: d029428946d90c84ca207873fd2b2dd2, type: 3}
+  prefab: {fileID: 1373228115944067928, guid: 642d010d51550294fa5c4a42380980c3, type: 3}
+--- !u!114 &-5184645832551965379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8511894856246420768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12de429763c4cdc8feae27fd270391f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  price: 0
+  requiredWorkers: 0
+  requiredEnergy: 0
+  emissionModifier: 0
+  moneyModifier: 0

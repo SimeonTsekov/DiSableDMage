@@ -16,6 +16,7 @@ public class DbManager : MonoBehaviour
 			Instance = this;
 		}
 
+		DontDestroyOnLoad(gameObject);
 		_app = FirebaseApp.DefaultInstance;
 	}
 
