@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using User;
 
 namespace Building
 {
@@ -9,6 +10,7 @@ namespace Building
         public void OnBuild()
         {
             Debug.Log("Lmao");
+            UserController.Instance.buildings.Add(new BuildingData(new SerializableTransform(transform), name));
         }
     }
 }

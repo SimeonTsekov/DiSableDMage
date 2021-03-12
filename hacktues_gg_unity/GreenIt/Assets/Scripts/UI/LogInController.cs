@@ -16,7 +16,7 @@ namespace UI
 
 		private void Awake()
 		{
-			if (PlayerPrefs.GetString("UserId") != null)
+			if (PlayerPrefs.GetString("UserId") != null && !PlayerPrefs.GetString("UserId").Equals("LMAO"))
 			{
 				SceneManager.LoadScene("MainScene");
 			}

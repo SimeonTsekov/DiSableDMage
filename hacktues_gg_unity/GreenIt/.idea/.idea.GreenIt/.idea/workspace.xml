@@ -40,12 +40,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/BuildSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/SignUpAuthenticationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/JSONHelper.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/User.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pYR4h3wcEBxbOEC7uVkIcEJWIu" />
@@ -104,7 +112,7 @@
       <workItem from="1615357958274" duration="3442000" />
       <workItem from="1615372865132" duration="12798000" />
       <workItem from="1615487887169" duration="1392000" />
-      <workItem from="1615536120201" duration="4902000" />
+      <workItem from="1615536120201" duration="12389000" />
     </task>
     <servers />
   </component>

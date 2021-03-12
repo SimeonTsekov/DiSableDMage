@@ -1,0 +1,46 @@
+﻿using System;
+using Firebase.Auth;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace UI
+{
+    public class SettingsController : MonoBehaviour
+    {
+        public GameObject settingsMenu;
+        private bool _settingsMenuActive;
+
+        private void Awake()
+        {
+            _settingsMenuActive = false;
+            settingsMenu.SetActive(_settingsMenuActive);
+        }
+
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                OnSettings();
+            }
+        }
+
+        public void OnSettings()
+        {
+            _settingsMenuActive = !_settingsMenuActive;
+            settingsMenu.SetActive(_settingsMenuActive);
+        }
+
+        public void OnSignOut()
+        {
+            PlayerPrefs.SetString("UserId", "LMAO");
+            FirebaseAuth.DefaultInstance.SignOut();
+            SceneManager.LoadScene("LogIn");
+        }
+        
+        public void OnExit()
+        {
+            GameStateController.Instance.GenerateBuildingsJsonFile();
+            Application.Quit();
+        }
+    }
+}

@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Firebase;
 using Firebase.Firestore;
+using Firebase.Storage;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class DbManager : MonoBehaviour
 {
 	public static DbManager Instance { get; private set; }
 	private DocumentReference _reference;
 	private FirebaseApp _app;
+	private StorageReference _storage;
 
 	private void Awake()
 	{
@@ -18,6 +22,7 @@ public class DbManager : MonoBehaviour
 
 		DontDestroyOnLoad(gameObject);
 		_app = FirebaseApp.DefaultInstance;
+		_storage = FirebaseStorage.DefaultInstance.RootReference;
 	}
 
 	private void Start()
@@ -37,4 +42,32 @@ public class DbManager : MonoBehaviour
 
 		await _reference.SetAsync(bruh);
 	}
+
+	async void ReadConfiguration()
+	{
+		var childReference = _storage.Child("/cities/" + PlayerPrefs.GetString("UserId"));
+		var cityConfigurationURL = await childReference.GetDownloadUrlAsync();
+
+		StartCoroutine(GetText(cityConfigurationURL.AbsolutePath));
+	}
+
+	async void WriteConfiguration()
+	{
+		var childReference = _storage.Child("/cities/" + PlayerPrefs.GetString("UserId"));
+		childReference.PutFileAsync("");
+	}
+	
+	IEnumerator GetText(string url) {
+		UnityWebRequest www = UnityWebRequest.Get(url);
+		yield return www.SendWebRequest();
+ 
+		if (www.result != UnityWebRequest.Result.Success) {
+			Debug.Log(www.error);
+		}
+		else {
+			// Show results as text
+			Debug.Log(www.downloadHandler.text);
+		}
+	}
+
 }

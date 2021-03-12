@@ -20,7 +20,11 @@
             <e p="FirebaseAnalytics_version-7.1.0_manifest.txt" t="Include" />
             <e p="FirebaseAuth_version-7.1.0_manifest.txt" t="Include" />
             <e p="FirebaseFirestore_version-7.1.0_manifest.txt" t="Include" />
+            <e p="FirebaseFunctions_version-7.1.0_manifest.txt" t="Include" />
+            <e p="FirebaseStorage_version-7.1.0_manifest.txt" t="Include" />
             <e p="FirestoreDependencies.xml" t="Include" />
+            <e p="FunctionsDependencies.xml" t="Include" />
+            <e p="StorageDependencies.xml" t="Include" />
           </e>
           <e p="m2repository" t="Include">
             <e p="com" t="Include">
@@ -36,6 +40,12 @@
                     <e p="maven-metadata.xml" t="Include" />
                   </e>
                   <e p="firebase-firestore-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-functions-unity" t="Include">
+                    <e p="maven-metadata.xml" t="Include" />
+                  </e>
+                  <e p="firebase-storage-unity" t="Include">
                     <e p="maven-metadata.xml" t="Include" />
                   </e>
                 </e>
@@ -83,10 +93,17 @@
           </e>
           <e p="UI" t="Include">
             <e p="LogInController.cs" t="Include" />
+            <e p="SettingsController.cs" t="Include" />
             <e p="SignUpController.cs" t="Include" />
+          </e>
+          <e p="User" t="Include">
+            <e p="BuildingData.cs" t="Include" />
+            <e p="SerializableTransform.cs" t="Include" />
+            <e p="UserController.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
             <e p="Constants.cs" t="Include" />
+            <e p="JSONHelper.cs" t="Include" />
           </e>
         </e>
         <e p="SimpleLowPolyNature" t="Include">
