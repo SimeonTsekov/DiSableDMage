@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/model/CityAverage.dart';
+import 'package:hacktues_gg_app/model/City.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class CityAverageBarChart extends StatefulWidget {
   final String chartTitle;
   final City city;
-  final CityAverage glocalCityAverage;
+  final CityAverage globalCityAverage;
 
-  const CityAverageBarChart({Key key, this.chartTitle,
-    this.city, this.globalCityAverage}) : super(key: key);
+  const CityAverageBarChart({Key? key, required this.chartTitle,
+    required this.city, required this.globalCityAverage}) : super(key: key);
 
   @override
   _CityAverageBarChartState createState() => _CityAverageBarChartState();
