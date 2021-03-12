@@ -53,5 +53,10 @@ export const onCityUpdate = functions.firestore
         }
 
         updateAggrCity(context.params.cityId, aggrCity);
+    })
 
+export const onCityDelete = functions.firestore
+    .document('/cities/{cityId}')
+    .onDelete(async (snapshot, context) => {
+        _firestore.collection('cities_agr').doc(context.params.cityId).delete();
     })
