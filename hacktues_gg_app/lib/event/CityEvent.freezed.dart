@@ -27,6 +27,12 @@ class _$CityEventTearOff {
       id,
     );
   }
+
+  _UploadCityWithId uploadCityWithId(String id) {
+    return _UploadCityWithId(
+      id,
+    );
+  }
 }
 
 /// @nodoc
@@ -40,12 +46,14 @@ mixin _$CityEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String id) fetchCityWithId,
     required TResult Function(String id) fetchAverageCityWithId,
+    required TResult Function(String id) uploadCityWithId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? fetchCityWithId,
     TResult Function(String id)? fetchAverageCityWithId,
+    TResult Function(String id)? uploadCityWithId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,12 +62,14 @@ mixin _$CityEvent {
     required TResult Function(_FetchCityWithId value) fetchCityWithId,
     required TResult Function(_FetchAverageCityWithId value)
         fetchAverageCityWithId,
+    required TResult Function(_UploadCityWithId value) uploadCityWithId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCityWithId value)? fetchCityWithId,
     TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
+    TResult Function(_UploadCityWithId value)? uploadCityWithId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,25 +141,15 @@ class __$FetchCityWithIdCopyWithImpl<$Res> extends _$CityEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_FetchCityWithId
-    with DiagnosticableTreeMixin
-    implements _FetchCityWithId {
+class _$_FetchCityWithId implements _FetchCityWithId {
   const _$_FetchCityWithId(this.id);
 
   @override
   final String id;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CityEvent.fetchCityWithId(id: $id)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CityEvent.fetchCityWithId'))
-      ..add(DiagnosticsProperty('id', id));
   }
 
   @override
@@ -174,6 +174,7 @@ class _$_FetchCityWithId
   TResult when<TResult extends Object?>({
     required TResult Function(String id) fetchCityWithId,
     required TResult Function(String id) fetchAverageCityWithId,
+    required TResult Function(String id) uploadCityWithId,
   }) {
     return fetchCityWithId(id);
   }
@@ -183,6 +184,7 @@ class _$_FetchCityWithId
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? fetchCityWithId,
     TResult Function(String id)? fetchAverageCityWithId,
+    TResult Function(String id)? uploadCityWithId,
     required TResult orElse(),
   }) {
     if (fetchCityWithId != null) {
@@ -197,6 +199,7 @@ class _$_FetchCityWithId
     required TResult Function(_FetchCityWithId value) fetchCityWithId,
     required TResult Function(_FetchAverageCityWithId value)
         fetchAverageCityWithId,
+    required TResult Function(_UploadCityWithId value) uploadCityWithId,
   }) {
     return fetchCityWithId(this);
   }
@@ -206,6 +209,7 @@ class _$_FetchCityWithId
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCityWithId value)? fetchCityWithId,
     TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
+    TResult Function(_UploadCityWithId value)? uploadCityWithId,
     required TResult orElse(),
   }) {
     if (fetchCityWithId != null) {
@@ -261,25 +265,15 @@ class __$FetchAverageCityWithIdCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_FetchAverageCityWithId
-    with DiagnosticableTreeMixin
-    implements _FetchAverageCityWithId {
+class _$_FetchAverageCityWithId implements _FetchAverageCityWithId {
   const _$_FetchAverageCityWithId(this.id);
 
   @override
   final String id;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'CityEvent.fetchAverageCityWithId(id: $id)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'CityEvent.fetchAverageCityWithId'))
-      ..add(DiagnosticsProperty('id', id));
   }
 
   @override
@@ -305,6 +299,7 @@ class _$_FetchAverageCityWithId
   TResult when<TResult extends Object?>({
     required TResult Function(String id) fetchCityWithId,
     required TResult Function(String id) fetchAverageCityWithId,
+    required TResult Function(String id) uploadCityWithId,
   }) {
     return fetchAverageCityWithId(id);
   }
@@ -314,6 +309,7 @@ class _$_FetchAverageCityWithId
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String id)? fetchCityWithId,
     TResult Function(String id)? fetchAverageCityWithId,
+    TResult Function(String id)? uploadCityWithId,
     required TResult orElse(),
   }) {
     if (fetchAverageCityWithId != null) {
@@ -328,6 +324,7 @@ class _$_FetchAverageCityWithId
     required TResult Function(_FetchCityWithId value) fetchCityWithId,
     required TResult Function(_FetchAverageCityWithId value)
         fetchAverageCityWithId,
+    required TResult Function(_UploadCityWithId value) uploadCityWithId,
   }) {
     return fetchAverageCityWithId(this);
   }
@@ -337,6 +334,7 @@ class _$_FetchAverageCityWithId
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchCityWithId value)? fetchCityWithId,
     TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
+    TResult Function(_UploadCityWithId value)? uploadCityWithId,
     required TResult orElse(),
   }) {
     if (fetchAverageCityWithId != null) {
@@ -354,5 +352,129 @@ abstract class _FetchAverageCityWithId implements CityEvent {
   @override
   @JsonKey(ignore: true)
   _$FetchAverageCityWithIdCopyWith<_FetchAverageCityWithId> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UploadCityWithIdCopyWith<$Res>
+    implements $CityEventCopyWith<$Res> {
+  factory _$UploadCityWithIdCopyWith(
+          _UploadCityWithId value, $Res Function(_UploadCityWithId) then) =
+      __$UploadCityWithIdCopyWithImpl<$Res>;
+  @override
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$UploadCityWithIdCopyWithImpl<$Res>
+    extends _$CityEventCopyWithImpl<$Res>
+    implements _$UploadCityWithIdCopyWith<$Res> {
+  __$UploadCityWithIdCopyWithImpl(
+      _UploadCityWithId _value, $Res Function(_UploadCityWithId) _then)
+      : super(_value, (v) => _then(v as _UploadCityWithId));
+
+  @override
+  _UploadCityWithId get _value => super._value as _UploadCityWithId;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+  }) {
+    return _then(_UploadCityWithId(
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_UploadCityWithId implements _UploadCityWithId {
+  const _$_UploadCityWithId(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'CityEvent.uploadCityWithId(id: $id)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UploadCityWithId &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(id);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UploadCityWithIdCopyWith<_UploadCityWithId> get copyWith =>
+      __$UploadCityWithIdCopyWithImpl<_UploadCityWithId>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id) fetchCityWithId,
+    required TResult Function(String id) fetchAverageCityWithId,
+    required TResult Function(String id) uploadCityWithId,
+  }) {
+    return uploadCityWithId(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id)? fetchCityWithId,
+    TResult Function(String id)? fetchAverageCityWithId,
+    TResult Function(String id)? uploadCityWithId,
+    required TResult orElse(),
+  }) {
+    if (uploadCityWithId != null) {
+      return uploadCityWithId(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchCityWithId value) fetchCityWithId,
+    required TResult Function(_FetchAverageCityWithId value)
+        fetchAverageCityWithId,
+    required TResult Function(_UploadCityWithId value) uploadCityWithId,
+  }) {
+    return uploadCityWithId(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchCityWithId value)? fetchCityWithId,
+    TResult Function(_FetchAverageCityWithId value)? fetchAverageCityWithId,
+    TResult Function(_UploadCityWithId value)? uploadCityWithId,
+    required TResult orElse(),
+  }) {
+    if (uploadCityWithId != null) {
+      return uploadCityWithId(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UploadCityWithId implements CityEvent {
+  const factory _UploadCityWithId(String id) = _$_UploadCityWithId;
+
+  @override
+  String get id => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$UploadCityWithIdCopyWith<_UploadCityWithId> get copyWith =>
       throw _privateConstructorUsedError;
 }

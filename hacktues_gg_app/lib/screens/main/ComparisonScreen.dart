@@ -1,4 +1,4 @@
-// part of StatsScreen 4-panel pageview
+// part of AverageStatsScreen 2-panel pageview for stats
 
 import 'package:flutter/material.dart';
 

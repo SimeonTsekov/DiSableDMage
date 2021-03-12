@@ -15,8 +15,16 @@ class CityBloc extends Bloc<ResponseState<City>, CityEvent> {
 
   void uploadCityWithId(City city) => _cityRepository.uploadCity(city);
 
-  void fetchCityForId(String id) => _cityRepository.fetchCitiesWithId(id);
+  void fetchCityForId(String id) => _cityRepository.fetchCityWithId(id);
+
+  void fetchAverageCityForId(String id) =>
+      _cityRepository.fetchAverageCityWithId(id);
 
   @override
-  sendEvent(CityEvent event) {}
+  sendEvent(CityEvent event) {
+    event.when(
+        fetchCityWithId: (fetchCityWithId) {},
+        fetchAverageCityWithId: (fetchAverageCityWithId) {},
+        uploadCityWithId: (uploadCityWithId) {});
+  }
 }

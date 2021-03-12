@@ -15,8 +15,10 @@ class CityRepository {
     // duplicated city with new props
   }
 
-  void fetchCitiesWithId(String id) {
+  void fetchCityWithId(String id) {
     // TODO: Fetch user an call FirestoreDatabase method
   }
+
+  void fetchAverageCityWithId(String id) {}
   // methods that return stream and this gets injected to bloc go brrr
 }
