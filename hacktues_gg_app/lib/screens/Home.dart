@@ -2,20 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityBloc.dart';
-import 'package:hacktues_gg_app/di/serviceLocator.dart';
+import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
+import 'package:hacktues_gg_app/event/CityEvent.dart';
 import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
+import 'package:hacktues_gg_app/utils/CurrentContext.dart';
 import 'package:hacktues_gg_app/widgets/HackTUESText.dart';
 import 'package:hacktues_gg_app/widgets/NavDrawer.dart';
 
 class HomeScreen extends StatefulWidget {
+  final CityBloc cityBloc;
+  final CityAverageBloc cityAverageBloc;
+  final CityPreviousStatisticsBloc previousStatisticsBloc;
+
+  const HomeScreen(
+      this.cityBloc, this.cityAverageBloc, this.previousStatisticsBloc);
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  final CityBloc cityBloc = $<CityBloc>();
-  final CityAverageBloc averageCityBloc = $<CityAverageBloc>();
-
+class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   List<Widget> get _aggregationScreens => [
         AverageStatsScreen(
             errorText: 'Something went wrong with the aggregation!'),
@@ -132,6 +138,13 @@ class _HomeScreenState extends State<HomeScreen> {
       _pageController.animateToPage(index,
           duration: Duration(milliseconds: 500), curve: Curves.ease);
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    widget.cityBloc.sendEvent(CityEvent.fetchCityWithId(this.currentCityId));
+    widget.previousStatisticsBloc.fetchInitialStatistics(this.currentCityId);
   }
 
   @override

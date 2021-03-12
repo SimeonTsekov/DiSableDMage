@@ -29,6 +29,8 @@ extension UserStatus on Auth {
   Stream<AuthState> get onAuthStateChanged =>
       _auth.authStateChanges().map((user) =>
           user == null ? AuthState.loggedOut() : AuthState.authenticated());
+
+  String get currentUserId => _auth.currentUser!.uid;
 }
 
 extension AuthExceptionHandler on Auth {
