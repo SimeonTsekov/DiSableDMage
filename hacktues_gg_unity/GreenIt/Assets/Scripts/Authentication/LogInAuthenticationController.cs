@@ -19,11 +19,9 @@ namespace Authentication
 			InitializeFirebaseAuth();
 		}
 
-		public async Task<string> Authenticate(string email, string password)
+		public async Task Authenticate(string email, string password)
 		{
-			Task.Run(() =>
-			{
-				_auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+			await _auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
 				{
 					if (task.IsCanceled)
 					{
@@ -41,10 +39,7 @@ namespace Authentication
 					Debug.LogFormat("User signed in successfully: {0} ({1})",
 						newUser.DisplayName, newUser.UserId);
 					PlayerPrefs.SetString("UserId", newUser.UserId);
-					return newUser.UserId;
 				});
-			});
-
 		}
 
 		private void InitializeFirebaseAuth()

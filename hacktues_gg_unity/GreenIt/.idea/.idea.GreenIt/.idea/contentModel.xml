@@ -86,6 +86,7 @@
             <e p="PreviewObj.cs" t="Include" />
           </e>
           <e p="DbManager.cs" t="Include" />
+          <e p="FirebaseStorageManager.cs" t="Include" />
           <e p="GameStateController.cs" t="Include" />
           <e p="Grid" t="Include">
             <e p="GridSpawner.cs" t="Include" />

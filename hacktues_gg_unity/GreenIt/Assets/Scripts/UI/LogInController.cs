@@ -36,7 +36,7 @@ namespace UI
 			_password = passwordField.text;
 			
 			logInMenu.SetActive(false);
-			LogInAuthenticationController.Instance.Authenticate(_email, _password);
+			await LogInAuthenticationController.Instance.Authenticate(_email, _password);
 			await UserController.Instance.ReadUser();
 			SceneManager.LoadScene("MainScene");
 		}
