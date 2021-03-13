@@ -122,6 +122,8 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
 
   int _currentTab = 0;
 
+  bool _isLoggedOut = false;
+
   bool _isShowingStatistics = false;
   bool _hasScrolledToSliverMax = false;
 
@@ -159,6 +161,9 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   @override
   Widget build(BuildContext context) => WillPopScope(
       onWillPop: () async {
+        if (_isLoggedOut) {
+          return true;
+        }
         if (_currentTab > 0) {
           setState(() => _currentTab = _currentTab - 1);
           return false;
@@ -168,11 +173,12 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
         } else if (Platform.isIOS) {
           exit(0);
         }
-
         return true;
       },
       child: Scaffold(
-        drawer: _hasScrolledToSliverMax ? NavigationDrawer() : null,
+        drawer: _hasScrolledToSliverMax
+            ? NavigationDrawer((isLoggedOut) => this._isLoggedOut = isLoggedOut)
+            : null,
         body: NestedScrollView(
           key: scrollKey,
           headerSliverBuilder: (context, _) => [
@@ -184,7 +190,6 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                     final String? cityTitle = snapshot.data!.maybeWhen(
                         (value) => value?.name ?? endgameCitySuffix,
                         orElse: () => null);
-
                     // TODO: Use AnimatedCrossFade for switch when received cityTitle
                     return _AdaptiveSliverAppBar(
                         isShowingStatistics: _isShowingStatistics,

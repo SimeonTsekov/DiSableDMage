@@ -8,7 +8,9 @@ import 'HackTUESText.dart';
 
 class NavigationDrawer extends StatelessWidget {
   final AuthBloc authBloc = $<AuthBloc>();
-  NavigationDrawer();
+  final Function(bool) _onLogout;
+
+  NavigationDrawer(this._onLogout);
 
   @override
   Widget build(BuildContext context) => Drawer(
@@ -33,6 +35,8 @@ class NavigationDrawer extends StatelessWidget {
                     letterSpacing: 1.5,
                   ),
                   onTap: () {
+                    _onLogout(true);
+                    Navigator.of(context).maybePop();
                     authBloc.sendEvent(AuthEvent.logout());
                   }),
               ListTile(

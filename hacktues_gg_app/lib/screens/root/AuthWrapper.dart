@@ -36,7 +36,6 @@ class AuthWrapper extends StatelessWidget {
             }, unknown: () {
               returnWidget = LoginScreen(_authBloc);
             }, loggedOut: () {
-              $<PageManager>().didPopById(key: 'Home');
               _prefsBgBloc.sendEvent(PrefBackgroundRunEvent.toggle(false));
               returnWidget = LoginScreen(_authBloc);
             });
