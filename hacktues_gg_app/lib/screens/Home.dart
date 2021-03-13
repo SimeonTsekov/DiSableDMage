@@ -164,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
           child: NestedScrollView(
             headerSliverBuilder: (context, _) => [
               StreamBuilder<ResponseState<City?>>(
-                  stream: null,
+                  stream: widget.cityBloc.stream,
                   builder: (context, snapshot) {
                     if (snapshot.data != null) {
                       const String endgameCitySuffix = 'a graveyard';

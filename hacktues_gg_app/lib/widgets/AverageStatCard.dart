@@ -6,7 +6,6 @@ class AverageStatCard extends StatefulWidget {
   final String title;
   late final String cardDescription;
   final double aggregatedAmount;
-  final int opacityFadeInDuration;
   final Icon topIcon;
   final Color topIconBackgroundColor;
 
@@ -14,7 +13,6 @@ class AverageStatCard extends StatefulWidget {
       {Key? key,
       required this.title,
       required this.aggregatedAmount,
-      required this.opacityFadeInDuration,
       required this.topIcon,
       required this.topIconBackgroundColor})
       : super(key: key) {
@@ -28,7 +26,7 @@ class AverageStatCard extends StatefulWidget {
 class _AverageStatCardState extends State<AverageStatCard>
     with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    duration: Duration(seconds: widget.opacityFadeInDuration),
+    duration: Duration(seconds: 1),
     vsync: this,
   )..repeat(reverse: true);
 
@@ -40,7 +38,7 @@ class _AverageStatCardState extends State<AverageStatCard>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
-        opacity: _animation,
+        opacity: Tween<double>(begin: 0, end: 1).animate(_animation),
         child: Card(
             elevation: 5.0,
             color: Colors.blueAccent,

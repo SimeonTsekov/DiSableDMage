@@ -7,14 +7,12 @@ class CityAverageBarChart extends StatefulWidget {
   final String chartTitle;
   final double cityAggregatedAmount;
   final double globalAggregatedAmount;
-  final int opacityFadeInDuration;
 
   const CityAverageBarChart(
       {Key? key,
       required this.chartTitle,
       required this.cityAggregatedAmount,
-      required this.globalAggregatedAmount,
-      required this.opacityFadeInDuration})
+      required this.globalAggregatedAmount})
       : super(key: key);
 
   @override
