@@ -155,10 +155,13 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   Widget build(BuildContext context) => Scaffold(
         body: NotificationListener<ScrollNotification>(
           onNotification: (notification) {
-            setState(() {
-              _hasScrolledToSliverMax = notification.metrics.pixels ==
-                  notification.metrics.maxScrollExtent;
-            });
+            var changed = _hasScrolledToSliverMax = notification.metrics.pixels ==
+                notification.metrics.maxScrollExtent;
+            if(changed != _hasScrolledToSliverMax) {
+              setState(() {
+                _hasScrolledToSliverMax = changed;
+              });
+            }
             return true;
           },
           child: NestedScrollView(

@@ -34,7 +34,7 @@ class _CityAverageBarChartState extends State<CityAverageBarChart>
 
   @override
   Widget build(BuildContext context) =>
-      FadeTransition(opacity: _animation, child: _getCityAverageBarChart());
+      FadeTransition(opacity: Tween<double>(begin: 0, end: 1).animate(_animation), child: _getCityAverageBarChart());
 
   SfCartesianChart _getCityAverageBarChart() {
     return SfCartesianChart(

@@ -4,6 +4,7 @@ import 'package:hacktues_gg_app/blocs/AuthBloc.dart';
 import 'package:hacktues_gg_app/event/AuthEvent.dart';
 import 'package:hacktues_gg_app/state/AuthState.dart';
 import 'package:hacktues_gg_app/utils/StreamListener.dart';
+import 'package:hacktues_gg_app/widgets/HackTUESText.dart';
 
 class LoginScreen extends StatefulWidget {
   final AuthBloc _authBloc;
@@ -129,11 +130,17 @@ class _LoginScreenState extends State<LoginScreen> {
               // Navigate and stuff (or handle nav from a top level widget)
               failedToAuthenticate: (reason) {
                 this._presentDialog(context,
-                    message: 'Auth failed',
+                    message: 'Your sign-in attempt was unsuccessful! Please, try again.',
                     additionalInformation: reason.toString());
               },
               unknown: () {},
-              loggedOut: () {});
+              loggedOut: () {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: HackTUESText('Yay! A SnackBar!'),
+                  elevation: 5.0,
+                  backgroundColor: Colors.lightBlueAccent,
+                ));
+              });
         },
         child: SafeArea(
           child: Scaffold(
