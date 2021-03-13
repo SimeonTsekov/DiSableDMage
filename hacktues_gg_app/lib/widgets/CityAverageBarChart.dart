@@ -44,11 +44,13 @@ class _CityAverageBarChartState extends State<CityAverageBarChart> {
       <ColumnSeries<double, String>>[
         ColumnSeries(
             dataSource: [widget.cityAggregatedAmount],
-            xValueMapper: (_, __) => 'The category here',
-            yValueMapper: (city, __) => city),
+            xValueMapper: (_, __) => widget.chartTitle,
+            yValueMapper: (city, __) => city,
+            name: 'You'),
         ColumnSeries(
             dataSource: [widget.globalAggregatedAmount],
-            xValueMapper: (_, __) => 'The category here',
-            yValueMapper: (global, __) => global),
+            xValueMapper: (_, __) => widget.chartTitle,
+            yValueMapper: (global, __) => global,
+            name: 'Global'),
       ];
 }

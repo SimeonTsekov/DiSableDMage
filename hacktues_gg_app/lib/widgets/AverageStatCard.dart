@@ -15,7 +15,8 @@ class AverageStatCard extends StatelessWidget {
       required this.title,
       required this.aggregatedAmount,
       required this.opacityFadeInDuration,
-      required this.topIcon, required this.topIconBackgroundColor})
+      required this.topIcon,
+      required this.topIconBackgroundColor})
       : super(key: key) {
     this.cardDescription = 'Your average ${title.toLowerCase()}';
   }
@@ -32,25 +33,26 @@ class AverageStatCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CircleAvatar(
-                  radius: 80.0,
-                  backgroundColor: topIconBackgroundColor,
-                  child: ClipOval(
-                    child: SizedBox(
-                      width: 90.0,
-                      height: 200.0,
-                      child: topIcon
-                    )
-                  )
-                ),
+                    radius: 25.0,
+                    backgroundColor: topIconBackgroundColor,
+                    child: ClipOval(
+                        child: SizedBox(
+                            width: 90.0, height: 200.0, child: topIcon))),
                 HackTUESText(title,
-                    fontSize: 18,
+                    fontSize: 16,
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.bold,
                     maxLines: 2),
                 HackTUESText(cardDescription,
-                    fontSize: 16, textAlign: TextAlign.center, fontWeight: FontWeight.bold, maxLines: 3),
-                HackTUESText(aggregatedAmount.toString(),
-                    fontSize: 20, textAlign: TextAlign.center, fontWeight: FontWeight.bold, maxLines: 3),
+                    fontSize: 15,
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w300,
+                    maxLines: 3),
+                HackTUESText(aggregatedAmount.toStringAsFixed(2),
+                    fontSize: 19,
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.bold,
+                    maxLines: 3),
               ])),
     );
   }
