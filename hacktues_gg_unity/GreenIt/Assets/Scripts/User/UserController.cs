@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Firebase.Firestore;
@@ -28,6 +29,11 @@ namespace User
             userId = "";
         }
 
+        private void Start()
+        {
+            InvokeRepeating(nameof(UpdateUserResources), 1f, 5f);
+        }
+
         public void InitializeUser()
         {
             UserData = new UserData();
@@ -43,6 +49,13 @@ namespace User
             DbManager.Instance.UpdateUser();
         }
 
+        public void UpdateUserResources()
+        {
+            UserData.currency += UserData.currencyMultiplier;
+            UserData.pollution += UserData.pollutionMultiplier;
+            Debug.Log(UserData.currency + " : " + UserData.currencyMultiplier);
+        }
+        
         public Dictionary<string, object> GetUserDataDictionary()
         {
             Dictionary<string, object> data = new Dictionary<string, object>();

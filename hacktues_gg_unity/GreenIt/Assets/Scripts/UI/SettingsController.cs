@@ -28,7 +28,6 @@ namespace UI
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log(UserController.Instance.userId);
                 OnSettings();
             }
         }

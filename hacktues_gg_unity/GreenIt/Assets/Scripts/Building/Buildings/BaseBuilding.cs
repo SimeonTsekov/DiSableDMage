@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using User;
 
-namespace Building
+namespace Building.Buildings
 {
-    public class BaseBuilding : MonoBehaviour
+    public abstract class BaseBuilding : MonoBehaviour
     {
-        public int price;
+        protected float Price;
+        protected int WorkersRequired;
+        protected UserController User;
 
-        public void OnBuild()
+        protected void OnBuild()
         {
-            Debug.Log("Lmao");
-            UserController.Instance.buildings.Add(new BuildingData(new SerializableTransform(transform), name));
+            User.UserData.currency -= Price;
+            User.UserData.workers -= WorkersRequired;
+            UpdateMultipliers();
+            User.buildings.Add(new BuildingData(new SerializableTransform(transform), name));
         }
+
+        protected abstract void UpdateMultipliers();
     }
 }

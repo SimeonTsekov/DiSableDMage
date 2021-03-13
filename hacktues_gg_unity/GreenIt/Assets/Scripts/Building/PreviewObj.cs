@@ -81,7 +81,6 @@ public class PreviewObj : MonoBehaviour
         }
 
         Instantiate(prefab, transform.position, transform.rotation); //spawn in the prefab(Actual Building this preview represents)
-        prefab.GetComponentInChildren<BaseBuilding>().OnBuild();
         Destroy(gameObject);//destroy the preview
 
     }

@@ -6,5 +6,9 @@
         public int requiredEnergy;
         public float emissionModifier;
         public float moneyModifier;
+        protected override void UpdateMultipliers()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class GameStateController : MonoBehaviour
         _camT = Camera.main.transform;
         _camT.Rotate(Vector3.right * -45);
     }
-    
+
     public void SerializeBuildings(List<BuildingData> buildings)
     {
         string jsonBuildings = JsonUtility.ToJson(buildings);
