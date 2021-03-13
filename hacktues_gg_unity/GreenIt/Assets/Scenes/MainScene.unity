@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2566,6 +2566,7 @@ GameObject:
   - component: {fileID: 435290303}
   - component: {fileID: 435290302}
   - component: {fileID: 435290301}
+  - component: {fileID: 435290304}
   m_Layer: 5
   m_Name: Factory
   m_TagString: Untagged
@@ -2688,6 +2689,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435290299}
   m_CullTransparentMesh: 0
+--- !u!114 &435290304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435290299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef8526dd47d13b4e808d61946d32af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &443936807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3490,6 +3503,7 @@ GameObject:
   - component: {fileID: 687020708}
   - component: {fileID: 687020707}
   - component: {fileID: 687020706}
+  - component: {fileID: 687020709}
   m_Layer: 5
   m_Name: House
   m_TagString: Untagged
@@ -3566,7 +3580,7 @@ MonoBehaviour:
         m_MethodName: StartBuild
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8511894856246420768, guid: ac443cb5b19f6b54b8a7a37042adc9b0,
+          m_ObjectArgument: {fileID: 8511894856246420768, guid: 6415b21989e44db48ab0c4e2ae945bf0,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -3612,6 +3626,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687020704}
   m_CullTransparentMesh: 0
+--- !u!114 &687020709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687020704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef8526dd47d13b4e808d61946d32af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &694930279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4721,6 +4747,7 @@ GameObject:
   - component: {fileID: 920417776}
   - component: {fileID: 920417775}
   - component: {fileID: 920417774}
+  - component: {fileID: 920417777}
   m_Layer: 5
   m_Name: Tree
   m_TagString: Untagged
@@ -4843,6 +4870,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920417772}
   m_CullTransparentMesh: 0
+--- !u!114 &920417777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920417772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef8526dd47d13b4e808d61946d32af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &962028113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10824,6 +10863,7 @@ GameObject:
   - component: {fileID: 2060178866}
   - component: {fileID: 2060178865}
   - component: {fileID: 2060178864}
+  - component: {fileID: 2060178867}
   m_Layer: 5
   m_Name: WindTurbine
   m_TagString: Untagged
@@ -10946,6 +10986,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060178862}
   m_CullTransparentMesh: 0
+--- !u!114 &2060178867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060178862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ef8526dd47d13b4e808d61946d32af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2074374105
 PrefabInstance:
   m_ObjectHideFlags: 0
