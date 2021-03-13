@@ -20,68 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0e3d825-c182-4d8a-bc87-03e8ef43bfa9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/GoldLabelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/GoldLabelController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/NameLabelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/NameLabelController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PollutionSliderController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PollutionSliderController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PowerLabelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PowerLabelController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/WorkersLabelController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/WorkersLabelController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Authentication/LogInAuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Authentication/LogInAuthenticationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/House.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/House.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,30 +56,31 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/BuildSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utils/JSONHelper.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/User.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/LogInAuthenticationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/SignUpAuthenticationController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/NameLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/GoldLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PowerLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/WorkersLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PollutionSliderController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/House.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/LogInAuthenticationController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pYR4h3wcEBxbOEC7uVkIcEJWIu" />
@@ -185,7 +141,7 @@
       <workItem from="1615487887169" duration="1392000" />
       <workItem from="1615536120201" duration="21926000" />
       <workItem from="1615573411631" duration="5199000" />
-      <workItem from="1615614385043" duration="3677000" />
+      <workItem from="1615614385043" duration="10775000" />
     </task>
     <servers />
   </component>

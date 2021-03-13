@@ -19,7 +19,7 @@ namespace UI
 
 		public GameObject logInMenu;
 
-		private async void Start()
+		/*private async void Start()
 		{
 			if (PlayerPrefs.GetString("UserId") != null && !PlayerPrefs.GetString("UserId").Equals("LMAO"))
 			{
@@ -28,7 +28,7 @@ namespace UI
 				await UserController.Instance.ReadUser();
 				SceneManager.LoadScene("MainScene");
 			}
-		}
+		}*/
 
 		public async void OnSignIn()
 		{

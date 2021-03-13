@@ -82,7 +82,11 @@ public class PreviewObj : MonoBehaviour
 
         Instantiate(prefab, transform.position, transform.rotation); //spawn in the prefab(Actual Building this preview represents)
         Destroy(gameObject);//destroy the preview
+    }
 
+    public void BuildOnPosition(Vector3 position, Quaternion rotation)
+    {
+        Instantiate(prefab, position, rotation);
     }
 
     public bool CanBuild()//just returns the canBuild bool....this is so it cant accidently be changed by another script

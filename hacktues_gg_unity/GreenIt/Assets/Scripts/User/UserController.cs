@@ -53,7 +53,6 @@ namespace User
         {
             UserData.currency += UserData.currencyMultiplier;
             UserData.pollution += UserData.pollutionMultiplier;
-            Debug.Log(UserData.currency + " : " + UserData.currencyMultiplier);
         }
         
         public Dictionary<string, object> GetUserDataDictionary()

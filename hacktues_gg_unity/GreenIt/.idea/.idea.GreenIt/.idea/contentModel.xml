@@ -98,6 +98,7 @@
           </e>
           <e p="User" t="Include">
             <e p="BuildingData.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
             <e p="SerializableTransform.cs" t="Include" />
             <e p="UserController.cs" t="Include" />
             <e p="UserData.cs" t="Include" />

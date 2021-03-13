@@ -9,13 +9,11 @@ namespace User
     {
         public SerializableTransform buildingTransform;
         public string prefab;
-        //public BaseBuilding buildingInfo;
 
         public BuildingData(SerializableTransform buildingTransform, string prefab)
         {
             this.buildingTransform = buildingTransform;
             this.prefab = prefab;
-            //this.buildingInfo = buildingInfo;
         }
     }
 }

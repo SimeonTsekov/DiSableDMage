@@ -1,4 +1,5 @@
-﻿using Firebase.Auth;
+﻿using System.Threading.Tasks;
+using Firebase.Auth;
 using UnityEngine;
 
 namespace Authentication
@@ -18,23 +19,32 @@ namespace Authentication
 			InitializeFirebaseAuth();
 		}
 
-		public void Authenticate(string email, string password)
+		public async Task<string> Authenticate(string email, string password)
 		{
-			_auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task => {
-				if (task.IsCanceled) {
-					Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
-					return;
-				}
-				if (task.IsFaulted) {
-					Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
-					return;
-				}
+			Task.Run(() =>
+			{
+				_auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
+				{
+					if (task.IsCanceled)
+					{
+						Debug.LogError("SignInWithEmailAndPasswordAsync was canceled.");
+						return;
+					}
 
-				var newUser = task.Result;
-				Debug.LogFormat("User signed in successfully: {0} ({1})",
-					newUser.DisplayName, newUser.UserId);
-				PlayerPrefs.SetString("UserId", newUser.UserId);
+					if (task.IsFaulted)
+					{
+						Debug.LogError("SignInWithEmailAndPasswordAsync encountered an error: " + task.Exception);
+						return;
+					}
+
+					var newUser = task.Result;
+					Debug.LogFormat("User signed in successfully: {0} ({1})",
+						newUser.DisplayName, newUser.UserId);
+					PlayerPrefs.SetString("UserId", newUser.UserId);
+					return newUser.UserId;
+				});
 			});
+
 		}
 
 		private void InitializeFirebaseAuth()

@@ -19,6 +19,7 @@ namespace Building.Buildings
             _energyConsumption = Constants.houseEnergy;
             _currencyMultiplier = Constants.houseCurrencyMultiplier;
             _pollutionMultiplier = Constants.housePollutionMultiplier;
+            Name = "House";
             OnBuild();
         }
         

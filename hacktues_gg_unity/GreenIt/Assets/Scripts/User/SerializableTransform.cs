@@ -6,13 +6,23 @@ namespace User
     [Serializable]
     public class SerializableTransform
     {
-        public Vector3 position;
-        public Quaternion rotation;
+        public float positionX;
+        public float positionY;
+        public float positionZ;
+        public float rotationX;
+        public float rotationY;
+        public float rotationZ;
+        public float rotationW;
 
         public SerializableTransform(Transform transform)
         {
-            this.position = transform.position;
-            this.rotation = transform.rotation;
+            positionX = transform.position.x;
+            positionY = transform.position.y;
+            positionZ = transform.position.z;
+            rotationX = transform.rotation.x;
+            rotationY = transform.rotation.y;
+            rotationZ = transform.rotation.z;
+            rotationW = transform.rotation.w;
         }
     }
 }

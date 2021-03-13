@@ -59,7 +59,7 @@ namespace UI
             PlayerPrefs.SetString("UserId", UserController.Instance.userId);
             PlayerPrefs.Save();
             UserController.Instance.UpdateUser();
-            GameStateController.Instance.GenerateBuildingsJsonFile();
+            GameStateController.Instance.SaveBuildings();
             Application.Quit();
         }
     }
