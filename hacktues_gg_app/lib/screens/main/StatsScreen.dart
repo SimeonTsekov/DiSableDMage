@@ -73,7 +73,7 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
     }
   }
 
-  SplineSeries<City, DateTime> _getDefaultLineSeries(City city) {
+  List<SplineSeries<City, DateTime>> _getDefaultLineSeries(City city) {
     late List<City>? cities;
     ResponseState<List<City>?>? currentState =
         this._previousStatisticsBloc.value;
@@ -90,21 +90,23 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
       cities = [city];
     }
 
-    return SplineSeries<City, DateTime>(
-        dataSource: cities,
-        xValueMapper: (model, _) => DateTime.parse(model.updated_at),
-        yValueMapper: (model, _) {
-          switch (this.graphicType) {
-            case GraphicType.BuildingCount:
-              return model.building_count;
-            case GraphicType.Money:
-              return model.money;
-            case GraphicType.Pollution:
-              return model.pollution;
-            default:
-              return 0.0;
-          }
-        },
-        color: Colors.lightBlueAccent);
+    return <SplineSeries<City, DateTime>>[
+      SplineSeries<City, DateTime>(
+          dataSource: cities,
+          xValueMapper: (model, _) => DateTime.parse(model.updated_at),
+          yValueMapper: (model, _) {
+            switch (this.graphicType) {
+              case GraphicType.BuildingCount:
+                return model.building_count;
+              case GraphicType.Money:
+                return model.money;
+              case GraphicType.Pollution:
+                return model.pollution;
+              default:
+                return 0.0;
+            }
+          },
+          color: Colors.lightBlueAccent)
+    ];
   }
 }
