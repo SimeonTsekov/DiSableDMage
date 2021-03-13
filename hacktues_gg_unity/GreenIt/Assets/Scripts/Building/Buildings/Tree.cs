@@ -1,11 +1,25 @@
-﻿namespace Building.Buildings
+﻿using User;
+using Utils;
+
+namespace Building.Buildings
 {
     public class Tree : BaseBuilding
     {
-        public float emmisionModifier;
+        private float _pollutionMultiplier;
+
+        private void Awake()
+        {
+            User = UserController.Instance;
+            Price = Constants.treePrice;
+            WorkersRequired = Constants.treeWorkers;
+            _pollutionMultiplier = Constants.treePollutionMultiplier;
+            Name = "Tree";
+            OnBuild();
+        }
+        
         protected override void UpdateMultipliers()
         {
-            throw new System.NotImplementedException();
+            User.UserData.pollutionMultiplier -= _pollutionMultiplier;
         }
     }
 }

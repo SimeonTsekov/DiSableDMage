@@ -1,12 +1,25 @@
-﻿namespace Building.Buildings
+﻿using User;
+using Utils;
+
+namespace Building.Buildings
 {
     public class WindTurbine : BaseBuilding
     {
-        public int workersRequired;
-        public float generatedEnergy;
+        private int _energyGeneration;
+
+        private void Awake()
+        {
+            User = UserController.Instance;
+            Price = Constants.turbinePrice;
+            WorkersRequired = Constants.turbineWorkers;
+            _energyGeneration = Constants.turbineEnergy;
+            Name = "WindTurbine";
+            OnBuild();
+        }
+        
         protected override void UpdateMultipliers()
         {
-            throw new System.NotImplementedException();
+            User.UserData.power += _energyGeneration;
         }
     }
 }

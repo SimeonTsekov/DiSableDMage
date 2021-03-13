@@ -20,15 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0e3d825-c182-4d8a-bc87-03e8ef43bfa9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/colors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/colors.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/factory.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/factory.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/uploads_files_2302816_wind+terbine+low+poly (1).fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/uploads_files_2302816_wind+terbine+low+poly (1).fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirebaseStorageManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirebaseStorageManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Factory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Factory.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/FactoryModel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/FactoryModel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/TreeModel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/TreeModel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/WindTurbineModel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/WindTurbineModel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LogIn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LogIn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +67,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PowerLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/WorkersLabelController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PollutionSliderController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" />
@@ -74,10 +80,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/FirebaseStorageManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1pYR4h3wcEBxbOEC7uVkIcEJWIu" />
@@ -140,7 +149,7 @@
       <workItem from="1615573411631" duration="5199000" />
       <workItem from="1615614385043" duration="10775000" />
       <workItem from="1615630882524" duration="2454000" />
-      <workItem from="1615637111539" duration="6791000" />
+      <workItem from="1615637111539" duration="9113000" />
     </task>
     <servers />
   </component>

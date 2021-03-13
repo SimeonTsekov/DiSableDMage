@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodMat: {fileID: 2100000, guid: 9fd91d16699307d449b42117365e2b69, type: 2}
   badMat: {fileID: 2100000, guid: 439a570770679144189b4990afc1a915, type: 2}
-  prefab: {fileID: 1373228115944067928, guid: 642d010d51550294fa5c4a42380980c3, type: 3}
+  prefab: {fileID: 883703491827260318, guid: c0f531ace497b4b4f97d4018b6fd11c9, type: 3}
 --- !u!114 &-5184645832551965379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12de429763c4cdc8feae27fd270391f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
   requiredWorkers: 0
   requiredEnergy: 0
   emissionModifier: 0
