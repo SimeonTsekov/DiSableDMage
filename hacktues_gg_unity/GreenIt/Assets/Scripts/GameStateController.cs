@@ -50,7 +50,7 @@ public class GameStateController : MonoBehaviour
         var buildings = SaveSystem.LoadBuildingsInfo();
         UserController.Instance.buildings = buildings;
         
-        foreach (var building in buildings)
+        foreach (var building in UserController.Instance.buildings)
         {
             Debug.Log(building.prefab);
             var prefab = Resources.Load(building.prefab) as GameObject;

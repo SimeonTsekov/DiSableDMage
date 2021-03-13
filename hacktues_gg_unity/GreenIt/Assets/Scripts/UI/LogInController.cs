@@ -13,14 +13,19 @@ namespace UI
 	{
 		private string _email;
 		private string _password;
+		private bool loadFlag;
 
 		public TMP_InputField emailField;
 		public TMP_InputField passwordField;
 
 		public GameObject logInMenu;
 
-		/*private async void Start()
+		private async void Start()
 		{
+			loadFlag = false;
+			PlayerPrefs.SetString("UserId", "LMAO");
+			FirebaseAuth.DefaultInstance.SignOut();
+			
 			if (PlayerPrefs.GetString("UserId") != null && !PlayerPrefs.GetString("UserId").Equals("LMAO"))
 			{
 				logInMenu.SetActive(false);
@@ -28,7 +33,15 @@ namespace UI
 				await UserController.Instance.ReadUser();
 				SceneManager.LoadScene("MainScene");
 			}
-		}*/
+		}
+
+		private void Update()
+		{
+			if (loadFlag)
+			{
+				SceneManager.LoadScene("MainScene");
+			}
+		}
 
 		public async void OnSignIn()
 		{
@@ -36,9 +49,13 @@ namespace UI
 			_password = passwordField.text;
 			
 			logInMenu.SetActive(false);
-			await LogInAuthenticationController.Instance.Authenticate(_email, _password);
-			await UserController.Instance.ReadUser();
-			SceneManager.LoadScene("MainScene");
+			var id = await LogInAuthenticationController.Instance.Authenticate(_email, _password);
+			PlayerPrefs.SetString("UserId", id);
+			Debug.Log("PlayerPrefs : " + PlayerPrefs.GetString("UserId"));
+			await UserController.Instance.ReadUser().ContinueWith(userData =>
+			{
+				loadFlag = true;
+			});
 		}
 
 		public void OnLoadSignUp()
