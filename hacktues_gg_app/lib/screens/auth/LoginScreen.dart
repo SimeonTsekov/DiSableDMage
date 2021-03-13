@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Padding _buildInput(
+  Container _buildInput(
           {required String hintText,
           required IconData primaryIcon,
           bool endIcon = false,
@@ -70,7 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
           required TextInputType keyboardType,
           required FormFieldValidator<String> validate,
           required void Function(String) onChanged}) =>
-      Padding(
+      Container(
+        margin: const EdgeInsets.only(left: 15.0, right: 15.0),
         padding: const EdgeInsets.all(8.0),
         child: TextFormField(
           keyboardType: keyboardType,
@@ -78,6 +79,9 @@ class _LoginScreenState extends State<LoginScreen> {
           obscureText: obscureText,
           enableSuggestions: enableSuggestions,
           autocorrect: autocorrect,
+          style: TextStyle(
+            color: Colors.white,
+          ),
           decoration: InputDecoration(
             suffixIcon: endIcon
                 ? Icon(
@@ -104,22 +108,24 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
   Widget _buildLoginButton(IconData iconName, Function onPressed) => Padding(
-        padding: const EdgeInsets.only(top: 20.0),
-        child: SizedBox(
-          width: 180,
-          height: 45,
-          // ignore: deprecated_member_use
-          child: FlatButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              color: Colors.blueAccent,
-              onPressed: () => onPressed(),
-              child: Icon(
-                iconName,
-                color: Colors.white,
-              )),
+      padding: const EdgeInsets.only(top: 20.0),
+      child: SizedBox(
+        width: 180,
+        height: 45,
+        // ignore: deprecated_member_use
+        child: RaisedButton.icon(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          color: Colors.blueAccent,
+          onPressed: () => onPressed(),
+          icon: Icon(
+            iconName,
+            color: Colors.white,
+          ),
+          label:
+              HackTUESText('Login', fontWeight: FontWeight.bold, fontSize: 16),
         ),
-      );
+      ));
 
   @override
   Widget build(BuildContext context) {
@@ -205,6 +211,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ]),
                             )),
+                        HackTUESText(
+                          'Tracking your cities with 100% efficiency, even while being offline.',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          textAlign: TextAlign.center,
+                          maxLines: 3,
+                        ),
                         _buildInput(
                             hintText: "Email",
                             primaryIcon: Icons.person_outline,

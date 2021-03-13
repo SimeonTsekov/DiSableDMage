@@ -80,7 +80,7 @@ Future<void> configureBackgroundFetch() async {
   // when unity client goes back up, we call BackgroundFetch.finish(_taskId);
 }
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   configureDependencies();

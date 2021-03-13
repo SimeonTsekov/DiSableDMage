@@ -34,7 +34,7 @@ class Auth {
 extension UserStatus on Auth {
   Stream<AuthState> get onAuthStateChanged =>
       _auth.authStateChanges().map((user) =>
-          user == null ? AuthState.loggedOut() : AuthState.authenticated());
+          user != null ? AuthState.authenticated() : AuthState.loggedOut());
 
   String get currentUserId => _auth.currentUser!.uid;
 }
