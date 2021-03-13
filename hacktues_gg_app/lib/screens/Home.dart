@@ -169,6 +169,9 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                         isShowingStatistics: _isShowingStatistics,
                         hasScrolledToSliverMax: _hasScrolledToSliverMax,
                         onToggleButtonPressed: () => setState(() {
+                              if (_currentTab == 2) {
+                                _currentTab = 1;
+                              }
                               _isShowingStatistics = !_isShowingStatistics;
                             }),
                         title: HackTUESText(
@@ -191,6 +194,9 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                       isShowingStatistics: _isShowingStatistics,
                       hasScrolledToSliverMax: _hasScrolledToSliverMax,
                       onToggleButtonPressed: () => setState(() {
+                        if (_currentTab == 2) {
+                          _currentTab = 1;
+                        }
                         _isShowingStatistics = !_isShowingStatistics;
                       }),
                       title: HackTUESText(

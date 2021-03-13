@@ -20,7 +20,7 @@ _$_City _$_$_CityFromJson(Map<String, dynamic> json) {
     pollution_multiplier: json['pollution_multiplier'] as int,
     power: json['power'] as int,
     power_multiplier: json['power_multiplier'] as int,
-    updated_at: json['updated_at'] as String,
+    updated_at: (json['updated_at'].toDate() as DateTime).toString(),
   );
 }
 
