@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using User;
 using Utils;
@@ -22,19 +23,6 @@ public class GameStateController : MonoBehaviour
         LoadBuildings();
     }
 
-    /*public void SerializeBuildings(List<BuildingData> buildings)
-    {
-        string jsonBuildings = JsonUtility.ToJson(buildings);
-
-        StreamWriter writer = new StreamWriter(Constants.jsonSaveFilePath);//takes absolute path
-        writer.WriteLine(jsonBuildings);
-    }*/
-
-    /*public List<BuildingData> deSerializeBuilding()
-    {
-        return File.ReadAllText(Constants.jsonSaveFilePath);   
-    }*/
-
     public void SaveBuildings()
     {
         SaveSystem.SaveBuildingsInfo(UserController.Instance.buildings);
@@ -50,7 +38,7 @@ public class GameStateController : MonoBehaviour
         var buildings = SaveSystem.LoadBuildingsInfo();
         UserController.Instance.buildings = buildings;
         
-        foreach (var building in UserController.Instance.buildings)
+        foreach (var building in UserController.Instance.buildings.ToList())
         {
             Debug.Log(building.prefab);
             var prefab = Resources.Load(building.prefab) as GameObject;

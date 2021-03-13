@@ -23,15 +23,16 @@ namespace UI
 		private async void Start()
 		{
 			loadFlag = false;
-			PlayerPrefs.SetString("UserId", "LMAO");
-			FirebaseAuth.DefaultInstance.SignOut();
-			
-			if (PlayerPrefs.GetString("UserId") != null && !PlayerPrefs.GetString("UserId").Equals("LMAO"))
+
+			if (FirebaseAuth.DefaultInstance.CurrentUser != null)
 			{
 				logInMenu.SetActive(false);
 				UserController.Instance.userId = FirebaseAuth.DefaultInstance.CurrentUser.UserId;
-				await UserController.Instance.ReadUser();
-				SceneManager.LoadScene("MainScene");
+				await UserController.Instance.ReadUser().ContinueWith(userData =>
+				{
+					FirebaseStorageManager.Instance.ReadConfiguration();
+					loadFlag = true;
+				});
 			}
 		}
 
@@ -51,9 +52,10 @@ namespace UI
 			logInMenu.SetActive(false);
 			var id = await LogInAuthenticationController.Instance.Authenticate(_email, _password);
 			PlayerPrefs.SetString("UserId", id);
-			Debug.Log("PlayerPrefs : " + PlayerPrefs.GetString("UserId"));
+			UserController.Instance.userId = id;
 			await UserController.Instance.ReadUser().ContinueWith(userData =>
 			{
+				FirebaseStorageManager.Instance.ReadConfiguration();
 				loadFlag = true;
 			});
 		}

@@ -11,16 +11,8 @@ namespace User
     {
         public static void SaveBuildingsInfo(List<BuildingData> buildings)
         {
-            if (File.Exists(Constants.saveFilePath))
-            {
-                Debug.Log("exists");
-                Debug.Log(Constants.saveFilePath);
-                File.Delete(Constants.saveFilePath);
-                Debug.Log(File.Exists(Constants.saveFilePath));
-            }
-                
             BinaryFormatter formatter = new BinaryFormatter();
-            string path = Constants.saveFilePath;
+            string path = Constants.saveFilePath + UserController.Instance.userId + ".bin";
 
             FileStream stream = new FileStream(path, FileMode.Create);
 
@@ -30,10 +22,11 @@ namespace User
 
         public static List<BuildingData> LoadBuildingsInfo()
         {
-            if (File.Exists(Constants.saveFilePath))
+            Debug.Log(File.Exists(Constants.saveFilePath + UserController.Instance.userId + ".bin"));
+            if (File.Exists(Constants.saveFilePath + UserController.Instance.userId + ".bin"))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                FileStream stream = new FileStream(Constants.saveFilePath, FileMode.Open);
+                FileStream stream = new FileStream(Constants.saveFilePath + UserController.Instance.userId + ".bin", FileMode.Open);
 
                 List<BuildingData> buildings = formatter.Deserialize(stream) as List<BuildingData>;
                 stream.Close();

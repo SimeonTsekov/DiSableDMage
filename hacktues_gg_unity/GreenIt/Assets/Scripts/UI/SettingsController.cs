@@ -51,6 +51,7 @@ namespace UI
             UserController.Instance.UpdateUser();
             PlayerPrefs.SetString("UserId", "LMAO");
             FirebaseAuth.DefaultInstance.SignOut();
+            FirebaseStorageManager.Instance.WriteConfiguration();
             SceneManager.LoadScene("LogIn");
         }
         
@@ -60,6 +61,7 @@ namespace UI
             PlayerPrefs.Save();
             UserController.Instance.UpdateUser();
             GameStateController.Instance.SaveBuildings();
+            FirebaseStorageManager.Instance.WriteConfiguration();
             Application.Quit();
         }
     }

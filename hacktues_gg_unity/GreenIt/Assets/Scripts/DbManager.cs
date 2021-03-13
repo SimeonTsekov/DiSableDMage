@@ -32,7 +32,7 @@ public class DbManager : MonoBehaviour
 		UserData userData = null;
 
 		await _db.Collection("cities")
-			.Document(PlayerPrefs.GetString("UserId"))
+			.Document(UserController.Instance.userId)
 			.GetSnapshotAsync()
 			.ContinueWith(user =>
 			{

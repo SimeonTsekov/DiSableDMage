@@ -14,7 +14,7 @@ namespace Utils
 		public static readonly int baseWorkers = 5;
 		public static readonly int baseCurrencyMultiplier = 0;
 		public static readonly int basePollutionMultiplier = 0;
-		public static string saveFilePath = Path.Combine(Application.persistentDataPath, "/buildings.bin");
+		public static string saveFilePath = Application.persistentDataPath;
 		public static readonly int basePower = 0;
 		
 		//House constants
