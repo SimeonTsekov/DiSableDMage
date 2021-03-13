@@ -25,6 +25,8 @@ namespace UI
 
             if (_confirmedPassword.Equals(_password))
             {
+                GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                cube.transform.position = new Vector3(0, 10f, 0);
                 SignUpAuthenticationController.Instance.Authenticate(_email, _password);
                 UserController.Instance.InitializeUser();
                 SceneManager.LoadScene("MainScene");

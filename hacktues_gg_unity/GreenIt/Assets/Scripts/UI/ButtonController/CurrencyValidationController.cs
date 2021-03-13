@@ -4,54 +4,58 @@ using Building;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading;
 
 namespace UI
 {
     public class CurrencyValidationController : MonoBehaviour 
     {
-        private Button button;
-        private float price;
-        private int energy;
-        private int workers;
+        private Button _button;
+        private float _price;
+        private int _energy;
+        private int _workers;
 
         void Awake()
         {
-            button = gameObject.GetComponent<Button>();
+            _button = gameObject.GetComponent<Button>();
         }
         
         void Start()
         {
-            switch (button.name)
+            switch (_button.name)
             {
                 case "House":
-                    price = Constants.housePrice;
-                    energy = Constants.houseEnergy;
+                    _price = Constants.housePrice;
+                    _energy = Constants.houseEnergy;
                     break;
                 case "Factory":
-                    price = Constants.factoryPrice;
-                    energy = Constants.factoryEnergy;
-                    workers = Constants.factoryWorkers;
+                    _price = Constants.factoryPrice;
+                    _energy = Constants.factoryEnergy;
+                    _workers = Constants.factoryWorkers;
                     break;
                 case "WindTurbine":
-                    price = Constants.turbinePrice;
-                    workers = Constants.turbineWorkers;
-                    energy = 0;
+                    _price = Constants.turbinePrice;
+                    _workers = Constants.turbineWorkers;
+                    _energy = 0;
                     break;
                 case "Tree":
-                    price = Constants.treePrice;
-                    energy = 0;
+                    _price = Constants.treePrice;
+                    _energy = 0;
                     break;
-                       
             }
         }
         
         void Update()
         {
-            if(UserController.Instance.UserData.currency < price 
-            || UserController.Instance.UserData.workers < workers
-            || UserController.Instance.UserData.power < energy)
+            if(UserController.Instance.UserData.currency < _price 
+            || UserController.Instance.UserData.workers < _workers
+            || UserController.Instance.UserData.power < _energy)
             {
-                button.interactable = false;
+                _button.interactable = false;
+            }
+            else
+            {
+                _button.interactable = true;
             }
         }
     }

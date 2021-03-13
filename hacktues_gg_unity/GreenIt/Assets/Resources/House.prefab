@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goodMat: {fileID: 2100000, guid: 9fd91d16699307d449b42117365e2b69, type: 2}
   badMat: {fileID: 2100000, guid: 439a570770679144189b4990afc1a915, type: 2}
-  prefab: {fileID: 4704225690565895432, guid: d029428946d90c84ca207873fd2b2dd2, type: 3}
+  prefab: {fileID: 4704225690565895432, guid: 71cadee07ee76a54386f068d8d7958bf, type: 3}

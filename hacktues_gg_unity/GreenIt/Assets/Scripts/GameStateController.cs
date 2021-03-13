@@ -13,6 +13,7 @@ public class GameStateController : MonoBehaviour
 {
     public static GameStateController Instance { get; private set; }
     private Transform _camT;
+    public bool loading;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class GameStateController : MonoBehaviour
         
         _camT = Camera.main.transform;
         _camT.Rotate(Vector3.right * -45);
+        loading = true;
         LoadBuildings();
     }
 
@@ -55,6 +57,8 @@ public class GameStateController : MonoBehaviour
                     building.buildingTransform.rotationZ,
                     building.buildingTransform.rotationW));
         }
+
+        loading = false;
     }
     
     public void GenerateBuildingsJsonFile()

@@ -93,6 +93,9 @@
             <e p="GroundCube.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="ButtonController" t="Include">
+              <e p="CurrencyValidationController.cs" t="Include" />
+            </e>
             <e p="LogInController.cs" t="Include" />
             <e p="SettingsController.cs" t="Include" />
             <e p="SignUpController.cs" t="Include" />
@@ -194,6 +197,21 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Unity-Logs-Viewer" t="Include">
+          <e p="Reporter" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReporterEditor.cs" t="Include" />
+            </e>
+            <e p="MultiKeyDictionary.cs" t="Include" />
+            <e p="Reporter.cs" t="Include" />
+            <e p="ReporterGUI.cs" t="Include" />
+            <e p="ReporterMessageReceiver.cs" t="Include" />
+            <e p="Test" t="Include">
+              <e p="Rotate.cs" t="Include" />
+              <e p="TestReporter.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>
