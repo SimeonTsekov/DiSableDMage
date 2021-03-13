@@ -4,6 +4,7 @@ import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
 import 'package:hacktues_gg_app/di/serviceLocator.dart';
+import 'package:hacktues_gg_app/event/AverageCityEvent.dart';
 import 'package:hacktues_gg_app/event/CityEvent.dart';
 import 'package:hacktues_gg_app/model/City.dart';
 import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
@@ -143,8 +144,11 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   @override
   void initState() {
     super.initState();
+    // Use the currentContext mixin here to pass the current user id
     widget.cityBloc.sendEvent(CityEvent.fetchCityWithId('random_city'));
-    widget.previousStatisticsBloc.fetchInitialStatistics(this.currentCityId);
+    $<CityAverageBloc>().sendEvent(
+        AverageCityEvent.fetchAverageCityWithAllCities('random_city'));
+    // widget.previousStatisticsBloc.fetchInitialStatistics(this.currentCityId);
   }
 
   @override

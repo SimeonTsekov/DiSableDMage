@@ -40,43 +40,42 @@ class _AverageStatCardState extends State<AverageStatCard>
   @override
   Widget build(BuildContext context) {
     return FadeTransition(
-      opacity: _animation,
-      child: Card(
-          elevation: 5.0,
-          color: Colors.blueAccent,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CircleAvatar(
-                    radius: 80.0,
-                    backgroundColor: widget.topIconBackgroundColor,
-                    child: ClipOval(
-                        child: SizedBox(
-                            width: 90.0,
-                            height: 200.0,
-                            child: widget.topIcon))),
-                HackTUESText(widget.title,
-                    fontSize: 18,
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.bold,
-                    maxLines: 2),
-                HackTUESText(widget.cardDescription,
-                    fontSize: 16,
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.bold,
-                    maxLines: 3),
-                HackTUESText(widget.aggregatedAmount.toString(),
-                    fontSize: 20,
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.bold,
-                    maxLines: 3),
-              ])),
-    );
+        opacity: _animation,
+        child: Card(
+            elevation: 5.0,
+            color: Colors.blueAccent,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CircleAvatar(
+                      radius: 25.0,
+                      backgroundColor: widget.topIconBackgroundColor,
+                      child: ClipOval(
+                          child: SizedBox(
+                              width: 90.0,
+                              height: 200.0,
+                              child: widget.topIcon))),
+                  HackTUESText(widget.title,
+                      fontSize: 18,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.bold,
+                      maxLines: 2),
+                  HackTUESText(widget.cardDescription,
+                      fontSize: 16,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.bold,
+                      maxLines: 3),
+                  HackTUESText(widget.aggregatedAmount.toString(),
+                      fontSize: 20,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.bold,
+                      maxLines: 3),
+                ])));
+  }
 
-    @override
-    void dispose() {
-      _controller.dispose();
-      super.dispose();
-    }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }

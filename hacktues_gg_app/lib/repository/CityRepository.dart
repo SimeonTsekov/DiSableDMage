@@ -6,7 +6,7 @@ import '../model/City.dart';
 import '../services/FirestoreDatabase.dart';
 import '../services/Storage.dart';
 
-@singleton
+@lazySingleton
 class CityRepository {
   FirestoreDatabase db;
   Storage storage;
@@ -24,6 +24,4 @@ class CityRepository {
 
   Stream<ResponseState<CityAverage?>> streamAverageAllCities() =>
       db.averageAllCitiesSnapshot().map((event) => ResponseState(event));
-
-// methods that return stream and this gets injected to bloc go brrr
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:sembast/timestamp.dart';
 
 import 'GeographicArea.dart';
 
@@ -10,20 +11,19 @@ part 'City.g.dart';
 class City with _$City {
   @Implements(GeographicArea)
   const factory City(
-      {
-      required String id,
+      {required String id,
       required String name,
       required int population,
-      required int buildingCount,
-      required int factoryCount,
-      required int houseCount,
+      required int building_count,
+      required int factory_count,
+      required int house_count,
       required double money,
-      required int moneyMultiplier,
+      required int money_multiplier,
       required int pollution,
-      required int pollutionMultiplier,
+      required int pollution_multiplier,
       required int power,
-      required int powerMultiplier,
-      required String updatedAt}) = _City;
+      required int power_multiplier,
+      required String updated_at}) = _City;
 
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 }

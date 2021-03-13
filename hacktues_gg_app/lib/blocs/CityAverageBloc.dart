@@ -17,35 +17,38 @@ class CityAverageBloc extends Bloc<
 
   void _combineCurrentAndAllCities(String id) {
     try {
-      Rx.combineLatest2<
-              ResponseState<CityAverage?>,
-              ResponseState<CityAverage?>,
-              MapEntry<CityAverage?, CityAverage>?>(
-          _cityRepository.streamAverageCityWithId(id),
-          _cityRepository.streamAverageAllCities(), (average, all) {
-        late CityAverage? _cityAverage;
-        late CityAverage? _allAverage;
-        late bool _hasData = false;
-        late ResponseState<MapEntry<CityAverage, CityAverage>> _responseState;
+      Rx.combineLatestList([
+        _cityRepository.streamAverageCityWithId(id + '_agr'),
+        _cityRepository.streamAverageAllCities()
+      ]).listen((event) {
+        {
+          late CityAverage _cityAverage;
+          late CityAverage _cityAverageAll;
+          bool _hasData = false;
 
-        average.when((value) {
-          _cityAverage = value;
-          _hasData = true;
-        },
-            idle: () => _responseState = ResponseState.idle(),
-            loading: () => _responseState = ResponseState.loading(),
-            error: (exc) => _responseState = ResponseState.error(ex: exc));
-        all.when((value) {
-          _allAverage = value;
-          _hasData = true;
-        },
-            idle: () => _responseState = ResponseState.idle(),
-            loading: () => _responseState = ResponseState.loading(),
-            error: (exc) => _responseState = ResponseState.error(ex: exc));
-        if (_hasData) {
-          emitState(ResponseState(MapEntry(_cityAverage!, _allAverage!)));
-        } else {
-          emitState(_responseState);
+          late ResponseState<MapEntry<CityAverage, CityAverage>> _responseState;
+
+          event.first.when((value) {
+            _cityAverage = value!;
+            _hasData = true;
+          },
+              idle: () => _responseState = ResponseState.idle(),
+              loading: () => _responseState = ResponseState.loading(),
+              error: (exc) => _responseState = ResponseState.error(ex: exc));
+
+          event.last.when((value) {
+            _cityAverageAll = value!;
+            _hasData = true;
+          },
+              idle: () => _responseState = ResponseState.idle(),
+              loading: () => _responseState = ResponseState.loading(),
+              error: (exc) => _responseState = ResponseState.error(ex: exc));
+
+          if (_hasData) {
+            emitState(ResponseState(MapEntry(_cityAverage, _cityAverageAll)));
+          } else {
+            emitState(_responseState);
+          }
         }
       });
     } on Exception catch (e) {

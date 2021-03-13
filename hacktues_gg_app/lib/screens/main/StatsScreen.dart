@@ -92,11 +92,11 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
 
     return SplineSeries<City, DateTime>(
         dataSource: cities,
-        xValueMapper: (model, _) => DateTime.parse(model.updatedAt),
+        xValueMapper: (model, _) => DateTime.parse(model.updated_at),
         yValueMapper: (model, _) {
           switch (this.graphicType) {
             case GraphicType.BuildingCount:
-              return model.buildingCount;
+              return model.building_count;
             case GraphicType.Money:
               return model.money;
             case GraphicType.Pollution:

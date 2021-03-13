@@ -36,9 +36,9 @@ Future<void> _onBackgroundFetch(String taskId) async {
       SembastDB localDb = $<SembastDB>();
       final City currentCity = await localDb.fetchCurrentCity();
       final City updatedCity = currentCity.copyWith.call(
-        money: currentCity.moneyMultiplier * currentCity.money,
-        pollution: currentCity.pollutionMultiplier * currentCity.pollution,
-        power: currentCity.powerMultiplier * currentCity.power,
+        money: currentCity.money_multiplier * currentCity.money,
+        pollution: currentCity.pollution_multiplier * currentCity.pollution,
+        power: currentCity.power_multiplier * currentCity.power,
       );
 
       localDb.updateCity(updatedCity);
@@ -84,7 +84,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   configureDependencies();
-  runApp(RootPage($()));
+  $.allReady().then((_) => runApp(RootPage($())));
 }
 
 class MyHomePage extends StatefulWidget {
