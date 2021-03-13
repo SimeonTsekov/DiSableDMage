@@ -24,6 +24,4 @@ class CityRepository {
 
   Stream<ResponseState<CityAverage?>> streamAverageAllCities() =>
       db.averageAllCitiesSnapshot().map((event) => ResponseState(event));
-
-// methods that return stream and this gets injected to bloc go brrr
 }

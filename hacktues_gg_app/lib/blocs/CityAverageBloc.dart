@@ -15,29 +15,38 @@ class CityAverageBloc extends Bloc<
 
   CityAverageBloc() : super(ResponseState.idle());
 
-  // REFACTOR THIS to actually use combineLatest2
   void _combineCurrentAndAllCities(String id) {
     try {
-      Rx.merge([
-        _cityRepository.streamAverageCityWithId(id),
+      Rx.combineLatestList([
+        _cityRepository.streamAverageCityWithId(id + '_agr'),
         _cityRepository.streamAverageAllCities()
       ]).listen((event) {
         {
-          late CityAverage? _cityAverage;
-          late bool _hasData = false;
+          late CityAverage _cityAverage;
+          late CityAverage _cityAverageAll;
+          bool _hasData = false;
+
           late ResponseState<MapEntry<CityAverage, CityAverage>> _responseState;
 
-          event.when((value) {
-            _cityAverage = value;
+          event.first.when((value) {
+            _cityAverage = value!;
             _hasData = true;
           },
               idle: () => _responseState = ResponseState.idle(),
               loading: () => _responseState = ResponseState.loading(),
               error: (exc) => _responseState = ResponseState.error(ex: exc));
+
+          event.last.when((value) {
+            _cityAverageAll = value!;
+            _hasData = true;
+          },
+              idle: () => _responseState = ResponseState.idle(),
+              loading: () => _responseState = ResponseState.loading(),
+              error: (exc) => _responseState = ResponseState.error(ex: exc));
+
           if (_hasData) {
-            emitState(ResponseState(MapEntry(_cityAverage!, _cityAverage!)));
+            emitState(ResponseState(MapEntry(_cityAverage, _cityAverageAll)));
           } else {
-            print(_responseState.toString());
             emitState(_responseState);
           }
         }

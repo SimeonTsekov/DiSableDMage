@@ -21,10 +21,10 @@ class FirestoreDatabase {
 
   DocumentReference getAverageCity(String cityId) => _averageCities.doc(cityId);
 
-  const FirestoreDatabase({required this.localDb});
-
   DocumentReference getAverageAllCities() =>
       _averageCities.doc('all_cities_agr');
+
+  const FirestoreDatabase({required this.localDb});
 
   Stream<City?> citySnapshots(String cityId) =>
       getCity(cityId).snapshots().map((city) {
@@ -46,11 +46,16 @@ class FirestoreDatabase {
               ? CityAverage.fromJson(averageCity.data()!)
               : null);
 
-  Stream<CityAverage?> averageAllCitiesSnapshot() => getAverageAllCities()
-      .snapshots()
-      .map((averageCity) => averageCity.data() != null
-          ? CityAverage.fromJson(averageCity.data()!)
-          : null);
+  Stream<CityAverage?> averageAllCitiesSnapshot() =>
+      getAverageAllCities().snapshots().map((averageCity) {
+        if (averageCity.data() != null) {
+          print('not null');
+          return CityAverage.fromJson(averageCity.data()!);
+        } else {
+          print('null');
+          return null;
+        }
+      });
 
   Future<void> updateCity(City city) async =>
       await getCity(city.id).update(city.toJson());
