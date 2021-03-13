@@ -15,11 +15,11 @@ _$_City _$_$_CityFromJson(Map<String, dynamic> json) {
     factory_count: json['factory_count'] as int,
     house_count: json['house_count'] as int,
     money: (json['money'] as num).toDouble(),
-    money_multiplier: json['money_multiplier'] as int,
-    pollution: json['pollution'] as int,
-    pollution_multiplier: json['pollution_multiplier'] as int,
-    power: json['power'] as int,
-    power_multiplier: json['power_multiplier'] as int,
+    money_multiplier: (json['money_multiplier'] as num).toDouble(),
+    pollution: (json['pollution'] as num).toDouble(),
+    pollution_multiplier: (json['pollution_multiplier'] as num).toDouble(),
+    power: (json['power'] as num).toDouble(),
+    power_multiplier: (json['power_multiplier'] as num).toDouble(),
     updated_at: (json['updated_at'].toDate() as DateTime).toString(),
   );
 }

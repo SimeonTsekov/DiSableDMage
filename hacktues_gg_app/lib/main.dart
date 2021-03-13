@@ -36,9 +36,9 @@ Future<void> _onBackgroundFetch(String taskId) async {
       SembastDB localDb = $<SembastDB>();
       final City currentCity = await localDb.fetchCurrentCity();
       final City updatedCity = currentCity.copyWith.call(
-        money: currentCity.money_multiplier * currentCity.money,
-        pollution: currentCity.pollution_multiplier * currentCity.pollution,
-        power: currentCity.power_multiplier * currentCity.power,
+        money: currentCity.money + (currentCity.money_multiplier * currentCity.money),
+        pollution: currentCity.pollution + (currentCity.pollution_multiplier * currentCity.pollution),
+        power: currentCity.power + (currentCity.power_multiplier * currentCity.power),
       );
 
       localDb.updateCity(updatedCity);

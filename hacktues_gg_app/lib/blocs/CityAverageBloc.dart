@@ -22,23 +22,30 @@ class CityAverageBloc extends Bloc<
         _cityRepository.streamAverageAllCities()
       ]).listen((event) {
         {
-          late CityAverage _cityAverage;
-          late CityAverage _cityAverageAll;
+          late CityAverage? _cityAverage;
+          late CityAverage? _cityAverageAll;
           bool _hasData = false;
 
-          late ResponseState<MapEntry<CityAverage, CityAverage>> _responseState;
+          ResponseState<MapEntry<CityAverage?, CityAverage?>>? _responseState;
 
           event.first.when((value) {
-            _cityAverage = value!;
-            _hasData = true;
+            _cityAverage = value;
+            _hasData = value != null;
           },
               idle: () => _responseState = ResponseState.idle(),
               loading: () => _responseState = ResponseState.loading(),
               error: (exc) => _responseState = ResponseState.error(ex: exc));
 
+          if (!_hasData) {
+            emitState(_responseState ??
+                ResponseState.error(
+                    ex: Exception('No average stats to load!')));
+            return;
+          }
+
           event.last.when((value) {
-            _cityAverageAll = value!;
-            _hasData = true;
+            _cityAverageAll = value;
+            _hasData = value != null;
           },
               idle: () => _responseState = ResponseState.idle(),
               loading: () => _responseState = ResponseState.loading(),
@@ -47,7 +54,9 @@ class CityAverageBloc extends Bloc<
           if (_hasData) {
             emitState(ResponseState(MapEntry(_cityAverage, _cityAverageAll)));
           } else {
-            emitState(_responseState);
+            emitState(_responseState ??
+                ResponseState.error(
+                    ex: Exception('No average stats to load!')));
           }
         }
       });

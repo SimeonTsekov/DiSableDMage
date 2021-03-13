@@ -14,14 +14,21 @@ class Error extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
               // Image.asset(),
-              Text(
-                error,
-                style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.redAccent,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5,
-                    fontFamily: 'Europe_Ext'),
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    error,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.redAccent,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.5,
+                        fontFamily: 'Europe_Ext'),
+                  ),
+                ),
               )
             ])));
   }

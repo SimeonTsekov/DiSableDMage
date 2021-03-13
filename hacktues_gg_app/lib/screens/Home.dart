@@ -152,9 +152,9 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   void initState() {
     super.initState();
     // Use the currentContext mixin here to pass the current user id
-    widget.cityBloc.sendEvent(CityEvent.fetchCityWithId('random_city'));
+    widget.cityBloc.sendEvent(CityEvent.fetchCityWithId(currentCityId));
     $<CityAverageBloc>().sendEvent(
-        AverageCityEvent.fetchAverageCityWithAllCities('random_city'));
+        AverageCityEvent.fetchAverageCityWithAllCities(currentCityId));
     // widget.previousStatisticsBloc.fetchInitialStatistics(this.currentCityId);
   }
 

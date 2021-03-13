@@ -28,11 +28,11 @@ class _$CityTearOff {
       required int factory_count,
       required int house_count,
       required double money,
-      required int money_multiplier,
-      required int pollution,
-      required int pollution_multiplier,
-      required int power,
-      required int power_multiplier,
+      required double money_multiplier,
+      required double pollution,
+      required double pollution_multiplier,
+      required double power,
+      required double power_multiplier,
       required String updated_at}) {
     return _City(
       id: id,
@@ -68,11 +68,11 @@ mixin _$City {
   int get factory_count => throw _privateConstructorUsedError;
   int get house_count => throw _privateConstructorUsedError;
   double get money => throw _privateConstructorUsedError;
-  int get money_multiplier => throw _privateConstructorUsedError;
-  int get pollution => throw _privateConstructorUsedError;
-  int get pollution_multiplier => throw _privateConstructorUsedError;
-  int get power => throw _privateConstructorUsedError;
-  int get power_multiplier => throw _privateConstructorUsedError;
+  double get money_multiplier => throw _privateConstructorUsedError;
+  double get pollution => throw _privateConstructorUsedError;
+  double get pollution_multiplier => throw _privateConstructorUsedError;
+  double get power => throw _privateConstructorUsedError;
+  double get power_multiplier => throw _privateConstructorUsedError;
   String get updated_at => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -92,11 +92,11 @@ abstract class $CityCopyWith<$Res> {
       int factory_count,
       int house_count,
       double money,
-      int money_multiplier,
-      int pollution,
-      int pollution_multiplier,
-      int power,
-      int power_multiplier,
+      double money_multiplier,
+      double pollution,
+      double pollution_multiplier,
+      double power,
+      double power_multiplier,
       String updated_at});
 }
 
@@ -156,23 +156,23 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
       money_multiplier: money_multiplier == freezed
           ? _value.money_multiplier
           : money_multiplier // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pollution: pollution == freezed
           ? _value.pollution
           : pollution // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pollution_multiplier: pollution_multiplier == freezed
           ? _value.pollution_multiplier
           : pollution_multiplier // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       power: power == freezed
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       power_multiplier: power_multiplier == freezed
           ? _value.power_multiplier
           : power_multiplier // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       updated_at: updated_at == freezed
           ? _value.updated_at
           : updated_at // ignore: cast_nullable_to_non_nullable
@@ -194,11 +194,11 @@ abstract class _$CityCopyWith<$Res> implements $CityCopyWith<$Res> {
       int factory_count,
       int house_count,
       double money,
-      int money_multiplier,
-      int pollution,
-      int pollution_multiplier,
-      int power,
-      int power_multiplier,
+      double money_multiplier,
+      double pollution,
+      double pollution_multiplier,
+      double power,
+      double power_multiplier,
       String updated_at});
 }
 
@@ -259,23 +259,23 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
       money_multiplier: money_multiplier == freezed
           ? _value.money_multiplier
           : money_multiplier // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pollution: pollution == freezed
           ? _value.pollution
           : pollution // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       pollution_multiplier: pollution_multiplier == freezed
           ? _value.pollution_multiplier
           : pollution_multiplier // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       power: power == freezed
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       power_multiplier: power_multiplier == freezed
           ? _value.power_multiplier
           : power_multiplier // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       updated_at: updated_at == freezed
           ? _value.updated_at
           : updated_at // ignore: cast_nullable_to_non_nullable
@@ -322,15 +322,15 @@ class _$_City implements _City {
   @override
   final double money;
   @override
-  final int money_multiplier;
+  final double money_multiplier;
   @override
-  final int pollution;
+  final double pollution;
   @override
-  final int pollution_multiplier;
+  final double pollution_multiplier;
   @override
-  final int power;
+  final double power;
   @override
-  final int power_multiplier;
+  final double power_multiplier;
   @override
   final String updated_at;
 
@@ -417,11 +417,11 @@ abstract class _City implements City, GeographicArea {
       required int factory_count,
       required int house_count,
       required double money,
-      required int money_multiplier,
-      required int pollution,
-      required int pollution_multiplier,
-      required int power,
-      required int power_multiplier,
+      required double money_multiplier,
+      required double pollution,
+      required double pollution_multiplier,
+      required double power,
+      required double power_multiplier,
       required String updated_at}) = _$_City;
 
   factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
@@ -441,15 +441,15 @@ abstract class _City implements City, GeographicArea {
   @override
   double get money => throw _privateConstructorUsedError;
   @override
-  int get money_multiplier => throw _privateConstructorUsedError;
+  double get money_multiplier => throw _privateConstructorUsedError;
   @override
-  int get pollution => throw _privateConstructorUsedError;
+  double get pollution => throw _privateConstructorUsedError;
   @override
-  int get pollution_multiplier => throw _privateConstructorUsedError;
+  double get pollution_multiplier => throw _privateConstructorUsedError;
   @override
-  int get power => throw _privateConstructorUsedError;
+  double get power => throw _privateConstructorUsedError;
   @override
-  int get power_multiplier => throw _privateConstructorUsedError;
+  double get power_multiplier => throw _privateConstructorUsedError;
   @override
   String get updated_at => throw _privateConstructorUsedError;
   @override
