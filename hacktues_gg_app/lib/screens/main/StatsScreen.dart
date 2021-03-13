@@ -1,3 +1,4 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
@@ -27,7 +28,13 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
   Widget buildOnCityFetched(context, City? city) {
     if (city != null) {
       _previousStatisticsBloc.sendEvent(city);
-      return Expanded(child: _getDefaultLineChart(city));
+      return Container(
+          padding: EdgeInsets.all(5.0),
+          margin: EdgeInsets.only(top: 90.0, left: 10, right: 10, bottom: 5),
+          decoration: BoxDecoration(boxShadow: [
+            BoxShadow(blurRadius: 60, color: Colors.black.withOpacity(.3))
+          ]),
+          child: _getDefaultLineChart(city));
     } else {
       return Endgame();
     }
@@ -35,45 +42,55 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
 
   Widget _getDefaultLineChart(City city) {
     try {
-      return SfCartesianChart(
-        backgroundColor: Colors.black,
-        plotAreaBorderWidth: 0,
-        primaryXAxis: DateTimeAxis(
-            intervalType: DateTimeIntervalType.minutes,
-            labelStyle: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
-            majorGridLines: MajorGridLines(width: 0)),
-        primaryYAxis: NumericAxis(
-            rangePadding: ChartRangePadding.none,
-            minimum: min,
-            maximum: max,
-            interval: interval,
-            labelStyle: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
-            axisLine: AxisLine(width: 0),
-            majorTickLines: MajorTickLines(size: 0)),
-        series: _getDefaultLineSeries(city),
-        trackballBehavior: TrackballBehavior(
-            enable: true,
-            lineColor: Color.fromRGBO(255, 255, 255, 0.03),
-            lineWidth: 15,
-            activationMode: ActivationMode.singleTap,
-            markerSettings: TrackballMarkerSettings(
-                borderWidth: 4,
-                height: 10,
-                width: 10,
-                markerVisibility: TrackballVisibilityMode.visible)),
-        zoomPanBehavior: ZoomPanBehavior(
-            enablePinching: true,
-            enableSelectionZooming: true,
-            enablePanning: true),
+      return IgnorePointer(
+        // FIXME: Dumb fix for dumb not scrolling bug
+        child: SfCartesianChart(
+          title: ChartTitle(
+              text: EnumToString.convertToString(graphicType, camelCase: true),
+              textStyle: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.blue[800],
+          plotAreaBorderWidth: 0,
+          primaryXAxis: DateTimeAxis(
+              intervalType: DateTimeIntervalType.minutes,
+              labelStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.white),
+              rangePadding: ChartRangePadding.normal,
+              majorGridLines: MajorGridLines(width: 0)),
+          primaryYAxis: NumericAxis(
+              rangePadding: ChartRangePadding.normal,
+              minimum: min,
+              maximum: max,
+              interval: interval,
+              labelStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.white),
+              axisLine: AxisLine(width: 0),
+              majorTickLines: MajorTickLines(size: 0)),
+          series: _getDefaultLineSeries(city),
+          trackballBehavior: TrackballBehavior(
+              enable: true,
+              lineColor: Color.fromRGBO(255, 255, 255, 0.03),
+              lineWidth: 15,
+              activationMode: ActivationMode.singleTap,
+              markerSettings: TrackballMarkerSettings(
+                  borderWidth: 4,
+                  height: 10,
+                  width: 10,
+                  markerVisibility: TrackballVisibilityMode.visible)),
+        ),
       );
     } on Exception catch (e) {
       return Error(error: 'Error while loading previous stats!');
     }
   }
 
-  SplineSeries<City, DateTime> _getDefaultLineSeries(City city) {
+  List<SplineSeries<City, DateTime>> _getDefaultLineSeries(City city) {
     late List<City>? cities;
     ResponseState<List<City>?>? currentState =
         this._previousStatisticsBloc.value;
@@ -90,21 +107,23 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
       cities = [city];
     }
 
-    return SplineSeries<City, DateTime>(
-        dataSource: cities,
-        xValueMapper: (model, _) => DateTime.parse(model.updated_at),
-        yValueMapper: (model, _) {
-          switch (this.graphicType) {
-            case GraphicType.BuildingCount:
-              return model.building_count;
-            case GraphicType.Money:
-              return model.money;
-            case GraphicType.Pollution:
-              return model.pollution;
-            default:
-              return 0.0;
-          }
-        },
-        color: Colors.lightBlueAccent);
+    return <SplineSeries<City, DateTime>>[
+      SplineSeries<City, DateTime>(
+          dataSource: cities,
+          xValueMapper: (model, _) => DateTime.parse(model.updated_at),
+          yValueMapper: (model, _) {
+            switch (this.graphicType) {
+              case GraphicType.BuildingCount:
+                return model.building_count;
+              case GraphicType.Money:
+                return model.money;
+              case GraphicType.Pollution:
+                return model.pollution;
+              default:
+                return 0.0;
+            }
+          },
+          color: Colors.lightBlueAccent)
+    ];
   }
 }

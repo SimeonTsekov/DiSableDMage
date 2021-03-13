@@ -1,5 +1,6 @@
 // part of AverageStatsScreen 2-panel pageview for stats
 
+import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/model/CityAverage.dart';
 import 'package:hacktues_gg_app/screens/base/AverageCityScreen.dart';
@@ -44,4 +45,11 @@ class ComparisonScreen extends AverageCityScreen<CityAverageBarChart,
           globalAggregatedAmount: aggregatedAndAll.value!.power_avg,
         ),
   };
+
+  @override
+  Widget buildOnCityFetched(
+          BuildContext context, MapEntry<CityAverage?, CityAverage?>? city) =>
+      Container(
+          margin: EdgeInsets.only(top: 65.0, left: 10, right: 10, bottom: 5),
+          child: super.buildOnCityFetched(context, city));
 }

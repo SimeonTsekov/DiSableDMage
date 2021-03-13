@@ -35,7 +35,7 @@ class BiDirectionalUpdateSwitch extends StatelessWidget {
               BackgroundFetch.finish(calculationsTaskId);
             }
 
-            return Switch.adaptive(
+            return Switch(
                 value: snapshot.data!.state
                     .map(on: (_) => true, off: (_) => false),
                 onChanged: snapshot.data!.shouldRun

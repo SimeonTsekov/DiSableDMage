@@ -12,38 +12,34 @@ class NavigationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            _createHeader(),
-            Divider(),
-            _createDrawerItem(
-              icon: Icons.bluetooth,
-              text: 'Connection Settings',
-              // onTap: go to the settins with the switch and stuff  () => $<PageManager>().openPage<Settings>(key: 'Settings', builder: () => {})
-            ),
-            Divider(),
-            SizedBox(
-              width: 20,
-              height: 20,
-              child: BiDirectionalUpdateSwitch(
-                prefsBgBloc: $(),
-              )
-            ),
-            ListTile(
-                title: const HackTUESText(
-                  'Logout',
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
-                ),
-                onTap: () {
-                  authBloc.sendEvent(AuthEvent.logout());
-                }),
-            ListTile(
-              title: Text('Version 0.0.1. All rights reserved. '),
-            ),
-          ],
+        child: Container(
+          color: Colors.blueAccent,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              _createHeader(),
+              Divider(),
+              SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: BiDirectionalUpdateSwitch(
+                    prefsBgBloc: $(),
+                  )),
+              ListTile(
+                  title: const HackTUESText(
+                    'Logout',
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.5,
+                  ),
+                  onTap: () {
+                    authBloc.sendEvent(AuthEvent.logout());
+                  }),
+              ListTile(
+                title: HackTUESText('Version 0.0.1. All rights reserved. '),
+              ),
+            ],
+          ),
         ),
       );
 
@@ -59,7 +55,7 @@ class NavigationDrawer extends StatelessWidget {
         Positioned(
           bottom: 12.0,
           left: 16.0,
-          child: const HackTUESText("Bluetooth low energy app",
+          child: const HackTUESText("Settings",
               fontSize: 20.0, fontWeight: FontWeight.w500),
         )
       ]));

@@ -12,6 +12,7 @@ class Storage {
 
   Future<List<City>?> downloadStats(String cityId) async {
     final refs = _root.child('/cities/$cityId/stats.json');
+
     final url = await refs.getDownloadURL();
 
     final data = (await Dio().get<List<dynamic>>(url)).data;

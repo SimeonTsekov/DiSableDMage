@@ -16,9 +16,9 @@ abstract class AverageCityScreen<W extends Widget, M,
 
   // def'd LiveAnimation options for GridView
   final options = const LiveOptions(
-    showItemInterval: Duration(seconds: 1, milliseconds: 500),
+    showItemInterval: Duration(seconds: 4),
     delay: Duration(seconds: 1),
-    showItemDuration: Duration(seconds: 1),
+    showItemDuration: Duration(seconds: 2),
     visibleFraction: 0.05,
     reAnimateOnVisibility: false,
   );

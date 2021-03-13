@@ -1,20 +1,25 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hacktues_gg_app/services/CloudMessaging.dart';
+import 'package:hacktues_gg_app/services/FirestoreDatabase.dart';
 import 'package:hacktues_gg_app/state/AuthState.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
 class Auth {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirestoreDatabase _db;
+  final CloudMessaging _cloudMessaging;
+
+  Auth(this._db, this._cloudMessaging);
 
   Future<AuthState> signIn(
       {required String email, required String password}) async {
-    User user;
     try {
-      final UserCredential credential = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
-      user = credential.user!;
-      final id = user.uid;
-      // Do stuff with the ID
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      final token = await _cloudMessaging.getToken();
+      if (token != null) {
+        _db.updateUserDeviceTokens(deviceToken: token);
+      }
       return AuthState.authenticated();
     } on FirebaseAuthException catch (e) {
       return AuthState.failedToAuthenticate(

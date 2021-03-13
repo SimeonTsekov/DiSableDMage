@@ -32,7 +32,6 @@ class _CityAverageBarChartState extends State<CityAverageBarChart>
     curve: Curves.easeIn,
   );
 
-
   @override
   void initState() {
     super.initState();
@@ -40,19 +39,30 @@ class _CityAverageBarChartState extends State<CityAverageBarChart>
   }
 
   @override
-  Widget build(BuildContext context) =>
-      FadeTransition(opacity: Tween<double>(begin: 0, end: 1).animate(_animation), child: _getCityAverageBarChart());
+  Widget build(BuildContext context) => FadeTransition(
+      opacity: Tween<double>(begin: 0, end: 1).animate(_animation),
+      child: _getCityAverageBarChart());
 
   SfCartesianChart _getCityAverageBarChart() {
     return SfCartesianChart(
       plotAreaBorderWidth: 0,
-      title: ChartTitle(text: widget.chartTitle),
-      legend: Legend(isVisible: true),
+      title: ChartTitle(
+          text: widget.chartTitle,
+          textStyle: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white)),
+      legend: Legend(
+          isVisible: true,
+          textStyle: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 12, color: Colors.white)),
       primaryXAxis: CategoryAxis(
-        majorGridLines: MajorGridLines(width: 0),
+        majorGridLines: MajorGridLines(width: 0, color: Colors.white),
+          labelStyle: const TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 12, color: Colors.white)
       ),
       primaryYAxis: NumericAxis(
-          majorGridLines: MajorGridLines(width: 0),
+          labelStyle: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 12, color: Colors.white),
+          majorGridLines: MajorGridLines(width: 0, color: Colors.white),
           numberFormat: NumberFormat.compact()),
       series: _getCityAverageBarChartSeries(),
       tooltipBehavior: TooltipBehavior(enable: true),

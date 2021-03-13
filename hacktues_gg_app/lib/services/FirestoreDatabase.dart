@@ -2,10 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hacktues_gg_app/model/City.dart';
 import 'package:hacktues_gg_app/model/CityAverage.dart';
 import 'package:hacktues_gg_app/persistence/SembastDB.dart';
+import 'package:hacktues_gg_app/utils/CurrentContext.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(dependsOn: [SembastDB])
-class FirestoreDatabase {
+class FirestoreDatabase with CurrentContext {
   final SembastDB localDb;
 
   FirebaseFirestore get _db => FirebaseFirestore.instance;
@@ -29,12 +30,10 @@ class FirestoreDatabase {
   Stream<City?> citySnapshots(String cityId) =>
       getCity(cityId).snapshots().map((city) {
         if (city.data() != null) {
-          print('BRUH');
           City parsedCity = City.fromJson(city.data()!);
           localDb.updateCity(parsedCity);
           return parsedCity;
         } else {
-          print('WHAT');
           localDb.deleteCity();
           return null;
         }
@@ -59,4 +58,9 @@ class FirestoreDatabase {
 
   Future<void> updateCity(City city) async =>
       await getCity(city.id).update(city.toJson());
+
+  Future<void> updateUserDeviceTokens({required String deviceToken}) =>
+      getCity(this.currentCityId).update({
+        'tokens': FieldValue.arrayUnion([deviceToken]),
+      });
 }

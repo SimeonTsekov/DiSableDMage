@@ -2,6 +2,7 @@ import 'package:background_fetch/background_fetch.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:hacktues_gg_app/main.dart';
 import 'package:hacktues_gg_app/utils/PrefsKeys.dart';
+import 'package:injectable/injectable.dart';
 import 'package:rx_shared_preferences/rx_shared_preferences.dart';
 
 Future<void> _backgroundMessageHandler(Map<String, dynamic>? message) async {
@@ -20,6 +21,7 @@ Future<void> _backgroundMessageHandler(Map<String, dynamic>? message) async {
   }
 }
 
+@lazySingleton
 class CloudMessaging {
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
 
