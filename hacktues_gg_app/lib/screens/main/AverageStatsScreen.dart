@@ -17,7 +17,7 @@ class AverageStatsScreen extends AverageCityScreen<AverageStatCard,
         AverageStatCard(
           title: 'Building Count',
           aggregatedAmount: double.parse(
-              cityWithAll.key!.buildingCountAverage.toStringAsFixed(2)),
+              cityWithAll.key!.building_count_avg.toStringAsFixed(2)),
           opacityFadeInDuration: 100,
           topIcon: Icon(Icons.ac_unit_rounded),
           topIconBackgroundColor: Colors.orange,
@@ -25,7 +25,7 @@ class AverageStatsScreen extends AverageCityScreen<AverageStatCard,
         AverageStatCard(
           title: 'Factory Count',
           aggregatedAmount: double.parse(
-              cityWithAll.key!.factoryCountAverage.toStringAsFixed(2)),
+              cityWithAll.key!.factory_count_avg.toStringAsFixed(2)),
           opacityFadeInDuration: 100,
           topIcon: Icon(Icons.ac_unit_rounded),
           topIconBackgroundColor: Colors.brown,
@@ -33,7 +33,7 @@ class AverageStatsScreen extends AverageCityScreen<AverageStatCard,
         AverageStatCard(
           title: 'House Count',
           aggregatedAmount: double.parse(
-              cityWithAll.key!.houseCountAverage.toStringAsFixed(2)),
+              cityWithAll.key!.house_count_avg.toStringAsFixed(2)),
           topIcon: Icon(Icons.ac_unit_rounded),
           opacityFadeInDuration: 200,
           topIconBackgroundColor: Colors.amber,
@@ -41,28 +41,28 @@ class AverageStatsScreen extends AverageCityScreen<AverageStatCard,
         AverageStatCard(
             title: 'Money',
             aggregatedAmount:
-                double.parse(cityWithAll.key!.moneyAverage.toStringAsFixed(2)),
+                double.parse(cityWithAll.key!.money_avg.toStringAsFixed(2)),
             topIcon: Icon(Icons.ac_unit_rounded),
             opacityFadeInDuration: 200,
             topIconBackgroundColor: Colors.lightGreen),
         AverageStatCard(
             title: 'Pollution',
             aggregatedAmount: double.parse(
-                cityWithAll.key!.pollutionAverage.toStringAsFixed(2)),
+                cityWithAll.key!.pollution_avg.toStringAsFixed(2)),
             topIcon: Icon(Icons.ac_unit_rounded),
             opacityFadeInDuration: 300,
             topIconBackgroundColor: Colors.grey),
         AverageStatCard(
             title: 'Population',
             aggregatedAmount: double.parse(
-                cityWithAll.key!.populationAverage.toStringAsFixed(2)),
+                cityWithAll.key!.population_avg.toStringAsFixed(2)),
             topIcon: Icon(Icons.ac_unit_rounded),
             opacityFadeInDuration: 300,
             topIconBackgroundColor: Colors.pinkAccent),
         AverageStatCard(
             title: 'Power',
             aggregatedAmount:
-                double.parse(cityWithAll.key!.powerAverage.toStringAsFixed(2)),
+                double.parse(cityWithAll.key!.power_avg.toStringAsFixed(2)),
             topIcon: Icon(Icons.ac_unit_rounded),
             opacityFadeInDuration: 400,
             topIconBackgroundColor: Colors.yellow),

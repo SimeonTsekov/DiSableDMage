@@ -9,9 +9,9 @@ import 'base/Bloc.dart';
 
 @lazySingleton
 class CityBloc extends Bloc<ResponseState<City?>, CityEvent> {
-  final CityRepository _cityRepository = $<CityRepository>();
+  final CityRepository _cityRepository;
 
-  CityBloc() : super(ResponseState.idle());
+  CityBloc(this._cityRepository) : super(ResponseState.idle());
 
   void _updateCity(City city) async {
     emitState(ResponseState.loading());
@@ -21,6 +21,7 @@ class CityBloc extends Bloc<ResponseState<City?>, CityEvent> {
 
   void _fetchCityForId(String id) {
     try {
+      print('Emitting');
       _cityRepository.streamCityWithId(id).listen(emitState);
     } on Exception catch (e) {
       emitState(ResponseState.error(ex: e));

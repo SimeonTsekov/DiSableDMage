@@ -6,7 +6,7 @@ import '../model/City.dart';
 import '../services/FirestoreDatabase.dart';
 import '../services/Storage.dart';
 
-@singleton
+@lazySingleton
 class CityRepository {
   FirestoreDatabase db;
   Storage storage;

@@ -62,7 +62,7 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
             enableSelectionZooming: true,
             enablePanning: true),
       );
-    } on Exception catch(e) {
+    } on Exception catch (e) {
       return Error(error: 'Error while loading previous stats!');
     }
   }
@@ -71,14 +71,18 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
     late List<City>? cities;
     this._previousStatisticsBloc.value!.when((value) {
       cities = value;
-    }, idle: () {}, loading: () {}, error: (exc) => throw exc ?? Exception('Error while loading previous stats!'));
+    },
+        idle: () {},
+        loading: () {},
+        error: (exc) =>
+            throw exc ?? Exception('Error while loading previous stats!'));
     return SplineSeries<City, DateTime>(
         dataSource: cities,
-        xValueMapper: (model, _) => DateTime.parse(model.updatedAt),
+        xValueMapper: (model, _) => DateTime.parse(model.updated_at),
         yValueMapper: (model, _) {
           switch (this.graphicType) {
             case GraphicType.BuildingCount:
-              return model.buildingCount;
+              return model.building_count;
             case GraphicType.Money:
               return model.money;
             case GraphicType.Pollution:

@@ -24,30 +24,30 @@ class _$CityTearOff {
       {required String id,
       required String name,
       required int population,
-      required int buildingCount,
-      required int factoryCount,
-      required int houseCount,
+      required int building_count,
+      required int factory_count,
+      required int house_count,
       required double money,
-      required int moneyMultiplier,
+      required int money_multiplier,
       required int pollution,
-      required int pollutionMultiplier,
+      required int pollution_multiplier,
       required int power,
-      required int powerMultiplier,
-      required String updatedAt}) {
+      required int power_multiplier,
+      required String updated_at}) {
     return _City(
       id: id,
       name: name,
       population: population,
-      buildingCount: buildingCount,
-      factoryCount: factoryCount,
-      houseCount: houseCount,
+      building_count: building_count,
+      factory_count: factory_count,
+      house_count: house_count,
       money: money,
-      moneyMultiplier: moneyMultiplier,
+      money_multiplier: money_multiplier,
       pollution: pollution,
-      pollutionMultiplier: pollutionMultiplier,
+      pollution_multiplier: pollution_multiplier,
       power: power,
-      powerMultiplier: powerMultiplier,
-      updatedAt: updatedAt,
+      power_multiplier: power_multiplier,
+      updated_at: updated_at,
     );
   }
 
@@ -64,16 +64,16 @@ mixin _$City {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get population => throw _privateConstructorUsedError;
-  int get buildingCount => throw _privateConstructorUsedError;
-  int get factoryCount => throw _privateConstructorUsedError;
-  int get houseCount => throw _privateConstructorUsedError;
+  int get building_count => throw _privateConstructorUsedError;
+  int get factory_count => throw _privateConstructorUsedError;
+  int get house_count => throw _privateConstructorUsedError;
   double get money => throw _privateConstructorUsedError;
-  int get moneyMultiplier => throw _privateConstructorUsedError;
+  int get money_multiplier => throw _privateConstructorUsedError;
   int get pollution => throw _privateConstructorUsedError;
-  int get pollutionMultiplier => throw _privateConstructorUsedError;
+  int get pollution_multiplier => throw _privateConstructorUsedError;
   int get power => throw _privateConstructorUsedError;
-  int get powerMultiplier => throw _privateConstructorUsedError;
-  String get updatedAt => throw _privateConstructorUsedError;
+  int get power_multiplier => throw _privateConstructorUsedError;
+  String get updated_at => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -88,16 +88,16 @@ abstract class $CityCopyWith<$Res> {
       {String id,
       String name,
       int population,
-      int buildingCount,
-      int factoryCount,
-      int houseCount,
+      int building_count,
+      int factory_count,
+      int house_count,
       double money,
-      int moneyMultiplier,
+      int money_multiplier,
       int pollution,
-      int pollutionMultiplier,
+      int pollution_multiplier,
       int power,
-      int powerMultiplier,
-      String updatedAt});
+      int power_multiplier,
+      String updated_at});
 }
 
 /// @nodoc
@@ -113,16 +113,16 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
     Object? id = freezed,
     Object? name = freezed,
     Object? population = freezed,
-    Object? buildingCount = freezed,
-    Object? factoryCount = freezed,
-    Object? houseCount = freezed,
+    Object? building_count = freezed,
+    Object? factory_count = freezed,
+    Object? house_count = freezed,
     Object? money = freezed,
-    Object? moneyMultiplier = freezed,
+    Object? money_multiplier = freezed,
     Object? pollution = freezed,
-    Object? pollutionMultiplier = freezed,
+    Object? pollution_multiplier = freezed,
     Object? power = freezed,
-    Object? powerMultiplier = freezed,
-    Object? updatedAt = freezed,
+    Object? power_multiplier = freezed,
+    Object? updated_at = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -137,45 +137,45 @@ class _$CityCopyWithImpl<$Res> implements $CityCopyWith<$Res> {
           ? _value.population
           : population // ignore: cast_nullable_to_non_nullable
               as int,
-      buildingCount: buildingCount == freezed
-          ? _value.buildingCount
-          : buildingCount // ignore: cast_nullable_to_non_nullable
+      building_count: building_count == freezed
+          ? _value.building_count
+          : building_count // ignore: cast_nullable_to_non_nullable
               as int,
-      factoryCount: factoryCount == freezed
-          ? _value.factoryCount
-          : factoryCount // ignore: cast_nullable_to_non_nullable
+      factory_count: factory_count == freezed
+          ? _value.factory_count
+          : factory_count // ignore: cast_nullable_to_non_nullable
               as int,
-      houseCount: houseCount == freezed
-          ? _value.houseCount
-          : houseCount // ignore: cast_nullable_to_non_nullable
+      house_count: house_count == freezed
+          ? _value.house_count
+          : house_count // ignore: cast_nullable_to_non_nullable
               as int,
       money: money == freezed
           ? _value.money
           : money // ignore: cast_nullable_to_non_nullable
               as double,
-      moneyMultiplier: moneyMultiplier == freezed
-          ? _value.moneyMultiplier
-          : moneyMultiplier // ignore: cast_nullable_to_non_nullable
+      money_multiplier: money_multiplier == freezed
+          ? _value.money_multiplier
+          : money_multiplier // ignore: cast_nullable_to_non_nullable
               as int,
       pollution: pollution == freezed
           ? _value.pollution
           : pollution // ignore: cast_nullable_to_non_nullable
               as int,
-      pollutionMultiplier: pollutionMultiplier == freezed
-          ? _value.pollutionMultiplier
-          : pollutionMultiplier // ignore: cast_nullable_to_non_nullable
+      pollution_multiplier: pollution_multiplier == freezed
+          ? _value.pollution_multiplier
+          : pollution_multiplier // ignore: cast_nullable_to_non_nullable
               as int,
       power: power == freezed
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
               as int,
-      powerMultiplier: powerMultiplier == freezed
-          ? _value.powerMultiplier
-          : powerMultiplier // ignore: cast_nullable_to_non_nullable
+      power_multiplier: power_multiplier == freezed
+          ? _value.power_multiplier
+          : power_multiplier // ignore: cast_nullable_to_non_nullable
               as int,
-      updatedAt: updatedAt == freezed
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: updated_at == freezed
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -190,16 +190,16 @@ abstract class _$CityCopyWith<$Res> implements $CityCopyWith<$Res> {
       {String id,
       String name,
       int population,
-      int buildingCount,
-      int factoryCount,
-      int houseCount,
+      int building_count,
+      int factory_count,
+      int house_count,
       double money,
-      int moneyMultiplier,
+      int money_multiplier,
       int pollution,
-      int pollutionMultiplier,
+      int pollution_multiplier,
       int power,
-      int powerMultiplier,
-      String updatedAt});
+      int power_multiplier,
+      String updated_at});
 }
 
 /// @nodoc
@@ -216,16 +216,16 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? population = freezed,
-    Object? buildingCount = freezed,
-    Object? factoryCount = freezed,
-    Object? houseCount = freezed,
+    Object? building_count = freezed,
+    Object? factory_count = freezed,
+    Object? house_count = freezed,
     Object? money = freezed,
-    Object? moneyMultiplier = freezed,
+    Object? money_multiplier = freezed,
     Object? pollution = freezed,
-    Object? pollutionMultiplier = freezed,
+    Object? pollution_multiplier = freezed,
     Object? power = freezed,
-    Object? powerMultiplier = freezed,
-    Object? updatedAt = freezed,
+    Object? power_multiplier = freezed,
+    Object? updated_at = freezed,
   }) {
     return _then(_City(
       id: id == freezed
@@ -240,45 +240,45 @@ class __$CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res>
           ? _value.population
           : population // ignore: cast_nullable_to_non_nullable
               as int,
-      buildingCount: buildingCount == freezed
-          ? _value.buildingCount
-          : buildingCount // ignore: cast_nullable_to_non_nullable
+      building_count: building_count == freezed
+          ? _value.building_count
+          : building_count // ignore: cast_nullable_to_non_nullable
               as int,
-      factoryCount: factoryCount == freezed
-          ? _value.factoryCount
-          : factoryCount // ignore: cast_nullable_to_non_nullable
+      factory_count: factory_count == freezed
+          ? _value.factory_count
+          : factory_count // ignore: cast_nullable_to_non_nullable
               as int,
-      houseCount: houseCount == freezed
-          ? _value.houseCount
-          : houseCount // ignore: cast_nullable_to_non_nullable
+      house_count: house_count == freezed
+          ? _value.house_count
+          : house_count // ignore: cast_nullable_to_non_nullable
               as int,
       money: money == freezed
           ? _value.money
           : money // ignore: cast_nullable_to_non_nullable
               as double,
-      moneyMultiplier: moneyMultiplier == freezed
-          ? _value.moneyMultiplier
-          : moneyMultiplier // ignore: cast_nullable_to_non_nullable
+      money_multiplier: money_multiplier == freezed
+          ? _value.money_multiplier
+          : money_multiplier // ignore: cast_nullable_to_non_nullable
               as int,
       pollution: pollution == freezed
           ? _value.pollution
           : pollution // ignore: cast_nullable_to_non_nullable
               as int,
-      pollutionMultiplier: pollutionMultiplier == freezed
-          ? _value.pollutionMultiplier
-          : pollutionMultiplier // ignore: cast_nullable_to_non_nullable
+      pollution_multiplier: pollution_multiplier == freezed
+          ? _value.pollution_multiplier
+          : pollution_multiplier // ignore: cast_nullable_to_non_nullable
               as int,
       power: power == freezed
           ? _value.power
           : power // ignore: cast_nullable_to_non_nullable
               as int,
-      powerMultiplier: powerMultiplier == freezed
-          ? _value.powerMultiplier
-          : powerMultiplier // ignore: cast_nullable_to_non_nullable
+      power_multiplier: power_multiplier == freezed
+          ? _value.power_multiplier
+          : power_multiplier // ignore: cast_nullable_to_non_nullable
               as int,
-      updatedAt: updatedAt == freezed
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
+      updated_at: updated_at == freezed
+          ? _value.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -293,16 +293,16 @@ class _$_City implements _City {
       {required this.id,
       required this.name,
       required this.population,
-      required this.buildingCount,
-      required this.factoryCount,
-      required this.houseCount,
+      required this.building_count,
+      required this.factory_count,
+      required this.house_count,
       required this.money,
-      required this.moneyMultiplier,
+      required this.money_multiplier,
       required this.pollution,
-      required this.pollutionMultiplier,
+      required this.pollution_multiplier,
       required this.power,
-      required this.powerMultiplier,
-      required this.updatedAt});
+      required this.power_multiplier,
+      required this.updated_at});
 
   factory _$_City.fromJson(Map<String, dynamic> json) =>
       _$_$_CityFromJson(json);
@@ -314,29 +314,29 @@ class _$_City implements _City {
   @override
   final int population;
   @override
-  final int buildingCount;
+  final int building_count;
   @override
-  final int factoryCount;
+  final int factory_count;
   @override
-  final int houseCount;
+  final int house_count;
   @override
   final double money;
   @override
-  final int moneyMultiplier;
+  final int money_multiplier;
   @override
   final int pollution;
   @override
-  final int pollutionMultiplier;
+  final int pollution_multiplier;
   @override
   final int power;
   @override
-  final int powerMultiplier;
+  final int power_multiplier;
   @override
-  final String updatedAt;
+  final String updated_at;
 
   @override
   String toString() {
-    return 'City(id: $id, name: $name, population: $population, buildingCount: $buildingCount, factoryCount: $factoryCount, houseCount: $houseCount, money: $money, moneyMultiplier: $moneyMultiplier, pollution: $pollution, pollutionMultiplier: $pollutionMultiplier, power: $power, powerMultiplier: $powerMultiplier, updatedAt: $updatedAt)';
+    return 'City(id: $id, name: $name, population: $population, building_count: $building_count, factory_count: $factory_count, house_count: $house_count, money: $money, money_multiplier: $money_multiplier, pollution: $pollution, pollution_multiplier: $pollution_multiplier, power: $power, power_multiplier: $power_multiplier, updated_at: $updated_at)';
   }
 
   @override
@@ -350,34 +350,34 @@ class _$_City implements _City {
             (identical(other.population, population) ||
                 const DeepCollectionEquality()
                     .equals(other.population, population)) &&
-            (identical(other.buildingCount, buildingCount) ||
+            (identical(other.building_count, building_count) ||
                 const DeepCollectionEquality()
-                    .equals(other.buildingCount, buildingCount)) &&
-            (identical(other.factoryCount, factoryCount) ||
+                    .equals(other.building_count, building_count)) &&
+            (identical(other.factory_count, factory_count) ||
                 const DeepCollectionEquality()
-                    .equals(other.factoryCount, factoryCount)) &&
-            (identical(other.houseCount, houseCount) ||
+                    .equals(other.factory_count, factory_count)) &&
+            (identical(other.house_count, house_count) ||
                 const DeepCollectionEquality()
-                    .equals(other.houseCount, houseCount)) &&
+                    .equals(other.house_count, house_count)) &&
             (identical(other.money, money) ||
                 const DeepCollectionEquality().equals(other.money, money)) &&
-            (identical(other.moneyMultiplier, moneyMultiplier) ||
+            (identical(other.money_multiplier, money_multiplier) ||
                 const DeepCollectionEquality()
-                    .equals(other.moneyMultiplier, moneyMultiplier)) &&
+                    .equals(other.money_multiplier, money_multiplier)) &&
             (identical(other.pollution, pollution) ||
                 const DeepCollectionEquality()
                     .equals(other.pollution, pollution)) &&
-            (identical(other.pollutionMultiplier, pollutionMultiplier) ||
-                const DeepCollectionEquality()
-                    .equals(other.pollutionMultiplier, pollutionMultiplier)) &&
+            (identical(other.pollution_multiplier, pollution_multiplier) ||
+                const DeepCollectionEquality().equals(
+                    other.pollution_multiplier, pollution_multiplier)) &&
             (identical(other.power, power) ||
                 const DeepCollectionEquality().equals(other.power, power)) &&
-            (identical(other.powerMultiplier, powerMultiplier) ||
+            (identical(other.power_multiplier, power_multiplier) ||
                 const DeepCollectionEquality()
-                    .equals(other.powerMultiplier, powerMultiplier)) &&
-            (identical(other.updatedAt, updatedAt) ||
+                    .equals(other.power_multiplier, power_multiplier)) &&
+            (identical(other.updated_at, updated_at) ||
                 const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)));
+                    .equals(other.updated_at, updated_at)));
   }
 
   @override
@@ -386,16 +386,16 @@ class _$_City implements _City {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(population) ^
-      const DeepCollectionEquality().hash(buildingCount) ^
-      const DeepCollectionEquality().hash(factoryCount) ^
-      const DeepCollectionEquality().hash(houseCount) ^
+      const DeepCollectionEquality().hash(building_count) ^
+      const DeepCollectionEquality().hash(factory_count) ^
+      const DeepCollectionEquality().hash(house_count) ^
       const DeepCollectionEquality().hash(money) ^
-      const DeepCollectionEquality().hash(moneyMultiplier) ^
+      const DeepCollectionEquality().hash(money_multiplier) ^
       const DeepCollectionEquality().hash(pollution) ^
-      const DeepCollectionEquality().hash(pollutionMultiplier) ^
+      const DeepCollectionEquality().hash(pollution_multiplier) ^
       const DeepCollectionEquality().hash(power) ^
-      const DeepCollectionEquality().hash(powerMultiplier) ^
-      const DeepCollectionEquality().hash(updatedAt);
+      const DeepCollectionEquality().hash(power_multiplier) ^
+      const DeepCollectionEquality().hash(updated_at);
 
   @JsonKey(ignore: true)
   @override
@@ -413,16 +413,16 @@ abstract class _City implements City, GeographicArea {
       {required String id,
       required String name,
       required int population,
-      required int buildingCount,
-      required int factoryCount,
-      required int houseCount,
+      required int building_count,
+      required int factory_count,
+      required int house_count,
       required double money,
-      required int moneyMultiplier,
+      required int money_multiplier,
       required int pollution,
-      required int pollutionMultiplier,
+      required int pollution_multiplier,
       required int power,
-      required int powerMultiplier,
-      required String updatedAt}) = _$_City;
+      required int power_multiplier,
+      required String updated_at}) = _$_City;
 
   factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
 
@@ -433,25 +433,25 @@ abstract class _City implements City, GeographicArea {
   @override
   int get population => throw _privateConstructorUsedError;
   @override
-  int get buildingCount => throw _privateConstructorUsedError;
+  int get building_count => throw _privateConstructorUsedError;
   @override
-  int get factoryCount => throw _privateConstructorUsedError;
+  int get factory_count => throw _privateConstructorUsedError;
   @override
-  int get houseCount => throw _privateConstructorUsedError;
+  int get house_count => throw _privateConstructorUsedError;
   @override
   double get money => throw _privateConstructorUsedError;
   @override
-  int get moneyMultiplier => throw _privateConstructorUsedError;
+  int get money_multiplier => throw _privateConstructorUsedError;
   @override
   int get pollution => throw _privateConstructorUsedError;
   @override
-  int get pollutionMultiplier => throw _privateConstructorUsedError;
+  int get pollution_multiplier => throw _privateConstructorUsedError;
   @override
   int get power => throw _privateConstructorUsedError;
   @override
-  int get powerMultiplier => throw _privateConstructorUsedError;
+  int get power_multiplier => throw _privateConstructorUsedError;
   @override
-  String get updatedAt => throw _privateConstructorUsedError;
+  String get updated_at => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CityCopyWith<_City> get copyWith => throw _privateConstructorUsedError;

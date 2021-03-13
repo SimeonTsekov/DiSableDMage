@@ -7,13 +7,13 @@ part 'CityAverage.g.dart';
 class CityAverage with _$CityAverage {
   const factory CityAverage(
       {required String id,
-      required double buildingCountAverage,
-      required double factoryCountAverage,
-      required double houseCountAverage,
-      required double moneyAverage,
-      required double pollutionAverage,
-      required double populationAverage,
-      required double powerAverage}) = _CityAverage;
+      required double building_count_avg,
+      required double factory_count_avg,
+      required double house_count_avg,
+      required double money_avg,
+      required double pollution_avg,
+      required double population_avg,
+      required double power_avg}) = _CityAverage;
 
   factory CityAverage.fromJson(Map<String, dynamic> json) =>
       _$CityAverageFromJson(json);

@@ -22,22 +22,22 @@ class _$CityAverageTearOff {
 
   _CityAverage call(
       {required String id,
-      required double buildingCountAverage,
-      required double factoryCountAverage,
-      required double houseCountAverage,
-      required double moneyAverage,
-      required double pollutionAverage,
-      required double populationAverage,
-      required double powerAverage}) {
+      required double building_count_avg,
+      required double factory_count_avg,
+      required double house_count_avg,
+      required double money_avg,
+      required double pollution_avg,
+      required double population_avg,
+      required double power_avg}) {
     return _CityAverage(
       id: id,
-      buildingCountAverage: buildingCountAverage,
-      factoryCountAverage: factoryCountAverage,
-      houseCountAverage: houseCountAverage,
-      moneyAverage: moneyAverage,
-      pollutionAverage: pollutionAverage,
-      populationAverage: populationAverage,
-      powerAverage: powerAverage,
+      building_count_avg: building_count_avg,
+      factory_count_avg: factory_count_avg,
+      house_count_avg: house_count_avg,
+      money_avg: money_avg,
+      pollution_avg: pollution_avg,
+      population_avg: population_avg,
+      power_avg: power_avg,
     );
   }
 
@@ -52,13 +52,13 @@ const $CityAverage = _$CityAverageTearOff();
 /// @nodoc
 mixin _$CityAverage {
   String get id => throw _privateConstructorUsedError;
-  double get buildingCountAverage => throw _privateConstructorUsedError;
-  double get factoryCountAverage => throw _privateConstructorUsedError;
-  double get houseCountAverage => throw _privateConstructorUsedError;
-  double get moneyAverage => throw _privateConstructorUsedError;
-  double get pollutionAverage => throw _privateConstructorUsedError;
-  double get populationAverage => throw _privateConstructorUsedError;
-  double get powerAverage => throw _privateConstructorUsedError;
+  double get building_count_avg => throw _privateConstructorUsedError;
+  double get factory_count_avg => throw _privateConstructorUsedError;
+  double get house_count_avg => throw _privateConstructorUsedError;
+  double get money_avg => throw _privateConstructorUsedError;
+  double get pollution_avg => throw _privateConstructorUsedError;
+  double get population_avg => throw _privateConstructorUsedError;
+  double get power_avg => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,13 +73,13 @@ abstract class $CityAverageCopyWith<$Res> {
       _$CityAverageCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      double buildingCountAverage,
-      double factoryCountAverage,
-      double houseCountAverage,
-      double moneyAverage,
-      double pollutionAverage,
-      double populationAverage,
-      double powerAverage});
+      double building_count_avg,
+      double factory_count_avg,
+      double house_count_avg,
+      double money_avg,
+      double pollution_avg,
+      double population_avg,
+      double power_avg});
 }
 
 /// @nodoc
@@ -93,46 +93,46 @@ class _$CityAverageCopyWithImpl<$Res> implements $CityAverageCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? buildingCountAverage = freezed,
-    Object? factoryCountAverage = freezed,
-    Object? houseCountAverage = freezed,
-    Object? moneyAverage = freezed,
-    Object? pollutionAverage = freezed,
-    Object? populationAverage = freezed,
-    Object? powerAverage = freezed,
+    Object? building_count_avg = freezed,
+    Object? factory_count_avg = freezed,
+    Object? house_count_avg = freezed,
+    Object? money_avg = freezed,
+    Object? pollution_avg = freezed,
+    Object? population_avg = freezed,
+    Object? power_avg = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      buildingCountAverage: buildingCountAverage == freezed
-          ? _value.buildingCountAverage
-          : buildingCountAverage // ignore: cast_nullable_to_non_nullable
+      building_count_avg: building_count_avg == freezed
+          ? _value.building_count_avg
+          : building_count_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      factoryCountAverage: factoryCountAverage == freezed
-          ? _value.factoryCountAverage
-          : factoryCountAverage // ignore: cast_nullable_to_non_nullable
+      factory_count_avg: factory_count_avg == freezed
+          ? _value.factory_count_avg
+          : factory_count_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      houseCountAverage: houseCountAverage == freezed
-          ? _value.houseCountAverage
-          : houseCountAverage // ignore: cast_nullable_to_non_nullable
+      house_count_avg: house_count_avg == freezed
+          ? _value.house_count_avg
+          : house_count_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      moneyAverage: moneyAverage == freezed
-          ? _value.moneyAverage
-          : moneyAverage // ignore: cast_nullable_to_non_nullable
+      money_avg: money_avg == freezed
+          ? _value.money_avg
+          : money_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      pollutionAverage: pollutionAverage == freezed
-          ? _value.pollutionAverage
-          : pollutionAverage // ignore: cast_nullable_to_non_nullable
+      pollution_avg: pollution_avg == freezed
+          ? _value.pollution_avg
+          : pollution_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      populationAverage: populationAverage == freezed
-          ? _value.populationAverage
-          : populationAverage // ignore: cast_nullable_to_non_nullable
+      population_avg: population_avg == freezed
+          ? _value.population_avg
+          : population_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      powerAverage: powerAverage == freezed
-          ? _value.powerAverage
-          : powerAverage // ignore: cast_nullable_to_non_nullable
+      power_avg: power_avg == freezed
+          ? _value.power_avg
+          : power_avg // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -147,13 +147,13 @@ abstract class _$CityAverageCopyWith<$Res>
   @override
   $Res call(
       {String id,
-      double buildingCountAverage,
-      double factoryCountAverage,
-      double houseCountAverage,
-      double moneyAverage,
-      double pollutionAverage,
-      double populationAverage,
-      double powerAverage});
+      double building_count_avg,
+      double factory_count_avg,
+      double house_count_avg,
+      double money_avg,
+      double pollution_avg,
+      double population_avg,
+      double power_avg});
 }
 
 /// @nodoc
@@ -169,46 +169,46 @@ class __$CityAverageCopyWithImpl<$Res> extends _$CityAverageCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? buildingCountAverage = freezed,
-    Object? factoryCountAverage = freezed,
-    Object? houseCountAverage = freezed,
-    Object? moneyAverage = freezed,
-    Object? pollutionAverage = freezed,
-    Object? populationAverage = freezed,
-    Object? powerAverage = freezed,
+    Object? building_count_avg = freezed,
+    Object? factory_count_avg = freezed,
+    Object? house_count_avg = freezed,
+    Object? money_avg = freezed,
+    Object? pollution_avg = freezed,
+    Object? population_avg = freezed,
+    Object? power_avg = freezed,
   }) {
     return _then(_CityAverage(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      buildingCountAverage: buildingCountAverage == freezed
-          ? _value.buildingCountAverage
-          : buildingCountAverage // ignore: cast_nullable_to_non_nullable
+      building_count_avg: building_count_avg == freezed
+          ? _value.building_count_avg
+          : building_count_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      factoryCountAverage: factoryCountAverage == freezed
-          ? _value.factoryCountAverage
-          : factoryCountAverage // ignore: cast_nullable_to_non_nullable
+      factory_count_avg: factory_count_avg == freezed
+          ? _value.factory_count_avg
+          : factory_count_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      houseCountAverage: houseCountAverage == freezed
-          ? _value.houseCountAverage
-          : houseCountAverage // ignore: cast_nullable_to_non_nullable
+      house_count_avg: house_count_avg == freezed
+          ? _value.house_count_avg
+          : house_count_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      moneyAverage: moneyAverage == freezed
-          ? _value.moneyAverage
-          : moneyAverage // ignore: cast_nullable_to_non_nullable
+      money_avg: money_avg == freezed
+          ? _value.money_avg
+          : money_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      pollutionAverage: pollutionAverage == freezed
-          ? _value.pollutionAverage
-          : pollutionAverage // ignore: cast_nullable_to_non_nullable
+      pollution_avg: pollution_avg == freezed
+          ? _value.pollution_avg
+          : pollution_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      populationAverage: populationAverage == freezed
-          ? _value.populationAverage
-          : populationAverage // ignore: cast_nullable_to_non_nullable
+      population_avg: population_avg == freezed
+          ? _value.population_avg
+          : population_avg // ignore: cast_nullable_to_non_nullable
               as double,
-      powerAverage: powerAverage == freezed
-          ? _value.powerAverage
-          : powerAverage // ignore: cast_nullable_to_non_nullable
+      power_avg: power_avg == freezed
+          ? _value.power_avg
+          : power_avg // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -220,13 +220,13 @@ class __$CityAverageCopyWithImpl<$Res> extends _$CityAverageCopyWithImpl<$Res>
 class _$_CityAverage implements _CityAverage {
   const _$_CityAverage(
       {required this.id,
-      required this.buildingCountAverage,
-      required this.factoryCountAverage,
-      required this.houseCountAverage,
-      required this.moneyAverage,
-      required this.pollutionAverage,
-      required this.populationAverage,
-      required this.powerAverage});
+      required this.building_count_avg,
+      required this.factory_count_avg,
+      required this.house_count_avg,
+      required this.money_avg,
+      required this.pollution_avg,
+      required this.population_avg,
+      required this.power_avg});
 
   factory _$_CityAverage.fromJson(Map<String, dynamic> json) =>
       _$_$_CityAverageFromJson(json);
@@ -234,23 +234,23 @@ class _$_CityAverage implements _CityAverage {
   @override
   final String id;
   @override
-  final double buildingCountAverage;
+  final double building_count_avg;
   @override
-  final double factoryCountAverage;
+  final double factory_count_avg;
   @override
-  final double houseCountAverage;
+  final double house_count_avg;
   @override
-  final double moneyAverage;
+  final double money_avg;
   @override
-  final double pollutionAverage;
+  final double pollution_avg;
   @override
-  final double populationAverage;
+  final double population_avg;
   @override
-  final double powerAverage;
+  final double power_avg;
 
   @override
   String toString() {
-    return 'CityAverage(id: $id, buildingCountAverage: $buildingCountAverage, factoryCountAverage: $factoryCountAverage, houseCountAverage: $houseCountAverage, moneyAverage: $moneyAverage, pollutionAverage: $pollutionAverage, populationAverage: $populationAverage, powerAverage: $powerAverage)';
+    return 'CityAverage(id: $id, building_count_avg: $building_count_avg, factory_count_avg: $factory_count_avg, house_count_avg: $house_count_avg, money_avg: $money_avg, pollution_avg: $pollution_avg, population_avg: $population_avg, power_avg: $power_avg)';
   }
 
   @override
@@ -259,40 +259,40 @@ class _$_CityAverage implements _CityAverage {
         (other is _CityAverage &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.buildingCountAverage, buildingCountAverage) ||
-                const DeepCollectionEquality().equals(
-                    other.buildingCountAverage, buildingCountAverage)) &&
-            (identical(other.factoryCountAverage, factoryCountAverage) ||
+            (identical(other.building_count_avg, building_count_avg) ||
                 const DeepCollectionEquality()
-                    .equals(other.factoryCountAverage, factoryCountAverage)) &&
-            (identical(other.houseCountAverage, houseCountAverage) ||
+                    .equals(other.building_count_avg, building_count_avg)) &&
+            (identical(other.factory_count_avg, factory_count_avg) ||
                 const DeepCollectionEquality()
-                    .equals(other.houseCountAverage, houseCountAverage)) &&
-            (identical(other.moneyAverage, moneyAverage) ||
+                    .equals(other.factory_count_avg, factory_count_avg)) &&
+            (identical(other.house_count_avg, house_count_avg) ||
                 const DeepCollectionEquality()
-                    .equals(other.moneyAverage, moneyAverage)) &&
-            (identical(other.pollutionAverage, pollutionAverage) ||
+                    .equals(other.house_count_avg, house_count_avg)) &&
+            (identical(other.money_avg, money_avg) ||
                 const DeepCollectionEquality()
-                    .equals(other.pollutionAverage, pollutionAverage)) &&
-            (identical(other.populationAverage, populationAverage) ||
+                    .equals(other.money_avg, money_avg)) &&
+            (identical(other.pollution_avg, pollution_avg) ||
                 const DeepCollectionEquality()
-                    .equals(other.populationAverage, populationAverage)) &&
-            (identical(other.powerAverage, powerAverage) ||
+                    .equals(other.pollution_avg, pollution_avg)) &&
+            (identical(other.population_avg, population_avg) ||
                 const DeepCollectionEquality()
-                    .equals(other.powerAverage, powerAverage)));
+                    .equals(other.population_avg, population_avg)) &&
+            (identical(other.power_avg, power_avg) ||
+                const DeepCollectionEquality()
+                    .equals(other.power_avg, power_avg)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(buildingCountAverage) ^
-      const DeepCollectionEquality().hash(factoryCountAverage) ^
-      const DeepCollectionEquality().hash(houseCountAverage) ^
-      const DeepCollectionEquality().hash(moneyAverage) ^
-      const DeepCollectionEquality().hash(pollutionAverage) ^
-      const DeepCollectionEquality().hash(populationAverage) ^
-      const DeepCollectionEquality().hash(powerAverage);
+      const DeepCollectionEquality().hash(building_count_avg) ^
+      const DeepCollectionEquality().hash(factory_count_avg) ^
+      const DeepCollectionEquality().hash(house_count_avg) ^
+      const DeepCollectionEquality().hash(money_avg) ^
+      const DeepCollectionEquality().hash(pollution_avg) ^
+      const DeepCollectionEquality().hash(population_avg) ^
+      const DeepCollectionEquality().hash(power_avg);
 
   @JsonKey(ignore: true)
   @override
@@ -308,13 +308,13 @@ class _$_CityAverage implements _CityAverage {
 abstract class _CityAverage implements CityAverage {
   const factory _CityAverage(
       {required String id,
-      required double buildingCountAverage,
-      required double factoryCountAverage,
-      required double houseCountAverage,
-      required double moneyAverage,
-      required double pollutionAverage,
-      required double populationAverage,
-      required double powerAverage}) = _$_CityAverage;
+      required double building_count_avg,
+      required double factory_count_avg,
+      required double house_count_avg,
+      required double money_avg,
+      required double pollution_avg,
+      required double population_avg,
+      required double power_avg}) = _$_CityAverage;
 
   factory _CityAverage.fromJson(Map<String, dynamic> json) =
       _$_CityAverage.fromJson;
@@ -322,19 +322,19 @@ abstract class _CityAverage implements CityAverage {
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  double get buildingCountAverage => throw _privateConstructorUsedError;
+  double get building_count_avg => throw _privateConstructorUsedError;
   @override
-  double get factoryCountAverage => throw _privateConstructorUsedError;
+  double get factory_count_avg => throw _privateConstructorUsedError;
   @override
-  double get houseCountAverage => throw _privateConstructorUsedError;
+  double get house_count_avg => throw _privateConstructorUsedError;
   @override
-  double get moneyAverage => throw _privateConstructorUsedError;
+  double get money_avg => throw _privateConstructorUsedError;
   @override
-  double get pollutionAverage => throw _privateConstructorUsedError;
+  double get pollution_avg => throw _privateConstructorUsedError;
   @override
-  double get populationAverage => throw _privateConstructorUsedError;
+  double get population_avg => throw _privateConstructorUsedError;
   @override
-  double get powerAverage => throw _privateConstructorUsedError;
+  double get power_avg => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CityAverageCopyWith<_CityAverage> get copyWith =>

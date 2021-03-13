@@ -4,7 +4,7 @@ import 'package:hacktues_gg_app/model/CityAverage.dart';
 import 'package:hacktues_gg_app/persistence/SembastDB.dart';
 import 'package:injectable/injectable.dart';
 
-@singleton
+@Singleton(dependsOn: [SembastDB])
 class FirestoreDatabase {
   final SembastDB localDb;
 
@@ -14,7 +14,10 @@ class FirestoreDatabase {
 
   CollectionReference get _averageCities => _db.collection('cities_agr');
 
-  DocumentReference getCity(String cityId) => _cities.doc(cityId);
+  DocumentReference getCity(String cityId) {
+    print('Getting city');
+    return _cities.doc(cityId);
+  }
 
   DocumentReference getAverageCity(String cityId) => _averageCities.doc(cityId);
 
@@ -26,12 +29,15 @@ class FirestoreDatabase {
   Stream<City?> citySnapshots(String cityId) =>
       getCity(cityId).snapshots().map((city) {
         if (city.data() != null) {
+          print('BRUH');
           City parsedCity = City.fromJson(city.data()!);
           localDb.updateCity(parsedCity);
           return parsedCity;
+        } else {
+          print('WHAT');
+          localDb.deleteCity();
+          return null;
         }
-        localDb.deleteCity();
-        return null;
       });
 
   Stream<CityAverage?> averageCitySnapshot(String cityId) =>
