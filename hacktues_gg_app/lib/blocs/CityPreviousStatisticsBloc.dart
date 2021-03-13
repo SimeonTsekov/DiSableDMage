@@ -19,9 +19,10 @@ class CityPreviousStatisticsBloc
   Future<void> fetchInitialStatistics(String id) async {
     try {
       emitState(ResponseState.loading());
-      final stats = await _storage.downloadStats(id);
+      final stats = await _storage.downloadStats(id) ?? [];
       _lastStatistics.addAll(stats);
-      emitState(ResponseState(_lastStatistics));
+      emitState(
+          ResponseState(_lastStatistics.isEmpty ? null : _lastStatistics));
     } on Exception catch (e) {
       emitState(ResponseState.error(ex: e));
     }

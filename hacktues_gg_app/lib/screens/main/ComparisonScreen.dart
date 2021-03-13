@@ -12,33 +12,37 @@ class ComparisonScreen extends AverageCityScreen<CityAverageBarChart,
   @override
   List<CityAverageBarChart> buildAverageStatDisplayListFromCityAverage(
           MapEntry<CityAverage?, CityAverage?> aggregatedAndAll) =>
-      // Again, check for null here for endgame
       [
         CityAverageBarChart(
-            chartTitle: 'Building count',
-            cityAggregatedAmount: aggregatedAndAll.key!.buildingCountAverage,
-            globalAggregatedAmount:
-                aggregatedAndAll.value!.buildingCountAverage),
+          chartTitle: 'Building count',
+          cityAggregatedAmount: aggregatedAndAll.key!.buildingCountAverage,
+          globalAggregatedAmount: aggregatedAndAll.value!.buildingCountAverage,
+          opacityFadeInDuration: 100,
+        ),
         CityAverageBarChart(
             chartTitle: 'Factory count',
             cityAggregatedAmount: aggregatedAndAll.key!.factoryCountAverage,
-            globalAggregatedAmount:
-                aggregatedAndAll.value!.factoryCountAverage),
+            globalAggregatedAmount: aggregatedAndAll.value!.factoryCountAverage,
+            opacityFadeInDuration: 100),
         CityAverageBarChart(
             chartTitle: 'House count',
             cityAggregatedAmount: aggregatedAndAll.key!.houseCountAverage,
-            globalAggregatedAmount: aggregatedAndAll.value!.houseCountAverage),
+            globalAggregatedAmount: aggregatedAndAll.value!.houseCountAverage,
+            opacityFadeInDuration: 200),
         CityAverageBarChart(
-            chartTitle: 'Money count',
+            chartTitle: 'Money',
             cityAggregatedAmount: aggregatedAndAll.key!.moneyAverage,
-            globalAggregatedAmount: aggregatedAndAll.value!.moneyAverage),
+            globalAggregatedAmount: aggregatedAndAll.value!.moneyAverage,
+            opacityFadeInDuration: 200),
         CityAverageBarChart(
-            chartTitle: 'Population count',
+            chartTitle: 'Population',
             cityAggregatedAmount: aggregatedAndAll.key!.populationAverage,
-            globalAggregatedAmount: aggregatedAndAll.value!.populationAverage),
+            globalAggregatedAmount: aggregatedAndAll.value!.populationAverage,
+            opacityFadeInDuration: 300),
         CityAverageBarChart(
-            chartTitle: 'Power count',
+            chartTitle: 'Power',
             cityAggregatedAmount: aggregatedAndAll.key!.powerAverage,
-            globalAggregatedAmount: aggregatedAndAll.value!.powerAverage),
+            globalAggregatedAmount: aggregatedAndAll.value!.powerAverage,
+            opacityFadeInDuration: 300),
       ];
 }

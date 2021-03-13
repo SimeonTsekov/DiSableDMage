@@ -61,6 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
           required IconData primaryIcon,
           bool endIcon = false,
           IconData? suffixIconData,
+          bool obscureText = false,
+          bool enableSuggestions = true,
+          bool autocorrect = true,
           required TextInputType keyboardType,
           required FormFieldValidator<String> validate,
           required void Function(String) onChanged}) =>
@@ -69,6 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
         child: TextFormField(
           keyboardType: keyboardType,
           validator: validate,
+          obscureText: obscureText,
+          enableSuggestions: enableSuggestions,
+          autocorrect: autocorrect,
           decoration: InputDecoration(
             suffixIcon: endIcon
                 ? Icon(
@@ -214,6 +220,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               return null;
                             },
                             keyboardType: TextInputType.visiblePassword,
+                            obscureText: true,
+                            enableSuggestions: false,
+                            autocorrect: false,
                             onChanged: (value) => this._password = value),
                         _buildLoginButton(
                             Icons.exit_to_app, () => validateAndSubmit()),

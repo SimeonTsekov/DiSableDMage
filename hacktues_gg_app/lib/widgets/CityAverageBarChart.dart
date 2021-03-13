@@ -7,21 +7,36 @@ class CityAverageBarChart extends StatefulWidget {
   final String chartTitle;
   final double cityAggregatedAmount;
   final double globalAggregatedAmount;
+  final int opacityFadeInDuration;
 
   const CityAverageBarChart(
       {Key? key,
       required this.chartTitle,
       required this.cityAggregatedAmount,
-      required this.globalAggregatedAmount})
+      required this.globalAggregatedAmount,
+      required this.opacityFadeInDuration})
       : super(key: key);
 
   @override
   _CityAverageBarChartState createState() => _CityAverageBarChartState();
 }
 
-class _CityAverageBarChartState extends State<CityAverageBarChart> {
+// Haha code dup with AverageStatCard go brrrrr
+class _CityAverageBarChartState extends State<CityAverageBarChart>
+    with TickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 2),
+    vsync: this,
+  )..repeat(reverse: true);
+
+  late final Animation<double> _animation = CurvedAnimation(
+    parent: _controller,
+    curve: Curves.easeIn,
+  );
+
   @override
-  Widget build(BuildContext context) => _getCityAverageBarChart();
+  Widget build(BuildContext context) =>
+      FadeTransition(opacity: _animation, child: _getCityAverageBarChart());
 
   SfCartesianChart _getCityAverageBarChart() {
     return SfCartesianChart(
@@ -51,4 +66,10 @@ class _CityAverageBarChartState extends State<CityAverageBarChart> {
             xValueMapper: (_, __) => 'The category here',
             yValueMapper: (global, __) => global),
       ];
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 }

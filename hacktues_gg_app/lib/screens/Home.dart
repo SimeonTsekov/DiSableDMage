@@ -5,10 +5,12 @@ import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
 import 'package:hacktues_gg_app/di/serviceLocator.dart';
 import 'package:hacktues_gg_app/event/CityEvent.dart';
+import 'package:hacktues_gg_app/model/City.dart';
 import 'package:hacktues_gg_app/screens/main/AverageStatsScreen.dart';
 import 'package:hacktues_gg_app/screens/main/ComparisonScreen.dart';
 import 'package:hacktues_gg_app/screens/main/GraphicType.dart';
 import 'package:hacktues_gg_app/screens/main/StatsScreen.dart';
+import 'package:hacktues_gg_app/state/ResponseState.dart';
 import 'package:hacktues_gg_app/utils/CurrentContext.dart';
 import 'package:hacktues_gg_app/widgets/HackTUESText.dart';
 import 'package:hacktues_gg_app/widgets/NavDrawer.dart';
@@ -115,6 +117,7 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   int _currentTab = 0;
 
   bool _isShowingStatistics = false;
+  bool _hasScrolledToSliverMax = false;
 
   final _pageController = PageController();
 
@@ -146,68 +149,115 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder: (context, _) => [
-            SliverAppBar(
-              expandedHeight: 200.0,
-              floating: false,
-              pinned: true,
-              actions: [
-                ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _isShowingStatistics = !_isShowingStatistics;
-                      });
-                    },
-                    child: Text('Toggle'))
-              ],
-              flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: false,
-                  title: const HackTUESText(
-                    "Sliver with bottom navbar",
-                    fontSize: 16.0,
-                  ),
-                  // think of some interesting background image
-                  background: Image.network(
-                    "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
-                    fit: BoxFit.cover,
-                  )),
-            )
-          ],
-          body: _buildPageView(),
-        ),
-        drawer: NavigationDrawer(),
-        bottomNavigationBar: SafeArea(
-            // wrap with Opacity, listen notifications from the scrollView and update the opacity.
-            child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(100)),
-              boxShadow: [
-                BoxShadow(
-                    spreadRadius: -10,
-                    blurRadius: 60,
-                    color: Colors.black.withOpacity(.4),
-                    offset: Offset(0, 25))
-              ]),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3),
-            child: GNav(
-                gap: 8,
-                activeColor: Colors.white30,
-                iconSize: 24,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                duration: Duration(milliseconds: 800),
-                curve: Curves.easeOutExpo,
-                tabBackgroundColor: Colors.lightBlue,
-                textStyle: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                tabs: _buildTabs(),
-                selectedIndex: _currentTab,
-                onTabChange: (index) {
-                  bottomTapped(index);
-                }),
+        body: NotificationListener<ScrollNotification>(
+          onNotification: (notification) {
+            setState(() {
+              _hasScrolledToSliverMax = notification.metrics.pixels ==
+                  notification.metrics.maxScrollExtent;
+            });
+            return true;
+          },
+          child: NestedScrollView(
+            headerSliverBuilder: (context, _) => [
+              SliverAppBar(
+                expandedHeight: 200.0,
+                floating: false,
+                pinned: true,
+                actions: [
+                  Visibility(
+                    visible: _hasScrolledToSliverMax,
+                    child: ElevatedButton(
+                        clipBehavior: Clip.antiAlias,
+                        onPressed: () {
+                          setState(() {
+                            _isShowingStatistics = !_isShowingStatistics;
+                          });
+                        },
+                        child: Text('Toggle')),
+                  )
+                ],
+                flexibleSpace: FlexibleSpaceBar(
+                    centerTitle: false,
+                    title: StreamBuilder<ResponseState<City?>>(
+                        stream: widget.cityBloc.behaviourSubject.stream,
+                        builder: (context, snapshot) {
+                          if (snapshot.data != null) {
+                            final String? cityTitle = snapshot.data!.maybeWhen(
+                                (value) => value?.name ?? 'a graveyard',
+                                orElse: () => null);
+
+                            // TODO: Use AnimatedCrossFade for switch when received cityTitle
+                            return HackTUESText(
+                              _hasScrolledToSliverMax
+                                  ? (_isShowingStatistics
+                                          ? _statisticsTabs
+                                          : _aggregationTabs)[_currentTab]
+                                      .text
+                                  : (cityTitle != null
+                                      ? 'Your city, $cityTitle'
+                                      : 'Your city'),
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.bold,
+                            );
+                          } else {
+                            return HackTUESText(
+                              _hasScrolledToSliverMax
+                                  ? (_isShowingStatistics
+                                          ? _statisticsTabs
+                                          : _aggregationTabs)[_currentTab]
+                                      .text
+                                  : 'Your city',
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.bold,
+                            );
+                          }
+                        }),
+                    // think of some interesting background image
+                    background: Image.network(
+                      "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                      fit: BoxFit.cover,
+                    )),
+              )
+            ],
+            body: _buildPageView(),
           ),
-        )),
+        ),
+        drawer: _hasScrolledToSliverMax ? NavigationDrawer() : null,
+        bottomNavigationBar: Visibility(
+          visible: _hasScrolledToSliverMax,
+          child: SafeArea(
+              // wrap with Opacity, listen notifications from the scrollView and update the opacity.
+              child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+                boxShadow: [
+                  BoxShadow(
+                      spreadRadius: -10,
+                      blurRadius: 60,
+                      color: Colors.black.withOpacity(.4),
+                      offset: Offset(0, 25))
+                ]),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3),
+              child: GNav(
+                  gap: 8,
+                  activeColor: Colors.white30,
+                  iconSize: 24,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  duration: Duration(milliseconds: 800),
+                  curve: Curves.easeOutExpo,
+                  tabBackgroundColor: Colors.lightBlue,
+                  textStyle:
+                      TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                  tabs: _buildTabs(),
+                  selectedIndex: _currentTab,
+                  onTabChange: (index) {
+                    bottomTapped(index);
+                  }),
+            ),
+          )),
+        ),
       );
 }

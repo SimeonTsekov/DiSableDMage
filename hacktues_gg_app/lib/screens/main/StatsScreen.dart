@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hacktues_gg_app/blocs/CityBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityPreviousStatisticsBloc.dart';
 import 'package:hacktues_gg_app/model/City.dart';
+import 'package:hacktues_gg_app/state/ResponseState.dart';
+import 'package:hacktues_gg_app/widgets/Endgame.dart';
 import 'package:hacktues_gg_app/widgets/Error.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -23,11 +25,15 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
 
   @override
   Widget buildOnCityFetched(context, City? city) {
-    _previousStatisticsBloc.sendEvent(city!);
-    return Expanded(child: _getDefaultLineChart());
+    if (city != null) {
+      _previousStatisticsBloc.sendEvent(city);
+      return Expanded(child: _getDefaultLineChart(city));
+    } else {
+      return Endgame();
+    }
   }
 
-  Widget _getDefaultLineChart() {
+  Widget _getDefaultLineChart(City city) {
     try {
       return SfCartesianChart(
         backgroundColor: Colors.black,
@@ -46,7 +52,7 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
                 fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
             axisLine: AxisLine(width: 0),
             majorTickLines: MajorTickLines(size: 0)),
-        series: _getDefaultLineSeries(),
+        series: _getDefaultLineSeries(city),
         trackballBehavior: TrackballBehavior(
             enable: true,
             lineColor: Color.fromRGBO(255, 255, 255, 0.03),
@@ -62,16 +68,28 @@ class StatsScreen extends CityScreen<City?, CityBloc> {
             enableSelectionZooming: true,
             enablePanning: true),
       );
-    } on Exception catch(e) {
+    } on Exception catch (e) {
       return Error(error: 'Error while loading previous stats!');
     }
   }
 
-  SplineSeries<City, DateTime> _getDefaultLineSeries() {
+  SplineSeries<City, DateTime> _getDefaultLineSeries(City city) {
     late List<City>? cities;
-    this._previousStatisticsBloc.value!.when((value) {
-      cities = value;
-    }, idle: () {}, loading: () {}, error: (exc) => throw exc ?? Exception('Error while loading previous stats!'));
+    ResponseState<List<City>?>? currentState =
+        this._previousStatisticsBloc.value;
+
+    if (currentState != null) {
+      currentState.when((value) {
+        cities = value ?? [city];
+      },
+          idle: () {},
+          loading: () => {},
+          error: (exc) =>
+              throw exc ?? Exception('Error while loading previous stats!'));
+    } else {
+      cities = [city];
+    }
+
     return SplineSeries<City, DateTime>(
         dataSource: cities,
         xValueMapper: (model, _) => DateTime.parse(model.updatedAt),

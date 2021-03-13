@@ -11,7 +11,6 @@ class AverageStatsScreen extends AverageCityScreen<AverageStatCard,
   // SUCKS MAJOR DICK
   @override
   List<AverageStatCard> buildAverageStatDisplayListFromCityAverage(
-          // Check for null here, and return some Endgame widget here
           MapEntry<CityAverage?, CityAverage?> cityWithAll) =>
       [
         AverageStatCard(

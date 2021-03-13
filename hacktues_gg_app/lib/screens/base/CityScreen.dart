@@ -6,7 +6,7 @@ import 'package:hacktues_gg_app/widgets/Loading.dart';
 import '../../di/serviceLocator.dart';
 import '../../state/ResponseState.dart';
 
-abstract class CityScreen<M, T extends RxObject<ResponseState<M>>>
+abstract class CityScreen<M, T extends RxObject<ResponseState<M?>>>
     extends StatelessWidget {
   final T cityBloc = $<T>();
   final String onErrorText;
@@ -15,7 +15,7 @@ abstract class CityScreen<M, T extends RxObject<ResponseState<M>>>
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<ResponseState<M>>(
+    return StreamBuilder<ResponseState<M?>>(
         stream: cityBloc.behaviourSubject.stream,
         builder: (context, snapshot) {
           if (snapshot.data != null) {
@@ -37,5 +37,5 @@ abstract class CityScreen<M, T extends RxObject<ResponseState<M>>>
         });
   }
 
-  Widget buildOnCityFetched(BuildContext context, M city);
+  Widget buildOnCityFetched(BuildContext context, M? city);
 }
