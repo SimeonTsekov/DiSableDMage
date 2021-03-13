@@ -9,19 +9,28 @@ namespace UI
 {
     public class SettingsController : MonoBehaviour
     {
+        public static SettingsController Instance { get; private set; }
         public GameObject settingsMenu;
         public GameObject cityNameMenu;
+        public GameObject gameOverMenu;
         public TMP_InputField cityNameInput;
         private bool _settingsMenuActive;
 
         private void Awake()
         {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            
             if (!UserController.Instance.UserData.cityName.Equals(""))
             {
                 cityNameMenu.SetActive(false);
             }
+            
             _settingsMenuActive = false;
             settingsMenu.SetActive(_settingsMenuActive);
+            gameOverMenu.SetActive(false);
         }
 
         private void Update()
@@ -29,6 +38,11 @@ namespace UI
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 OnSettings();
+            }
+            
+            if ((int)UserController.Instance.UserData.pollution >= 100) 
+            {
+                gameOverMenu.SetActive(true);
             }
         }
 
@@ -52,6 +66,7 @@ namespace UI
             PlayerPrefs.SetString("UserId", "LMAO");
             FirebaseAuth.DefaultInstance.SignOut();
             FirebaseStorageManager.Instance.WriteConfiguration();
+            GameStateController.Instance.EndSession();
             SceneManager.LoadScene("LogIn");
         }
         
@@ -62,6 +77,7 @@ namespace UI
             UserController.Instance.UpdateUser();
             GameStateController.Instance.SaveBuildings();
             FirebaseStorageManager.Instance.WriteConfiguration();
+            GameStateController.Instance.EndSession();
             Application.Quit();
         }
     }

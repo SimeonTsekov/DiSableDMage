@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Firebase.Extensions;
+using Firebase.Functions;
+using UI;
 using UnityEngine;
 using User;
 using Utils;
@@ -58,5 +61,37 @@ public class GameStateController : MonoBehaviour
     {
         string buildingJson = JsonHelper.ToJson(UserController.Instance.buildings.ToArray());
         Debug.Log(buildingJson);
+    }
+
+    public void EndSession()
+    {
+        var dict = new Dictionary<string, object> {["isActive"] = true};
+
+        var function = FirebaseFunctions.DefaultInstance.GetHttpsCallable("updateUnityClientState");
+        function.CallAsync(dict).ContinueWith(response =>
+        {
+            Debug.Log("response = " + response.Result.Data);
+ 
+            if (response.IsFaulted || response.IsCanceled)
+            {
+                Firebase.FirebaseException e = response.Exception.Flatten().InnerExceptions[0] as Firebase.FirebaseException;
+                FunctionsErrorCode error = (FunctionsErrorCode)e.ErrorCode;
+ 
+                Debug.LogError("Fault!");
+                Debug.Log("FunctionsErrorCode! = " + error);
+            }
+            else
+            {
+                string returnedName = response.Result.Data.ToString();
+                if (returnedName == name)
+                {
+                    //Name already exists in database
+                }
+                else if (string.IsNullOrEmpty(returnedName))
+                {
+                    //Name doesn't exist in database
+                }
+            }
+        });
     }
 }
