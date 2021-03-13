@@ -21,6 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
   late String _email;
   late String _password;
 
+  AuthState? _previousState;
+
   bool validateAndSave() {
     final FormState form = formKey.currentState!;
     if (form.validate()) {
@@ -110,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: FlatButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)),
-              color: Colors.lightBlueAccent,
+              color: Colors.blueAccent,
               onPressed: () => onPressed(),
               child: Icon(
                 iconName,
@@ -135,12 +137,15 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               unknown: () {},
               loggedOut: () {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: HackTUESText('Yay! A SnackBar!'),
-                  elevation: 5.0,
-                  backgroundColor: Colors.lightBlueAccent,
-                ));
+                if(_previousState == AuthState.authenticated()) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Center(child: HackTUESText('Logged out successfully!')),
+                    elevation: 5.0,
+                    backgroundColor: Colors.blueAccent,
+                  ));
+                }
               });
+          _previousState = authState;
         },
         child: SafeArea(
           child: Scaffold(

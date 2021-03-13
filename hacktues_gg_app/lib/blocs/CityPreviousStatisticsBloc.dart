@@ -12,7 +12,7 @@ class CityPreviousStatisticsBloc
     extends Bloc<ResponseState<List<City>?>, City> {
   final Storage _storage;
 
-  late List<City> _lastStatistics;
+  List<City> _lastStatistics = [];
 
   CityPreviousStatisticsBloc(this._storage) : super(ResponseState.idle());
 

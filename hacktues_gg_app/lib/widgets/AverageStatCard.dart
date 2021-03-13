@@ -28,7 +28,7 @@ class _AverageStatCardState extends State<AverageStatCard>
   late final AnimationController _controller = AnimationController(
     duration: Duration(seconds: 1),
     vsync: this,
-  )..repeat(reverse: true);
+  );
 
   late final Animation<double> _animation = CurvedAnimation(
     parent: _controller,
@@ -36,11 +36,17 @@ class _AverageStatCardState extends State<AverageStatCard>
   );
 
   @override
+  void initState() {
+    super.initState();
+    _controller.forward();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FadeTransition(
         opacity: Tween<double>(begin: 0, end: 1).animate(_animation),
         child: Card(
-            elevation: 5.0,
+            elevation: 8.0,
             color: Colors.blueAccent,
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

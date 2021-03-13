@@ -23,8 +23,12 @@ class NavigationDrawer extends StatelessWidget {
               // onTap: go to the settins with the switch and stuff  () => $<PageManager>().openPage<Settings>(key: 'Settings', builder: () => {})
             ),
             Divider(),
-            BiDirectionalUpdateSwitch(
-              prefsBgBloc: $(),
+            SizedBox(
+              width: 20,
+              height: 20,
+              child: BiDirectionalUpdateSwitch(
+                prefsBgBloc: $(),
+              )
             ),
             ListTile(
                 title: const HackTUESText(

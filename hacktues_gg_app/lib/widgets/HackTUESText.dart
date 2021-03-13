@@ -23,10 +23,12 @@ class HackTUESText extends StatelessWidget {
       text,
       style: TextStyle(
           fontSize: fontSize,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
           letterSpacing: letterSpacing,
           fontFamily: 'Europe_Ext'),
       maxLines: maxLines,
+      textAlign: textAlign,
     );
   }
 }
