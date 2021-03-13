@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
             max: 200,
             min: 0,
             interval: 20,
-            graphicType: GraphicType.Money),
+            graphicType: GraphicType.BuildingCount),
         StatsScreen($(),
             errorText: 'Something went wrong with fetching buildingCount',
             max: 200,
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
           return true;
         }
         if (_currentTab > 0) {
-          setState(() => _currentTab = _currentTab - 1);
+          bottomTapped(_currentTab - 1);
           return false;
         }
         if (Platform.isAndroid) {
@@ -195,6 +195,9 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                         isShowingStatistics: _isShowingStatistics,
                         hasScrolledToSliverMax: _hasScrolledToSliverMax,
                         onToggleButtonPressed: () => setState(() {
+                              if (_isShowingStatistics && _currentTab == 2) {
+                                _currentTab = 1;
+                              }
                               _isShowingStatistics = !_isShowingStatistics;
                             }),
                         title: HackTUESText(
@@ -218,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                       isShowingStatistics: _isShowingStatistics,
                       hasScrolledToSliverMax: _hasScrolledToSliverMax,
                       onToggleButtonPressed: () => setState(() {
-                        if (_currentTab == 2) {
+                        if (_isShowingStatistics && _currentTab == 2) {
                           _currentTab = 1;
                         }
                         _isShowingStatistics = !_isShowingStatistics;
@@ -269,17 +272,17 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
                       offset: Offset(0, 25))
                 ]),
             child: GNav(
-                tabMargin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                tabMargin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 gap: 8,
                 activeColor: Colors.blueAccent,
-                iconSize: 24,
+                iconSize: 22,
                 duration: Duration(milliseconds: 300),
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 curve: Curves.easeOutExpo,
                 tabBackgroundColor: Colors.lightBlueAccent,
                 backgroundColor: Colors.blueAccent,
                 textStyle: TextStyle(
-                    fontSize: 22,
+                    fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Europe_Ext'),
@@ -324,12 +327,16 @@ class _AdaptiveSliverAppBar extends StatelessWidget {
           visible: hasScrolledToSliverMax,
           child: ElevatedButton(
               style: ButtonStyle(
+                textStyle: MaterialStateProperty.all<TextStyle?>(TextStyle(
+                    fontFamily: 'Europe_Ext',
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold)),
                 backgroundColor:
-                    MaterialStateProperty.all<Color?>(Colors.blue[520]),
+                    MaterialStateProperty.all<Color?>(Colors.lightBlue[510]),
               ),
               clipBehavior: Clip.antiAlias,
               onPressed: onToggleButtonPressed,
-              child: Text('Toggle')),
+              child: Text(isShowingStatistics ? 'Averages' : 'Stats')),
         )
       ],
       flexibleSpace: FlexibleSpaceBar(
