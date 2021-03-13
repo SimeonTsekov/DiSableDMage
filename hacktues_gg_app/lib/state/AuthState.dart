@@ -16,6 +16,8 @@ enum NotAuthenticatedReason {
 class AuthState with _$AuthState {
   const factory AuthState.authenticated() = _Authenticated;
 
+  const factory AuthState.loading() = _Loading;
+
   const factory AuthState.failedToAuthenticate(
       {required NotAuthenticatedReason reason}) = _FailedToAuthenticate;
 

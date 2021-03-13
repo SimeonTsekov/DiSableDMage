@@ -25,8 +25,9 @@ class NavigatorEntryPoint extends StatelessWidget {
 
   bool _onPopPage(
       Route<dynamic> route, dynamic result, PageManager pageManager) {
-    pageManager.didPop(
-        route.settings as Page, result); // safe cast, don't worry
+    Page page = route.settings as Page;
+
+    pageManager.didPop(page, result); // safe cast, don't worry
     return route.didPop(result);
   }
 }

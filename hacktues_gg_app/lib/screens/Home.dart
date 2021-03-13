@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:hacktues_gg_app/blocs/CityAverageBloc.dart';
 import 'package:hacktues_gg_app/blocs/CityBloc.dart';
@@ -152,112 +155,128 @@ class _HomeScreenState extends State<HomeScreen> with CurrentContext {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder: (context, _) => [
-            StreamBuilder<ResponseState<City?>>(
-                stream: widget.cityBloc.stream,
-                builder: (context, snapshot) {
-                  if (snapshot.data != null) {
-                    const String endgameCitySuffix = 'a graveyard';
-                    final String? cityTitle = snapshot.data!.maybeWhen(
-                        (value) => value?.name ?? endgameCitySuffix,
-                        orElse: () => null);
+  Widget build(BuildContext context) => WillPopScope(
+        onWillPop: () async {
+          if (_currentTab > 0) {
+            setState(() => _currentTab = _currentTab - 1);
+            return false;
+          }
+          if (Platform.isAndroid) {
+            SystemNavigator.pop();
+          } else if (Platform.isIOS) {
+            exit(0);
+          }
 
-                    // TODO: Use AnimatedCrossFade for switch when received cityTitle
-                    return _AdaptiveSliverAppBar(
+          return true;
+        },
+        child: Scaffold(
+          drawer: _hasScrolledToSliverMax ? NavigationDrawer() : null,
+          body: NestedScrollView(
+            headerSliverBuilder: (context, _) => [
+              StreamBuilder<ResponseState<City?>>(
+                  stream: widget.cityBloc.stream,
+                  builder: (context, snapshot) {
+                    if (snapshot.data != null) {
+                      const String endgameCitySuffix = 'a graveyard';
+                      final String? cityTitle = snapshot.data!.maybeWhen(
+                          (value) => value?.name ?? endgameCitySuffix,
+                          orElse: () => null);
+
+                      // TODO: Use AnimatedCrossFade for switch when received cityTitle
+                      return _AdaptiveSliverAppBar(
+                          isShowingStatistics: _isShowingStatistics,
+                          hasScrolledToSliverMax: _hasScrolledToSliverMax,
+                          onToggleButtonPressed: () => setState(() {
+                                _isShowingStatistics = !_isShowingStatistics;
+                              }),
+                          title: HackTUESText(
+                            _hasScrolledToSliverMax
+                                ? (_isShowingStatistics
+                                        ? _statisticsTabs
+                                        : _aggregationTabs)[_currentTab]
+                                    .text
+                                : (cityTitle != null
+                                    ? 'Your city, $cityTitle'
+                                    : 'Your city'),
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          backgroundColor: endgameCitySuffix == cityTitle
+                              ? Colors.grey[700]
+                              : Colors.blueAccent);
+                    } else {
+                      return _AdaptiveSliverAppBar(
                         isShowingStatistics: _isShowingStatistics,
                         hasScrolledToSliverMax: _hasScrolledToSliverMax,
                         onToggleButtonPressed: () => setState(() {
-                              _isShowingStatistics = !_isShowingStatistics;
-                            }),
+                          _isShowingStatistics = !_isShowingStatistics;
+                        }),
                         title: HackTUESText(
                           _hasScrolledToSliverMax
                               ? (_isShowingStatistics
                                       ? _statisticsTabs
                                       : _aggregationTabs)[_currentTab]
                                   .text
-                              : (cityTitle != null
-                                  ? 'Your city, $cityTitle'
-                                  : 'Your city'),
-                          fontSize: 14.0,
+                              : 'Your city',
+                          fontSize: 16.0,
                           fontWeight: FontWeight.bold,
                         ),
-                        backgroundColor: endgameCitySuffix == cityTitle
-                            ? Colors.grey[700]
-                            : Colors.blueAccent);
-                  } else {
-                    return _AdaptiveSliverAppBar(
-                      isShowingStatistics: _isShowingStatistics,
-                      hasScrolledToSliverMax: _hasScrolledToSliverMax,
-                      onToggleButtonPressed: () => setState(() {
-                        _isShowingStatistics = !_isShowingStatistics;
-                      }),
-                      title: HackTUESText(
-                        _hasScrolledToSliverMax
-                            ? (_isShowingStatistics
-                                    ? _statisticsTabs
-                                    : _aggregationTabs)[_currentTab]
-                                .text
-                            : 'Your city',
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    );
-                  }
-                })
-          ],
-          body: Builder(builder: (context) {
-            final controller = PrimaryScrollController.of(context);
-            controller?.addListener(() {
-              var changed = controller.position.pixels ==
-                  controller.position.minScrollExtent;
-              // if (changed != _hasScrolledToSliverMax) {
-              setState(() {
-                _hasScrolledToSliverMax = !changed;
+                      );
+                    }
+                  })
+            ],
+            body: Builder(builder: (context) {
+              final controller = PrimaryScrollController.of(context);
+              controller?.addListener(() {
+                var changed = controller.position.pixels ==
+                    controller.position.minScrollExtent;
+                if (changed != _hasScrolledToSliverMax) {
+                  setState(() {
+                    _hasScrolledToSliverMax = !changed;
+                  });
+                }
               });
-              // }
-            });
 
-            return _buildPageView();
-          }),
-        ),
-        drawer: _hasScrolledToSliverMax ? NavigationDrawer() : null,
-        bottomNavigationBar: Visibility(
-          visible: _hasScrolledToSliverMax,
-          child: SafeArea(
-              // wrap with Opacity, listen notifications from the scrollView and update the opacity.
-              child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-                boxShadow: [
-                  BoxShadow(
-                      spreadRadius: -10,
-                      blurRadius: 60,
-                      color: Colors.black.withOpacity(.4),
-                      offset: Offset(0, 25))
-                ]),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3),
-              child: GNav(
-                  gap: 8,
-                  activeColor: Colors.white30,
-                  iconSize: 24,
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                  duration: Duration(milliseconds: 800),
-                  curve: Curves.easeOutExpo,
-                  tabBackgroundColor: Colors.lightBlue,
-                  textStyle:
-                      TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  tabs: _buildTabs(),
-                  selectedIndex: _currentTab,
-                  onTabChange: (index) {
-                    bottomTapped(index);
-                  }),
-            ),
-          )),
+              return _buildPageView();
+            }),
+          ),
+          bottomNavigationBar: Visibility(
+            visible: _hasScrolledToSliverMax,
+            child: SafeArea(
+                // wrap with Opacity, listen notifications from the scrollView and update the opacity.
+                child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                  boxShadow: [
+                    BoxShadow(
+                        spreadRadius: -10,
+                        blurRadius: 60,
+                        color: Colors.black.withOpacity(.4),
+                        offset: Offset(0, 25))
+                  ]),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 3.0, vertical: 3),
+                child: GNav(
+                    gap: 8,
+                    activeColor: Colors.white30,
+                    iconSize: 24,
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    duration: Duration(milliseconds: 800),
+                    curve: Curves.easeOutExpo,
+                    tabBackgroundColor: Colors.lightBlue,
+                    textStyle:
+                        TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    tabs: _buildTabs(),
+                    selectedIndex: _currentTab,
+                    onTabChange: (index) {
+                      bottomTapped(index);
+                    }),
+              ),
+            )),
+          ),
         ),
       );
 }
@@ -286,7 +305,7 @@ class _AdaptiveSliverAppBar extends StatelessWidget {
       pinned: true,
       snap: true,
       backgroundColor: backgroundColor,
-      automaticallyImplyLeading: false,
+      automaticallyImplyLeading: hasScrolledToSliverMax ? true : false,
       actions: [
         Visibility(
           visible: hasScrolledToSliverMax,

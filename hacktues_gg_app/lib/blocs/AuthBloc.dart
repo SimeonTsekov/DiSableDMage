@@ -14,9 +14,11 @@ class AuthBloc extends Bloc<AuthState, AuthEvent> {
   }
 
   @override
-  sendEvent(AuthEvent event) => event.when(
-      authenticate: (email, password) =>
-          _auth.signIn(email: email, password: password),
-      logout: () => _auth.signOut()
-  );
+  sendEvent(AuthEvent event) =>
+      event.when(authenticate: (email, password) async {
+        emitState(AuthState.loading());
+        await _auth.signIn(email: email, password: password);
+      }, logout: () {
+        _auth.signOut();
+      });
 }

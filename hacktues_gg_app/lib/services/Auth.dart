@@ -18,7 +18,8 @@ class Auth {
       return AuthState.authenticated();
     } on FirebaseAuthException catch (e) {
       return AuthState.failedToAuthenticate(
-          reason: AuthExceptionHandler.handleException(e));
+          reason: AuthExceptionHandler.handleException(e)
+      );
     }
   }
 

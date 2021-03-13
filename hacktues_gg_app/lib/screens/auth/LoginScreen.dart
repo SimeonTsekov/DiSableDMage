@@ -127,24 +127,25 @@ class _LoginScreenState extends State<LoginScreen> {
     return StreamListener<AuthState>(
         stream: widget._authBloc.stream,
         onData: (authState) {
-          authState.when(
-              authenticated: () {},
+          authState.maybeWhen(
               // Navigate and stuff (or handle nav from a top level widget)
               failedToAuthenticate: (reason) {
                 this._presentDialog(context,
-                    message: 'Your sign-in attempt was unsuccessful! Please, try again.',
+                    message:
+                        'Your sign-in attempt was unsuccessful! Please, try again.',
                     additionalInformation: reason.toString());
               },
-              unknown: () {},
               loggedOut: () {
-                if(_previousState == AuthState.authenticated()) {
+                if (_previousState == AuthState.authenticated()) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Center(child: HackTUESText('Logged out successfully!')),
+                    content:
+                        Center(child: HackTUESText('Logged out successfully!')),
                     elevation: 5.0,
                     backgroundColor: Colors.blueAccent,
                   ));
                 }
-              });
+              },
+              orElse: () {});
           _previousState = authState;
         },
         child: SafeArea(

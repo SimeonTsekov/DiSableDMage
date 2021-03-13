@@ -42,4 +42,9 @@ class PageManager {
     _pages.remove(page);
     pages.emitState(_pagesList);
   }
+
+  void didPopById({required String key}) {
+    _pages.removeWhere((page) => page.key == ValueKey(key));
+    pages.emitState(_pagesList);
+  }
 }
