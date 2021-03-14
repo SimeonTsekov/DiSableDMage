@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d0e3d825-c182-4d8a-bc87-03e8ef43bfa9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAnalytics.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFirestore.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppFunctions.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.bundle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.bundle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.dll.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Firebase/Plugins/x86_64/FirebaseCppStorage.so.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/StreamingAssets/build_info.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/README.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Editor/ReporterEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Editor/ReporterEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/ComputerIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/ComputerIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/Save.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/Save.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/UnityIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/UnityIcon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/back.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/bar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/bar.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/buildFrom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/buildFrom.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/button_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/button_active.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/chart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/chart.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/clear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/clear.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/clearOnSceneLoaded.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/clearOnSceneLoaded.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/close.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/collapse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/collapse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/copy.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/date.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/date.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/error_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/error_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/even_log.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/even_log.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/fps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/fps.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/graphicCard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/graphicCard.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/info.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/log_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/log_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/memory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/memory.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/odd_log.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/odd_log.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/reporterScrollerSkin.guiskin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/reporterScrollerSkin.guiskin.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_down_arraw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_down_arraw.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_horizental_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_horizental_back.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_horizental_thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_horizental_thumb.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_left_arraw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_left_arraw.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_right_arraw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_right_arraw.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_up_arraw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_up_arraw.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_vertical_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_vertical_back.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_vertical_thumb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/scroller_vertical_thumb.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/search.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/selected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/selected.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/software.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/software.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/timer_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/timer_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/user.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/warning_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Images/warning_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/MultiKeyDictionary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/MultiKeyDictionary.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Reporter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Reporter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/ReporterGUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/ReporterGUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/ReporterMessageReceiver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/ReporterMessageReceiver.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/ReporterScene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/ReporterScene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/Rotate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/Rotate.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/TestReporter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/TestReporter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/test1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/test1.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/test2.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/Reporter/Test/test2.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/GCMem.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/GCMem.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/clear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/clear.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/clearOnNewScene.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/clearOnNewScene.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/collapse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/collapse.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/error.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/fps.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/fps.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/index.htm.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/info.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/log.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/log.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/scene.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/scene.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/screenShot11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/screenShot11.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/screenShot21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/screenShot21.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/screenShot3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/screenShot3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/style.css.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/time.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/time.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/warning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Unity-Logs-Viewer/ReporterDocumentation/warning.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GreenIt/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/House.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/House.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LogIn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LogIn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Register.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Register.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController/CurrencyValidationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController/CurrencyValidationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/76/44ff5c44/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62FFEEB7-EC02-4BEA-B61E-5FBF8D44AC5B/05/b18c1afc/FileMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RTS_Camera/Scripts/RTS_Camera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5E7C6B5E-BA76-4FBA-A226-432314835C9E/b8/1cd3be97/DocumentSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ADF64A36-CC6D-4C37-AE5F-C2F7D816FA99/f2/56a73dd2/FirebaseAuth.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/BaseBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/BuildSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/JSONHelper.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/User.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/SignUpAuthenticationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/NameLabelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/GoldLabelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PowerLabelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/WorkersLabelController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserInformationLabels/PollutionSliderController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Road.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/BuildingData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/SerializableTransform.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/UserController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/House.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/FirebaseStorageManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Authentication/LogInAuthenticationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DbManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LogInController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/User/SaveSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Factory.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Constants.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/WindTurbine.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/Tree.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SettingsController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/PreviewObj.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameStateController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Building/Buildings/BaseBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController/CurrencyValidationController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/SignUpController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/FirebaseStorageManager.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="1pYR4h3wcEBxbOEC7uVkIcEJWIu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/GreenItBuilds\GreenIt.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\simeo\Desktop\GreenItBuilds" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d0e3d825-c182-4d8a-bc87-03e8ef43bfa9" name="Default Changelist" comment="" />
+      <created>1615357910738</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615357910738</updated>
+      <workItem from="1615357958274" duration="3442000" />
+      <workItem from="1615372865132" duration="12798000" />
+      <workItem from="1615487887169" duration="1392000" />
+      <workItem from="1615536120201" duration="21926000" />
+      <workItem from="1615573411631" duration="5199000" />
+      <workItem from="1615614385043" duration="10775000" />
+      <workItem from="1615630882524" duration="2454000" />
+      <workItem from="1615637111539" duration="13777000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
